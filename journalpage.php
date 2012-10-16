@@ -12,6 +12,8 @@
 	
 	//echo '<p>post data = '.$_POST['submit'].'</p>';
 	
+	echo '<p>date = '.$_SESSION['curdate'].'</p>';
+	
 	if(isset($_POST['submit'])) {
 	
 			// check for existing dated workjournal page
@@ -22,7 +24,7 @@
 			// If no date exists
 			if (mysqli_num_rows($data) != 1) {
 				// create a record of one
-				$query = "INSERT INTO workjournal_data (user_id, date) VALUES ('".$_SESSION['user_id']."', CURDATE())";
+				$query = "INSERT INTO workjournal_data (user_id, date) VALUES ('".$_SESSION['user_id']."', '".$_SESSION['curdate']."')";
 				mysqli_query($dbc, $query);
 			}
 			
