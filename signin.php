@@ -26,9 +26,9 @@
 				//$data = mysqli_query($dbc, $query);
 				
 			
-				if ($dbc->numDataRows($query) == 1) {
+				if ($dbc->getNumRows($query) == 1) {
 					// The log-in is OK so set the user ID and username variables
-					$row = $dbc->query($query);
+					$row = $dbc->getData($query);
 					//$row = mysqli_fetch_array($data);
 					$_SESSION['user_id'] = $row['user_id'];
 					$_SESSION['username'] = $row['username'];

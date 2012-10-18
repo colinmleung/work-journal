@@ -5,20 +5,27 @@
 		
 		function __construct($db_host, $db_user, $db_password, $db_name) {
 			$this->db_conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+			if ($this->db_conn->connect_error) {
+				die('Connect Error (' . $this->db_conn->connect_errno . ') ' . $this->db_conn->connect_error); 
+			}
+		}
+		
+		function getData($query) {
+			return $this->db_conn->query($query)->fetch_array();
 		}
 		
 		function query($query) {
-			$data = $db_conn->query($query);
-			return $db_conn->mysqli_fetch_array($data);
+			return $this->db_conn->query($query);
 		}
 		
-		function numDataRows($query) {
-			return $db_conn->mysqli_num_rows($db_conn->query($query));
+		function getNumRows($query) {
+			return $this->db_conn->query($query)->num_rows;
 		}
 		
 		function validateString($string) {
-			return $db_conn->real_escape_string($string);
+			return $this->db_conn->real_escape_string($string);
 		}
+		
 	}
 	
 	class SessionHandler {
