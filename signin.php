@@ -1,5 +1,8 @@
 <?php
 	require_once('connect_vars.php');
+	require_once('class_lib.php');
+	
+	
 	
 	session_start();
 	
@@ -9,21 +12,24 @@
 	// If the user isn't logged in, try to log them in
 	if (!isset($_SESSION['user_id'])) {
 		if(isset($_POST['submit'])) {
+			
 			// Connect to the database
-			$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+			$dbc = new DBConnection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			
 			// Grab the user-entered log-in data
-			$user_username = mysqli_real_escape_string($dbc, trim($_POST['username']));
-			$user_password = mysqli_real_escape_string($dbc, trim($_POST['password']));
+			$user_username = $dbc->validateString(trim($_POST['username']));
+			$user_password = $dbc->validateString(trim($_POST['password']));
 			
 			if (!empty($user_username) && !empty($user_password)) {
 				// Look up the username and password in the database
 				$query = "SELECT user_id, username FROM workjournal_user WHERE username = '$user_username' AND password = SHA('$user_password')";
-				$data = mysqli_query($dbc, $query);
+				//$data = mysqli_query($dbc, $query);
+				
 			
-				if (mysqli_num_rows($data) == 1) {
+				if ($dbc->numDataRows($query) == 1) {
 					// The log-in is OK so set the user ID and username variables
-					$row = mysqli_fetch_array($data);
+					$row = $dbc->query($query);
+					//$row = mysqli_fetch_array($data);
 					$_SESSION['user_id'] = $row['user_id'];
 					$_SESSION['username'] = $row['username'];
 					$_SESSION['curdate'] = date('Y-m-d', time());

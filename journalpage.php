@@ -64,10 +64,6 @@
 			<input type="submit" value="Backward" name="backward"/>
 </form>
 
-<a href="forward.php">Forward</a>
-<a href="backward.php">Backward</a>
-<a href="signout.php">Log Out</a>
-
 <?php
 	require_once('footer.php');
 ?>
