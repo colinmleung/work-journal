@@ -1,0 +1,6 @@
+-complete the Database Connection Class by adding all the necessary methods
+-finish converting from mysqli to PDO
+-go into the rest of the .php files and converting old procedural database code into object oriented code
+-create a Session Handler and Date class
+-convert all the .php files to OO functions using the existing classes
+-convert application to MVC
