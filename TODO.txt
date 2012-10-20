@@ -4,3 +4,5 @@
 -create a Session Handler and Date class
 -convert all the .php files to OO functions using the existing classes
 -convert application to MVC
+
+-adhere to strict security measures https://www.owasp.org/index.php/PHP_Top_5

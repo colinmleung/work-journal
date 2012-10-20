@@ -5,7 +5,7 @@
 		
 		function __construct($db_host, $db_user, $db_password, $db_name) {
 			try {
-				$db_conn = new PDO($db_name, $db_host, $db_user, $db_password);
+				$db_conn = new PDO("mysql:host=$db_name;dbname=$db_name", $db_user, $db_password);
 				$db_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			} catch(PDOException $e) {
 				echo $e->getMessage();
@@ -25,12 +25,17 @@
 		}
 		
 		function validateUserLogin($username, $password) {
-			$db_conn->beginTransaction();
-			$query = $db_conn->prepare("SELECT user_id FROM workjournal_user WHERE username = :username and password = :password");
+			//$this->$db_conn->beginTransaction(); // maybe unnecessary
+			$query = $this->$db_conn->prepare("SELECT user_id FROM workjournal_user WHERE username = :username AND password = :password");
 			$query->bindParam(':username', $username, PDO::PARAM_STR);
 			$query->bindParam(':password', $password, PDO::PARAM_STR);
 			$query->execute();
-			$db_conn->commit();
+			//$this->db_conn->commit(); // maybe unnecessary
+			return $query->rowCount();
+		}
+		
+		function getUsername() {
+			
 		}
 		
 		
