@@ -1,0 +1,6 @@
+extension = phar.so
+suhosin.executor.include.whitelist = phar
+xdebug.profiler_enable=1
+memory_limit = 128M
+include_path=".;/home/colinleung/"
+
