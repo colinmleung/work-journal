@@ -43,33 +43,59 @@
 	}
 ?>
 
+<!doctype html>
 <html lang="en">
 	<head>
-		<title>WorkJournal: Plan, Reflect, Improve</title>
 		<meta charset="utf-8"/>
+		<title>Work Journal - Record and reflect on your work</title>
+		<meta name="description" content="A place to think about your work. Work Journal is a questionnaire creator that improves your productivity by getting you to think about the questions that really matter."/>
 	</head>
 	<body>
-		<h3>Sign In</h3>
-		
+		<header>
+				<h1>Work Journal</h1>
+				<p>A place to think about your work.</p>
+		</header>
+		<div id="features">
+			<div id="record">
+				<h2>Record</h2>
+				<p>Preserve your thoughts and feelings right when they happen.</p>
+			</div>
+			<div id="reflect">
+				<h2>Reflect</h2>
+				<p>Get a bird's-eye view of your work and identify key issues.</p>
+			</div>
+			<div id="templates">
+				<h2>Custom Templates</h2>
+				<p>Create questionnaires to ask yourself those important questions day after day.</p>
+			</div>
+		</div>
+		<div id="signUp">
+			<form method="link" action="signup.php">
+				<input type="submit" value="Sign Up">
+			</form>
+		</div>
+		<div id="logIn">
+
 <?php
 	// If the cookie is empty, show any error message and the log-in form; otherwise confirm the log-in
 	if (empty($_SESSION['user_id'])) {
 		echo '<p class="error">' . $error_msg . '</p>';
 ?>
 		
-		<form name="signin" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" required="required"/>
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required="required"/>
-			<input type="submit" value="Sign In" name="submit"/>
-		</form>
-		
-		<a href="signup.php">Sign Up</a>
+			<form name="logInForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" required="required"/>
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required="required"/>
+				<input type="submit" value="Log In" name="submit"/>
+			</form>
+
 <?php
 	} else {
 		// Confirm the successful log in
 		echo('<p class="login">You are logged in as ' . $_SESSION['username'] . '</p>');
 	}
-	require_once('footer.php');
 ?>
+		</div>
+	</body>
+</html>

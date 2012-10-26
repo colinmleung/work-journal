@@ -4,17 +4,6 @@
 		<meta charset="utf-8"/>
 		<title>Work Journal - Record and reflect on your work</title>
 		<meta name="description" content="A place to think about your work. Work Journal is a questionnaire creator that improves your productivity by getting you to think about the questions that really matter."/>
-		
-		<!--[if IE]> 
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]--> 
-		<!--[if lte IE 7]> 
-			<script src="js/IE8.js" type="text/javascript"></script>
-		<![endif]--> 
-		<!--[if lt IE 7]> 
-			<link rel="stylesheet" type="text/css" media="all" href="css/ie6.css"/>
-		<![endif]-->
-
 	</head>
 	<body>
 		<header>
@@ -35,14 +24,14 @@
 				<p>Create questionnaires to ask yourself those important questions day after day.</p>
 			</div>
 		</div>
-		<div id="signUpButton">
+		<div id="signUp">
 			<button type="button">Sign Up</button>
 		</div>
-		<div id="loginForm">
-			<form name="login" action="" method="post">
-				<label>Username</label>
+		<div id="logIn">
+			<form name="logInForm" action="" method="post">
+				<label for="username">Username</label>
 				<input name="username" type="text"/>
-				<label>Password</label>
+				<label for="password">Password</label>
 				<input name="password" type="text"/>
 				<input name="Log In" type="submit"/>
 			</form>
