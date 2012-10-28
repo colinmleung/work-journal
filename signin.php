@@ -82,11 +82,11 @@
 		echo '<p class="error">' . $error_msg . '</p>';
 ?>
 		
-			<form name="signinForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
+			<form id ="signinForm" name="signinForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
 				<label for="username">Username</label>
-				<input type="text" id="username" name="username" required="required"/>
+				<input type="text" id="username" name="username"/>
 				<label for="password">Password</label>
-				<input type="password" id="password" name="password" required="required"/>
+				<input type="password" id="password" name="password"/>
 				<input type="submit" value="Sign In" name="submit"/>
 			</form>
 
