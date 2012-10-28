@@ -83,10 +83,14 @@
 ?>
 		
 			<form id ="signinForm" name="signinForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
-				<label for="username">Username</label>
-				<input type="text" id="username" name="username"/>
-				<label for="password">Password</label>
-				<input type="password" id="password" name="password"/>
+				<div>
+					<label for="username">Username</label>
+					<input type="text" id="username" name="username"/>
+				</div>
+				<div>
+					<label for="password">Password</label>
+					<input type="password" id="password" name="password"/>
+				</div>
 				<input type="submit" value="Sign In" name="submit"/>
 			</form>
 
@@ -97,6 +101,9 @@
 	}
 ?>
 		</div>
+		<script src="js/ajax.js"></script>
+		<script src="js/utilities.js"></script>
+		<script src="js/errorMessages.js"></script>
 		<script src="js/signin.js"></script>
 	</body>
 </html>

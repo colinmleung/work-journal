@@ -12,7 +12,7 @@ var U = {
 	
 	setText: function(id, message) {
 		'use strict';
-		if ((typeof id == 'string' ) && (typeof message == 'string') {
+		if ((typeof id == 'string' ) && (typeof message == 'string')) {
 			var output = this.$(id);
 			if (!output)
 				return false;
