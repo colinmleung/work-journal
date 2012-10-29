@@ -1,3 +1,11 @@
+// Progressive enhancement: PHP functionality self-contained and working
+/* JS functionality has several steps:
+ * 1. make sure the inputs (username and password) exist
+ * 2. make sure the input combination is correct
+ * 3. if correct, direct to application page
+ *    if incorrect, send error message
+ */
+
 function validateForm(e) {
 	'use strict';
 	
@@ -8,6 +16,7 @@ function validateForm(e) {
 	
 	var error = false;
 	
+	// If username and password are not entered at all, print an error message
 	if (username.value.length > 0) {
 		removeErrorMessage('username');
 	} else {
@@ -21,6 +30,10 @@ function validateForm(e) {
 		addErrorMessage('password', 'Please enter a password.');
 		error = true;
 	}
+	
+	// If username and password are incorrect, print an error message
+	
+	// If an error is encountered, don't send the form
 	
 	if (error) {
 		if (e.preventDefault) {
@@ -36,11 +49,7 @@ function validateForm(e) {
 		ajax.onreadystatechange = function() {
 			if (ajax.readyState == 4) {
 				if ((ajax.status >= 200 && ajax.status < 300) || (ajax.state == 304)) {
-					if (ajax.responseText == 'VALID') {
-						alert('You are logged in!');
-					} else {
-						alert('The submitted values do not match those on file!');
-					}
+					document.getElementById('signinForm').innerHTML = ajax.responseText;
 				} else {
 					document.getElementById('signinForm').submit();
 				}
