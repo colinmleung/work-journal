@@ -1,23 +1,23 @@
 <?php
-	require_once('connect_vars.php');
+	require_once('class_lib.php');
 
-	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+	$dbc = new DAO;
 	
 	if (isset($_POST['submit'])) {
-		$username = mysqli_real_escape_string($dbc, trim($_POST['username']));
-		$password = mysqli_real_escape_string($dbc, trim($_POST['password']));
-		$password2 = mysqli_real_escape_string($dbc, trim($_POST['password2']));
+		$username = $dbc->sanitizeString($_POST['username']);
+		$password = $dbc->sanitizeString($_POST['password']);
+		$password2 = $dbc->sanitizeString($_POST['password2']);
+		
 		
 		if (!empty($username) && !empty($password) && !empty($password2) && ($password == $password2)) {
 			$query = "SELECT * FROM workjournal_user WHERE username='$username'";
 			
-			$data = mysqli_query($dbc, $query);
-			if (mysqli_num_rows($data) == 0) {
+			$qro = new QRO($dbc->query($query));
+			if ($qro->numRows() == 0) {
 				$query = "INSERT INTO workjournal_user (username, password) VALUES ('$username', SHA('$password'))";
-				mysqli_query($dbc, $query);
+				$dbc->query($query);
 				$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/signin.php';
 				header('Location: ' . $home_url);
-				mysqli_close($dbc);
 				exit();
 			} else {
 				echo '<p>Username already taken. Please try another one.</p>';
@@ -26,7 +26,6 @@
 			echo '<p>Please enter the desired username and the desired password twice.</p>';
 		}
 	}
-	mysqli_close($dbc);
 ?>
 
 <!doctype html>

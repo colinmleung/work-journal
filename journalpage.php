@@ -1,7 +1,7 @@
 <?php
 	require_once('startsession.php');
 	require_once('header.php');
-	require_once('connect_vars.php');
+	require_once('class_lib.php');
 	
 	if(isset($_POST['forward'])) {
 		$_SESSION['curdate'] = date("Y-m-d", strtotime($_SESSION['curdate'])+86400);
@@ -12,7 +12,7 @@
 	}
 	
 	// Connect to the database
-	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+	$dbc = new DAO;
 	
 	$tasksp = '';
 	$tasksc = '';
@@ -24,14 +24,14 @@
 	
 			// check for existing dated workjournal page
 			$query = "SELECT * FROM workjournal_data WHERE user_id ='".$_SESSION['user_id']."' AND date = '".$_SESSION['curdate']."'";
-			$data = mysqli_query($dbc, $query);
-			$row = mysqli_fetch_array($data);
+			$qro = new QRO($dbc->query($query));
+			$row = $qro->fetchArray();
 			
 			// If no date exists
-			if (mysqli_num_rows($data) == 0) {
+			if ($qro->numRows == 0) {
 				// create a record of one
 				$query = "INSERT INTO workjournal_data (user_id, date) VALUES ('".$_SESSION['user_id']."', '".$_SESSION['curdate']."')";
-				mysqli_query($dbc, $query);
+				$dbc->query($query);
 			}
 			
 			// Transfer data to variables
@@ -41,14 +41,14 @@
 			
 			// Send text information to database
 			$query = "UPDATE workjournal_data SET tasksp = '".$tasksp."', tasksc = '".$tasksc."', issues = '".$issues."' WHERE user_id ='".$_SESSION['user_id']."' AND date = '".$_SESSION['curdate']."'";
-			mysqli_query($dbc, $query);
+			$dbc->query($query);
 	}
 	
 	// Get text information from database
 	$query = "SELECT tasksp, tasksc, issues FROM workjournal_data WHERE user_id ='".$_SESSION['user_id']."' AND date = '".$_SESSION['curdate']."'";
-	$data = mysqli_query($dbc, $query);
+	$qro = new QRO($dbc->query($query));
 	//echo '<p>data = '.$data.'</p>';
-	$row = mysqli_fetch_array($data);
+	$row = $qro->fetchArray();
 	
 	$tasksp = $row['tasksp'];
 	$tasksc = $row['tasksc'];
@@ -68,6 +68,5 @@
 <a href="backward.php">Backward</a>
 <a href="signout.php">Log Out</a>
 
-<?php
-	require_once('footer.php');
-?>
+	</body>
+</html>
