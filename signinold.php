@@ -1,30 +1,10 @@
 <?php
 	require_once('class_lib.php');
 	
-	// signin.php calls the controller which acts in a master->slave arrangement with the models and views.
-	$sic = new SignInController();
-	
 	session_start();
 	
 	// Clear the error message
 	$error_msg = "";
-	
-	if (isset($_SESSION['user_id'])) {				// If the user is logged in, redirect them to the main application page
-		$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/journalpage.php';
-		header('Location: ' . $home_url);
-	} else {										// If the user is not logged in, check if they submitted login data
-		if (isset($_POST['signin'])) {				// If the user submitted data, try to log them in
-			
-		}											// If the user didnt submit data, do nothing
-	}
-	
-	if (isset($_POST['signup'])) {					// If the user presses the sign up button, go to that page
-		$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/signup.php';
-		header('Location: ' . $home_url);
-	}												// If not, do nothing
-	
-	// Print the document
-	
 	
 	// If the user isn't logged in, try to log them in
 	if (!isset($_SESSION['user_id'])) {
@@ -90,8 +70,8 @@
 			</div>
 		</div>
 		<div id="signUp">
-			<form id="signupButton" name="signupButton" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-				<input type="submit" value="Sign Up" name="signup"/>
+			<form method="link" action="signup.php">
+				<input type="submit" value="Sign Up" name="signup">
 			</form>
 		</div>
 		<div id="logIn">
@@ -102,7 +82,7 @@
 		echo '<p class="error">' . $error_msg . '</p>';
 ?>
 		
-			<form id="signinForm" name="signinForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
+			<form id ="signinForm" name="signinForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
 				<div>
 					<label for="username">Username</label>
 					<input type="text" id="username" name="username"/>
