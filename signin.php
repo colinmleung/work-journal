@@ -8,7 +8,7 @@
 	
 	// If the user isn't logged in, try to log them in
 	if (!isset($_SESSION['user_id'])) {
-		if(isset($_POST['submit'])) {
+		if(isset($_POST['signin'])) {
 			// Connect to the database
 			$dbc = new DAO;
 			
@@ -19,7 +19,6 @@
 			if (!empty($user_username) && !empty($user_password)) {
 				// Look up the username and password in the database
 				$query = "SELECT user_id, username FROM workjournal_user WHERE username = '$user_username' AND password = SHA('$user_password')";
-				//$data = mysqli_query($dbc, $query);
 				$qro = new QRO($dbc->query($query));
 			
 				if ($qro->numRows() == 1) {
@@ -28,8 +27,8 @@
 					$_SESSION['user_id'] = $row['user_id'];
 					$_SESSION['username'] = $row['username'];
 					$_SESSION['curdate'] = date('Y-m-d', time());
-					setcookie('user_id', $row['user_id'], time() + 60*60*24*30);
-					setcookie('username', $row['username'], time() + 60*60*24*30);
+					setcookie('user_id', $row['user_id'], time() + THIRTY_DAYS);
+					setcookie('username', $row['username'], time() + THIRTY_DAYS);
 					$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/journalpage.php';
 					header('Location: ' . $home_url);
 				} else {
@@ -72,7 +71,7 @@
 		</div>
 		<div id="signUp">
 			<form method="link" action="signup.php">
-				<input type="submit" value="Sign Up">
+				<input type="submit" value="Sign Up" name="signup">
 			</form>
 		</div>
 		<div id="logIn">
@@ -92,7 +91,7 @@
 					<label for="password">Password</label>
 					<input type="password" id="password" name="password"/>
 				</div>
-				<input type="submit" value="Sign In" name="submit"/>
+				<input type="submit" value="Sign In" name="signin"/>
 			</form>
 
 <?php

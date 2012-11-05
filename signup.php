@@ -1,4 +1,5 @@
 <?php
+	require_once('constants.php');
 	require_once('class_lib.php');
 
 	$dbc = new DAO;
@@ -13,7 +14,7 @@
 			$query = "SELECT * FROM workjournal_user WHERE username='$username'";
 			
 			$qro = new QRO($dbc->query($query));
-			if ($qro->numRows() == 0) {
+			if ($qro->numRows() == NO_RECORDS) {
 				$query = "INSERT INTO workjournal_user (username, password) VALUES ('$username', SHA('$password'))";
 				$dbc->query($query);
 				$home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/signin.php';

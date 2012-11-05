@@ -17,6 +17,15 @@ class View {
 }
 
 class Controller {
+	function __construct() {
+	}
+	
+	function signInPressed() {
+	}
+	
+	function signUpPressed() {
+		
+	}
 }
 
 // Database Access Object acts as a facade to the mysqli object
@@ -54,6 +63,26 @@ class QRO {
 	
 	function fetchArray() {
 		return $this->mysqli_result->fetch_array(MYSQLI_BOTH);
+	}
+}
+
+// Session Handling Object
+class SHO {	
+}
+
+// Cookie Handling Object
+class CHO {
+}
+
+class User {
+	private $user_id;
+	private $username;
+	private $password;
+	
+	function __construct() {
+	}
+	
+	function SignIn($user_id, ) {
 	}
 }
 ?>

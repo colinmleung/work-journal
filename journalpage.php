@@ -1,14 +1,15 @@
 <?php
 	require_once('startsession.php');
 	require_once('header.php');
+	require_once('constants.php');
 	require_once('class_lib.php');
 	
 	if(isset($_POST['forward'])) {
-		$_SESSION['curdate'] = date("Y-m-d", strtotime($_SESSION['curdate'])+86400);
+		$_SESSION['curdate'] = date("Y-m-d", strtotime($_SESSION['curdate'])+DAY);
 	}
 	
 	if(isset($_POST['backward'])) {
-		$_SESSION['curdate'] = date("Y-m-d", strtotime($_SESSION['curdate'])-86400);
+		$_SESSION['curdate'] = date("Y-m-d", strtotime($_SESSION['curdate'])-DAY);
 	}
 	
 	// Connect to the database
@@ -28,7 +29,7 @@
 			$row = $qro->fetchArray();
 			
 			// If no date exists
-			if ($qro->numRows == 0) {
+			if ($qro->numRows == NO_RECORDS) {
 				// create a record of one
 				$query = "INSERT INTO workjournal_data (user_id, date) VALUES ('".$_SESSION['user_id']."', '".$_SESSION['curdate']."')";
 				$dbc->query($query);
