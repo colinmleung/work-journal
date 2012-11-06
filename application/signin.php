@@ -1,6 +1,9 @@
 <?php
-	require_once('class_lib.php');
-	require_once('start_session.php');
+	require_once('SignInController.php');
+	require_once('../utilities/Utility.php');
+	
+	$util = new Utility();
+	$util->startSession();
 	
 	$sic = new SignInController();
 	$sic->performAction();
