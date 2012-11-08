@@ -11,6 +11,6 @@ abstract class ControllerFactory {
 	}
 	abstract protected function createView();
 	abstract protected function createModel();
-	abstract protected function performAction();
+	abstract public function performAction();
 }
 ?>

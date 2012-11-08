@@ -1,5 +1,5 @@
 <?php
 abstract class View {
-	abstract protected function display($model);
+	abstract public function display($model);
 }
 ?>

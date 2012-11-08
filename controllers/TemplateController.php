@@ -1,23 +1,31 @@
 <?php
 require_once('ControllerFactory.php');
-require_once('../views/SignInView.php');
-require_once('../models/SignInModel.php');
+require_once('../views/TemplateView.php');
+require_once('../models/TemplateModel.php');
 require_once('../utilities/Utility.php');
 
 
-class SignInController extends ControllerFactory {
+class TemplateController extends ControllerFactory {
 	function __construct() {
 		parent::__construct();
 	}
 	protected function createView() {
-		return new SignInView();
+		return new TemplateView();
 	}
 	protected function createModel() {
-		return new SignInModel();
+		return new TemplateModel();
 	}
 	public function performAction() {
-		if (isset($_SESSION['user_id'])) {
-			$this->userLoggedIn();
+		if () {
+		}
+	}
+}
+?>'])) {
+			
+		}
+	}
+}
+?>edIn();
 		} else if (isset($_POST['signin'])) {
 			$this->signInRequested();
 		} else if (isset ($_POST['signup'])) {

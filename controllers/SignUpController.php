@@ -14,20 +14,26 @@ class SignUpController extends ControllerFactory {
 	protected function createModel() {
 		return new SignUpModel();
 	}
-	protected function performAction() {
-		if (isset($_SESSION['user_id']))
+	public function performAction() {
+		if (isset($_SESSION['user_id'])) {
 			$this->userLoggedIn();
-		if (isset($_POST['signin']))
+		} else if (isset($_POST['signin'])) {
 			$this->signInPageRequested();
-		if (isset($_POST['signup']))
+		} else if (isset($_POST['signup'])) {
 			$this->signUpRequested();
+		} else {
+			$this->noActionTaken();
+		}
+	}
+	private function noActionTaken() {
+		$this->view->display($this->model);
 	}
 	private function signUpRequested() {
-		$this->model->signUp($_POST['username'], $_POST['password'], $_POST['password2']);
+		$this->model->signUp($_POST['username'], $_POST['password1'], $_POST['password2']);
 		$this->view->display($this->model);
 	}
 	private function signInPageRequested() {
-		$this->utility-?redirect('signin');
+		$this->utility->redirect('signin');
 	}
 	private function userLoggedIn() {
 		$this->utility->redirect('journalpage');

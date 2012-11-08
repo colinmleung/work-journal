@@ -2,9 +2,9 @@
 require_once('View.php');
 
 class SignInView extends View {
-	protected function display($model) {
-			private $str1 = <<<EOD
-!doctype html>
+	public function display($model) {
+?>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
@@ -36,9 +36,11 @@ class SignInView extends View {
 			</form>
 		</div>
 		<div id="logIn">
-EOD;
-
-		private $str2 = <<<EOD
+<?php 
+$error_msg = $model->getErrorMsg();
+if (isset($error_msg))
+	echo '<p class="error">' . $error_msg . '</p>';
+?>
 			<form id ="signinForm" name="signinForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
 				<div>
 					<label for="username">Username</label>
@@ -53,13 +55,7 @@ EOD;
 		</div>
 	</body>
 </html>
-EOD;
-	
-	function display($model) {
-		echo $str1;
-		if (isset($model->error_msg))
-			echo '<p class="error">' . $model->error_msg . '</p>';
-		echo $str2;
+<?php
 	}
 }
 ?>

@@ -1,5 +1,5 @@
 <?php 
-require_once('connect_vars.php');
+require_once('../utilities/connect_vars.php');
 
 class DAO {
 	private $mysqli;

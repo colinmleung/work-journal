@@ -14,26 +14,41 @@ class JournalPageController extends ControllerFactory {
 	protected function createModel() {
 		return new JournalPageModel();
 	}
-	protected function performAction() {
-		if (isset($_POST['save']))
+	public function performAction() {
+		if (isset($_POST['save'])) {
 			$this->saveData();
-		if (isset($_POST['forward']))
+		} else if (isset($_POST['forward'])) {
 			$this->incrementDay();
-		if (isset($_POST['backward']))
+		} else if (isset($_POST['backward'])) {
 			$this->decrementDay();
-		if (isset($_POST['signout']))
+		} else if (isset($_POST['signout'])) {
 			$this->signOut();
+		} else {
+			$this->noActionTaken();
+		}
 	}
 	private function saveData() {
-		$this->model->saveData();
+		$this->model->saveData($_POST['tasksp'], $_POST['tasksc'], $_POST['issues']);
+		$this->model->getData();
+		$this->view->display($this->model);
 	}
 	private function incrementDay() {
+		$this->model->incrementDay();
+		$this->model->getData();
+		$this->view->display($this->model);
 	}
 	private function decrementDay() {
+		$this->model->decrementDay();
+		$this->model->getData();
+		$this->view->display($this->model);
 	}
 	private function signOut() {
 		$this->model->signOut();
 		$this->utility->redirect('signin');
+	}
+	private function noActionTaken() {
+		$this->model->getData();
+		$this->view->display($this->model);
 	}
 }
 ?>

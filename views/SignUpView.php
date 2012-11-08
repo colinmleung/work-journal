@@ -2,7 +2,8 @@
 require_once('View.php');
 
 class SignUpView extends View {
-	private $s1 = <<<EOD
+	public function display($model) {
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -15,18 +16,23 @@ class SignUpView extends View {
 		<form name="signUpForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 			<label for="username">Username:</label>
 			<input type="text" id="username" name="username" required="required"/>
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required="required"/>
+			<label for="password1">Password:</label>
+			<input type="password" id="password1" name="password1" required="required"/>
 			<label for="password2">Retype Password:</label>
 			<input type="password" id="password2" name="password2" required="required"/>
-			<input type="submit" value="Submit" name="submit"/>
+			<input type="submit" value="Sign Up" name="signup"/>
 		</form>
+		<form name="signInButton" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+			<input type="submit" value="Sign In" name="signin"/>
+		</form>
+<?php
+$error_msg = $model->getErrorMsg();
+if (isset($error_msg))
+	echo '<p class="error">' . $error_msg . '</p>';
+?>
 	</body>
 </html>
-EOD;
-
-	protected function display($model) {
-		echo $str1;
+<?php
 	}
 }
 ?>

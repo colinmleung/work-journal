@@ -2,7 +2,9 @@
 require_once('View.php');
 
 class JournalPageView extends View {
-	private $s1 = <<<EOD
+
+	public function display($model) {
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -10,6 +12,7 @@ class JournalPageView extends View {
 		<title>WorkJournal</title>
 	</head>
 	<body>
+		<p>date = <?php echo $_SESSION['curdate'] ?></p>
 		<form name="journal" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 			Tasks Planned: <textarea name="tasksp" id="tasksp" rows="3" cols="30"><?php echo $model->tasksp ?></textarea>
 			Tasks Completed: <textarea name="tasksc" id="tasksc" rows="3" cols="30"><?php echo $model->tasksc ?></textarea>
@@ -21,9 +24,7 @@ class JournalPageView extends View {
 		</form>
 	</body>
 </html>
-EOD;
-	protected function display($model) {
-		echo $str1;
+<?php
 	}
 }
 ?>
