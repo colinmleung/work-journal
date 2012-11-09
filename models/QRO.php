@@ -13,5 +13,9 @@ class QRO {
 	function fetchArray() {
 		return $this->mysqli_result->fetch_array(MYSQLI_BOTH);
 	}
+	
+	function fetchRow() {
+		return $this->mysqli_result->fetch_row();
+	}
 }
 ?>

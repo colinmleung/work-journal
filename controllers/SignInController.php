@@ -4,7 +4,7 @@ require_once('../views/SignInView.php');
 require_once('../models/SignInModel.php');
 require_once('../utilities/Utility.php');
 
-
+// The SignInController manages interactions between the SignInView and SignInModel, as well as the browser itself.
 class SignInController extends ControllerFactory {
 	function __construct() {
 		parent::__construct();
@@ -30,8 +30,10 @@ class SignInController extends ControllerFactory {
 		$this->view->display($this->model);
 	}
 	private function signInRequested() {
-		$this->model->signIn($_POST['username'], $_POST['password']);
-		$this->view->display($this->model);
+		if ($this->model->signIn($_POST['username'], $_POST['password']))
+			redirect('journalpage');
+		else 
+			$this->view->display($this->model);
 	}
 	private function signUpPageRequested() {
 		$this->utility->redirect('signup');

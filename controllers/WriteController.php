@@ -26,6 +26,10 @@ class WriteController extends ControllerFactory {
 			$this->deleteEntry();
 		} else if ($_POST['clear']) {
 			$this->clearEntry();
+		} else if ($_POST['forward']) {
+			$this->incrementDay();
+		} else if ($_POST['backward']) {
+			$this->decrementDay();
 		} else {
 			$this->showDefaultEntry();
 		}
@@ -42,8 +46,11 @@ class WriteController extends ControllerFactory {
 	}
 	private function showDefaultEntry() {
 	}
-}
-?>ultEntry() {
+	private function incrementDay() {
+		$this->model->incrementDay($_SESSION['curdate']);
+	}
+	private function decrementDay() {
+		$this->model->decrementDay($_SESSION['curdate']);
 	}
 }
 ?>
