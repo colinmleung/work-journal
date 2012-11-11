@@ -19,7 +19,9 @@ class PersistenceLayer extends Model {
 		$ch = new CookieHandler;
 	}
 	
-	function insertEntry($user_id, $date, $header, $response, &$error_msg) {
+	function insertEntry($entry, &$error_msg) {
+		$date = $this->sh->getDate();
+		$user_id = $this->sh->getUserId();
 		$tco = new TCO;
 		$header = $tco->Array2String($header);
 		$response = $tco->Array2String($response);
@@ -29,7 +31,8 @@ class PersistenceLayer extends Model {
 	}
 	
 	//entries should be a two dimensional array
-	function retrieveEntry($user_id, &$entries, $date, &$error_msg) {
+	function retrieveEntry(&$entries, $date, &$error_msg) {
+		$user_id = $this->sh->getUserId();
 		$tco = new TCO;
 		$search_entry = "SELECT entry_header, entry_response WHERE user_id = '$user_id' AND date = '$date'";
 		$qro = new QRO($this->dao->query($search_query));
@@ -41,7 +44,8 @@ class PersistenceLayer extends Model {
 		return true;
 	}
 	
-	function deleteEntry($user_id, $date, $) {
+	function deleteEntry($user_id, $date, &$error_msg) {
+		$user_id = $this->sh->getUserId();
 	}
 	
 	function retrieveTemplate($user_id, $template_name, &$template, &$error_msg) {
@@ -58,7 +62,8 @@ class PersistenceLayer extends Model {
 	}
 	
 	//$template is an array of questions, with a name at index 0
-	function insertTemplate($user_id, $template, &$error_msg) {
+	function insertTemplate($template, &$error_msg) {
+		$user_id = $this->sh->getUserId();
 		$tco = new TCO;
 		$search_query = "SELECT * FROM workjournal_templates WHERE user_id = '$user_id' AND template_name = '$template[0]'";
 		$qro = new QRO($this->dao->query($search_query));
@@ -73,7 +78,8 @@ class PersistenceLayer extends Model {
 		}
 	}
 	
-	function deleteTemplate($user_id, $template_name, &$error_msg) {
+	function deleteTemplate($template_name, &$error_msg) {
+		$user_id = $this->sh->getUserId();
 		$delete_query = "DELETE FROM workjournal_templates WHERE user_id = '$user_id' AND template_name = '$template_name'";
 		$qro = new QRO($this->dao->query($delete_query));
 		// TEMPLATE_DELETED = 1
@@ -105,7 +111,7 @@ class PersistenceLayer extends Model {
 			$row = $qro->fetchArray();
 			$this->sh->setUserId($row['user_id']);
 			$this->sh->setUserName($row['username']);
-			$this->sh->setCurrentDate($row['cur_date']);
+			$this->sh->setDate($row['date']);
 			$this->ch->setUserId($row['user_id']);
 			$this->ch->setUserName($row['username']);
 			return true;
@@ -115,7 +121,8 @@ class PersistenceLayer extends Model {
 		}
 	}
 	
-	function deleteUser($user_id, &$error_msg) {
+	function deleteUser(&$error_msg) {
+		$user_id = $this->sh->getUserId();
 		$search_query = "SELECT user_id FROM workjournal_user WHERE user_id = '$user_id'";
 		$qro = new QRO($this->dao->query($search_query));
 		if ($qro->numRows() == USER_EXISTS) {

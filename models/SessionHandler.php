@@ -12,11 +12,11 @@ class SessionHandler extends Model {
 	function getUserName() {
 		return $_SESSION['username'];
 	}
-	function setCurrentDate($cur_date) {
-		$_SESSION['cur_date'] = $cur_date;
+	function setDate($date) {
+		$_SESSION['date'] = $date;
 	}
-	function getCurrentDate() {
-		return $_SESSION['cur_date'];
+	function getDate() {
+		return $_SESSION['date'];
 	}
 }
 ?>

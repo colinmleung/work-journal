@@ -8,12 +8,21 @@ class SignInView extends View {
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
-		<title>Work Journal - <?php echo $_SESSION['curdate'] ?></title>
+		<title>Work Journal -
+<?php
+$date = $model->getDate();
+echo $date;
+?>
+		</title>
 		<meta name="description" content="A place to think about your work. Work Journal is a questionnaire creator that improves your productivity by getting you to think about the questions that really matter."/>
 	</head>
 	<body>
 		<header>
-			<h1><?php echo $_SESSION['curdate'] ?></h1>
+			<h1>
+<?php
+echo $date
+?>
+			</h1>
 		</header>
 		<nav>
 			<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
@@ -23,10 +32,9 @@ class SignInView extends View {
 				<input type="submit" value="Sign Out" name="signout"/>
 			</form>
 		</nav>
-		<div id="journal">
-			<div id="actionBar">
+		<div id="entry">
 			<form name="entry" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-				<select>
+				<select name="template_name">
 					<option value="blank">Blank</option>
 <?php
 					$template_names = $model->getTemplateNames();
@@ -39,20 +47,29 @@ class SignInView extends View {
 				<input type="submit" value="Save" name="save"/>
 				<input type="submit" value="Delete" name="delete"/>
 				<input type="submit" value="Clear" name="clear"/>
-			</form>
-			</div>
-			<div id="entry">
+				<input type="submit" value="Forward" name="forward"/>
+				<input type="submit" value="Backward" name="backward"/>
 <?php
-			$entry_headers = $model->getEntryHeaders();
-			$entry_responses = $model->getEntryResponses();
-			for ($i = 0; $i < count($entry_headers); $i++) {
-				$entry_header = $entry_headers[$i];
-				$entry_response = $entry_responses[$i];
-				echo '<textarea form="entry" rows="1" cols="200" name="' . $entry_header . '">' . $entry_header . '</textarea>';
-				echo '<textarea form="entry" rows="10" cols="200" name="' . $entry_response . '">' . $entry_response . '</textarea>';
+			$entry = $model->getEntry();
+			for ($i = 0; $i < count($entry); $i++) {
+				echo '<textarea form="entry" rows="1" cols="200" name="entry[' . $i . '][\'header\']">' . $entry[$i]['header'] . '</textarea>';
+				echo '<textarea form="entry" rows="10" cols="200" name="entry[' . $i . '][\'response\']">' . $entry[$i]['response'] . '</textarea>';
 			}
 ?>				
-			</div>
+			</form>
 		</div>
 	</body>
+</html>['response'][$i] . '</textarea>';
+			}
+?>				
+			</form>
+		</div>
+	</body>
+</html>extarea>';
+			}
+?>				
+			</form>
+		</div>
+	</body>
+</html>dy>
 </html>

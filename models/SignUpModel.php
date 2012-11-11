@@ -9,7 +9,7 @@ class SignUpModel extends Model {
 	private $pl;
 	
 	function __construct() {
-		$this->iv = new InputValidator();
+		$this->iv = new SignUpInputValidator();
 		$this->pl = new PersistenceLayer();
 	}
 	function signUp($username, $password1, $password2) {
