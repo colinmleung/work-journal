@@ -12,21 +12,21 @@
       <name>../utilities/error_reporting.php</name>
       <docblock line="12">
         <description>Necessary for adding more detailed error reports.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="16" type="Require Once" package="Default">
       <name>../controllers/JournalPageController.php</name>
       <docblock line="15">
         <description>Include the page controller</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="19" type="Require Once" package="Default">
       <name>../utilities/Utility.php</name>
       <docblock line="18">
         <description>Include a catch-all utility class</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
   </file>
@@ -42,21 +42,21 @@
       <name>../utilities/error_reporting.php</name>
       <docblock line="12">
         <description>Necessary for adding more detailed error reports.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="16" type="Require Once" package="Default">
       <name>../controllers/ReadController.php</name>
       <docblock line="15">
         <description>Include the page controller</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="19" type="Require Once" package="Default">
       <name>../utilities/Utility.php</name>
       <docblock line="18">
         <description>Include a catch-all utility class</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
   </file>
@@ -72,21 +72,21 @@
       <name>../utilities/error_reporting.php</name>
       <docblock line="12">
         <description>Necessary for adding more detailed error reports.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="16" type="Require Once" package="Default">
       <name>../controllers/SignInController.php</name>
       <docblock line="15">
         <description>Include the page controller</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="19" type="Require Once" package="Default">
       <name>../utilities/Utility.php</name>
       <docblock line="18">
         <description>Include a catch-all utility class</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
   </file>
@@ -102,21 +102,21 @@
       <name>../utilities/error_reporting.php</name>
       <docblock line="12">
         <description>Necessary for adding more detailed error reports.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="16" type="Require Once" package="Default">
       <name>../controllers/SignUpController.php</name>
       <docblock line="15">
         <description>Include the page controller</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="19" type="Require Once" package="Default">
       <name>../utilities/Utility.php</name>
       <docblock line="18">
         <description>Include a catch-all utility class</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
   </file>
@@ -132,21 +132,21 @@
       <name>../utilities/error_reporting.php</name>
       <docblock line="12">
         <description>Necessary for adding more detailed error reports.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="16" type="Require Once" package="Default">
       <name>../controllers/TemplatesController.php</name>
       <docblock line="15">
         <description>Include the page controller</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="19" type="Require Once" package="Default">
       <name>../utilities/Utility.php</name>
       <docblock line="18">
         <description>Include a catch-all utility class</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
   </file>
@@ -162,21 +162,21 @@
       <name>../utilities/error_reporting.php</name>
       <docblock line="12">
         <description>Necessary for adding more detailed error reports.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="16" type="Require Once" package="Default">
       <name>../controllers/WriteController.php</name>
       <docblock line="15">
         <description>Include the page controller</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="19" type="Require Once" package="Default">
       <name>../utilities/Utility.php</name>
       <docblock line="18">
         <description>Include a catch-all utility class</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
   </file>
@@ -200,7 +200,7 @@ The controller's has 3 roles:
       </docblock>
       <property final="false" static="false" visibility="protected" line="27" namespace="global" package="Default">
         <name>$view</name>
-        <default></default>
+        <default/>
         <docblock line="19">
           <description>View part of the MVC.</description>
           <long-description>&lt;p&gt;The View represents the part of the MVC that displays the Model to the user.
@@ -212,7 +212,7 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
       </property>
       <property final="false" static="false" visibility="protected" line="35" namespace="global" package="Default">
         <name>$model</name>
-        <default></default>
+        <default/>
         <docblock line="29">
           <description>Model part of the MVC.</description>
           <long-description>&lt;p&gt;The Model represents all the logic of the application, as well as connections to the persistent data stores.&lt;/p&gt;</long-description>
@@ -223,10 +223,10 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
       </property>
       <property final="false" static="false" visibility="protected" line="38" namespace="global" package="Default">
         <name>$utility</name>
-        <default></default>
+        <default/>
         <docblock line="37">
-          <description></description>
-          <long-description></long-description>
+          <description/>
+          <long-description/>
           <tag line="37" name="var" description="" type="\Utility">
             <type by_reference="false">\Utility</type>
           </tag>
@@ -237,7 +237,7 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
         <full_name>__construct</full_name>
         <docblock line="40">
           <description>The constructor dynamically constructs the appropriate views and models as well as the utility object.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="40" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
@@ -248,7 +248,7 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
         <full_name>createView</full_name>
         <docblock line="50">
           <description>Constructs the appropriate view.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
@@ -259,7 +259,7 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
         <full_name>createModel</full_name>
         <docblock line="57">
           <description>Constructs the approriate model.</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="57" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
@@ -270,7 +270,7 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
         <full_name>performAction</full_name>
         <docblock line="64">
           <description>All constructors must respond to user actions and perform the approriate operations.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -282,7 +282,7 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
   <file path="controllers\JournalPageController.php" hash="436ab689bf2621e452c86a9e80cb55b7" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the JournalPageController class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -291,21 +291,21 @@ It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
       <name>ControllerFactory.php</name>
       <docblock line="10">
         <description>Include the base class of the JournalPageController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>../views/JournalPageView.php</name>
       <docblock line="13">
         <description>Include the view of the JournalPageController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
       <name>../models/JournalPageModel.php</name>
       <docblock line="16">
         <description>Include the model of the JournalPageController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="25" package="Default">
@@ -322,7 +322,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>__construct</full_name>
         <docblock line="27">
           <description>Calls the ControllerFactory constructor.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="37" package="Default">
@@ -330,7 +330,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>createView</full_name>
         <docblock line="32">
           <description>Constructs a JournalPageView</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="return" description="" type="\JournalPageView">
             <type by_reference="false">\JournalPageView</type>
           </tag>
@@ -341,7 +341,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>createModel</full_name>
         <docblock line="41">
           <description>Constructs a JournalPageModel</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="41" name="return" description="" type="\JournalPageModel">
             <type by_reference="false">\JournalPageModel</type>
           </tag>
@@ -364,7 +364,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>saveData</full_name>
         <docblock line="73">
           <description>Save the current entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="81" package="Default">
@@ -372,7 +372,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>incrementDay</full_name>
         <docblock line="80">
           <description>Go to the next day's entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="88" package="Default">
@@ -380,7 +380,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>decrementDay</full_name>
         <docblock line="87">
           <description>Go the previous day's entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="95" package="Default">
@@ -388,7 +388,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>signOut</full_name>
         <docblock line="94">
           <description>Go to the sign in page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="101" package="Default">
@@ -396,7 +396,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
         <full_name>noActionTaken</full_name>
         <docblock line="100">
           <description>Just display the page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -404,7 +404,7 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
   <file path="controllers\ReadController.php" hash="e39383c3848f8a9e3519dc391bd5b8a1" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the ReadController class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -413,21 +413,21 @@ and delegates tasks to the JournalPageModel and JournalPageView.&lt;/p&gt;</long
       <name>ControllerFactory.php</name>
       <docblock line="10">
         <description>Include the base class of the ReadController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>../views/ReadView.php</name>
       <docblock line="13">
         <description>Include the view of the ReadController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
       <name>../models/ReadModel.php</name>
       <docblock line="16">
         <description>Include the model of the ReadController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="25" package="Default">
@@ -444,7 +444,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>__construct</full_name>
         <docblock line="27">
           <description>Calls the ControllerFactory constructor.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="37" package="Default">
@@ -452,7 +452,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>createView</full_name>
         <docblock line="32">
           <description>Constructs a ReadView</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="return" description="" type="\ReadView">
             <type by_reference="false">\ReadView</type>
           </tag>
@@ -463,7 +463,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>createModel</full_name>
         <docblock line="41">
           <description>Constructs a ReadModel</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="41" name="return" description="" type="\ReadModel">
             <type by_reference="false">\ReadModel</type>
           </tag>
@@ -489,7 +489,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>signOut</full_name>
         <docblock line="82">
           <description>Sign out the user.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="88" package="Default">
@@ -497,7 +497,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>write</full_name>
         <docblock line="87">
           <description>Go to the write page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="93" package="Default">
@@ -505,7 +505,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>templates</full_name>
         <docblock line="92">
           <description>Go to the templates page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="98" package="Default">
@@ -513,7 +513,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>readDay</full_name>
         <docblock line="97">
           <description>Show today's entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="104" package="Default">
@@ -521,7 +521,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>readWeek</full_name>
         <docblock line="103">
           <description>Show all the entries this week.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="110" package="Default">
@@ -529,7 +529,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>readMonth</full_name>
         <docblock line="109">
           <description>Show all the entries this month.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="116" package="Default">
@@ -537,7 +537,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
         <full_name>readSemester</full_name>
         <docblock line="115">
           <description>Show all the entries this semester.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -545,7 +545,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
   <file path="controllers\SignInController.php" hash="9710f08d54f3b35410b267eec76a5f8b" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the SignInController class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -554,21 +554,21 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
       <name>ControllerFactory.php</name>
       <docblock line="10">
         <description>Include the base class of the SignInController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>../views/SignInView.php</name>
       <docblock line="13">
         <description>Include the view of the SignInController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
       <name>../models/SignInModel.php</name>
       <docblock line="16">
         <description>Include the model of the SignInController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="25" package="Default">
@@ -585,7 +585,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
         <full_name>__construct</full_name>
         <docblock line="27">
           <description>Calls the ControllerFactory constructor.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="37" package="Default">
@@ -593,7 +593,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
         <full_name>createView</full_name>
         <docblock line="32">
           <description>Constructs a SignInView</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="return" description="" type="\SignInView">
             <type by_reference="false">\SignInView</type>
           </tag>
@@ -604,7 +604,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
         <full_name>createModel</full_name>
         <docblock line="41">
           <description>Constructs a SignInModel</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="41" name="return" description="" type="\SignInModel">
             <type by_reference="false">\SignInModel</type>
           </tag>
@@ -626,7 +626,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
         <full_name>noActionTaken</full_name>
         <docblock line="70">
           <description>Just display the page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="76" package="Default">
@@ -634,7 +634,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
         <full_name>signInRequested</full_name>
         <docblock line="75">
           <description>Attempt to log in the user.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="84" package="Default">
@@ -642,7 +642,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
         <full_name>signUpPageRequested</full_name>
         <docblock line="83">
           <description>Go to the sign up page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="89" package="Default">
@@ -650,7 +650,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
         <full_name>userLoggedIn</full_name>
         <docblock line="88">
           <description>Go to the journal page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -658,7 +658,7 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
   <file path="controllers\SignUpController.php" hash="eb35bc99dc2780bea19755c97718c1c8" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the SignUpController class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -667,21 +667,21 @@ and delegates tasks to the SignInModel and SignInView.&lt;/p&gt;</long-descripti
       <name>ControllerFactory.php</name>
       <docblock line="10">
         <description>Include the base class of the SignUpController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>../views/SignUpView.php</name>
       <docblock line="13">
         <description>Include the view of the SignUpController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
       <name>../models/SignUpModel.php</name>
       <docblock line="16">
         <description>Include the model of the SignUpController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="25" package="Default">
@@ -698,7 +698,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
         <full_name>__construct</full_name>
         <docblock line="27">
           <description>Calls the ControllerFactory constructor.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="37" package="Default">
@@ -706,7 +706,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
         <full_name>createView</full_name>
         <docblock line="32">
           <description>Constructs a SignUpView</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="return" description="" type="\SignUpView">
             <type by_reference="false">\SignUpView</type>
           </tag>
@@ -717,7 +717,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
         <full_name>createModel</full_name>
         <docblock line="41">
           <description>Constructs a SignUpModel</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="41" name="return" description="" type="\SignUpModel">
             <type by_reference="false">\SignUpModel</type>
           </tag>
@@ -739,7 +739,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
         <full_name>noActionTaken</full_name>
         <docblock line="70">
           <description>Just display the page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="76" package="Default">
@@ -747,7 +747,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
         <full_name>signUpRequested</full_name>
         <docblock line="75">
           <description>Attempt to sign the user up.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="84" package="Default">
@@ -755,7 +755,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
         <full_name>signInPageRequested</full_name>
         <docblock line="83">
           <description>Go to the sign in page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="89" package="Default">
@@ -763,7 +763,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
         <full_name>userLoggedIn</full_name>
         <docblock line="88">
           <description>Go to the journal page</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -772,7 +772,7 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
   <file path="controllers\TemplatesController.php" hash="82d78c46b74e91a6297804a21b84f5c9" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the TemplatesController class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -781,21 +781,21 @@ and delegates tasks to the SignUpModel and SignUpView.&lt;/p&gt;</long-descripti
       <name>ControllerFactory.php</name>
       <docblock line="10">
         <description>Include the base class of the TemplatesController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>../views/TemplatesView.php</name>
       <docblock line="13">
         <description>Include the view of the TemplatesController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
       <name>../models/TemplatesModel.php</name>
       <docblock line="16">
         <description>Include the model of the TemplatesController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="25" package="Default">
@@ -812,7 +812,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>__construct</full_name>
         <docblock line="27">
           <description>Calls the ControllerFactory constructor.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="37" package="Default">
@@ -820,7 +820,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>createView</full_name>
         <docblock line="32">
           <description>Constructs a TemplatesView</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="return" description="" type="\TemplatesView">
             <type by_reference="false">\TemplatesView</type>
           </tag>
@@ -831,7 +831,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>createModel</full_name>
         <docblock line="41">
           <description>Constructs a TemplatesModel</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="41" name="return" description="" type="\TemplatesModel">
             <type by_reference="false">\TemplatesModel</type>
           </tag>
@@ -857,7 +857,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>signOut</full_name>
         <docblock line="82">
           <description>Sign out the user.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="88" package="Default">
@@ -865,7 +865,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>write</full_name>
         <docblock line="87">
           <description>Go to the write page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="93" package="Default">
@@ -873,7 +873,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>read</full_name>
         <docblock line="92">
           <description>Go to the read page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="98" package="Default">
@@ -881,7 +881,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>createNewTemplate</full_name>
         <docblock line="97">
           <description>Create a new template.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="104" package="Default">
@@ -889,7 +889,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>saveTemplate</full_name>
         <docblock line="103">
           <description>Save the current template.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="110" package="Default">
@@ -897,7 +897,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>deleteTemplate</full_name>
         <docblock line="109">
           <description>Delete the current template.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="116" package="Default">
@@ -905,7 +905,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
         <full_name>modifyTemplate</full_name>
         <docblock line="115">
           <description>Modify the current template.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -913,7 +913,7 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
   <file path="controllers\WriteController.php" hash="6bc3e9e99892ca9e2418d796aedaad53" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the WriteController class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -922,21 +922,21 @@ and delegates tasks to the TemplatesModel and TemplatesView.&lt;/p&gt;</long-des
       <name>ControllerFactory.php</name>
       <docblock line="10">
         <description>Include the base class of the WriteController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>../views/WriteView.php</name>
       <docblock line="13">
         <description>Include the view of the WriteController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
       <name>../models/WriteModel.php</name>
       <docblock line="16">
         <description>Include the model of the WriteController class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="25" package="Default">
@@ -953,7 +953,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>__construct</full_name>
         <docblock line="27">
           <description>Calls the ControllerFactory constructor.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="37" package="Default">
@@ -961,7 +961,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>createView</full_name>
         <docblock line="32">
           <description>Constructs a WriteView</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="return" description="" type="\WriteView">
             <type by_reference="false">\WriteView</type>
           </tag>
@@ -972,7 +972,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>createModel</full_name>
         <docblock line="41">
           <description>Constructs a WriteModel</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="41" name="return" description="" type="\WriteModel">
             <type by_reference="false">\WriteModel</type>
           </tag>
@@ -1000,7 +1000,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>signOut</full_name>
         <docblock line="88">
           <description>Sign out the user.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="94" package="Default">
@@ -1008,7 +1008,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>read</full_name>
         <docblock line="93">
           <description>Go to the read page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="99" package="Default">
@@ -1016,7 +1016,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>templates</full_name>
         <docblock line="98">
           <description>Go to the templates page.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="104" package="Default">
@@ -1024,7 +1024,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>createNewEntry</full_name>
         <docblock line="103">
           <description>Create a new journal entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="110" package="Default">
@@ -1032,7 +1032,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>saveEntry</full_name>
         <docblock line="109">
           <description>Save the current entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="116" package="Default">
@@ -1040,7 +1040,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>deleteEntry</full_name>
         <docblock line="115">
           <description>Delete the current entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="122" package="Default">
@@ -1048,7 +1048,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>clearEntry</full_name>
         <docblock line="121">
           <description>Clear the current entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="128" package="Default">
@@ -1060,7 +1060,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>incrementDate</full_name>
         <docblock line="133">
           <description>Go the next day's entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="140" package="Default">
@@ -1068,7 +1068,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>decrementDate</full_name>
         <docblock line="139">
           <description>Go the previous day's entry.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -1083,14 +1083,14 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\CookieHandler</full_name>
       <property final="false" static="false" visibility="private" line="3" namespace="global" package="Default">
         <name>$cookie_lifetime</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
         <name>setLifetime</name>
         <full_name>setLifetime</full_name>
         <argument line="5">
           <name>$seconds</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1099,7 +1099,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>setUserId</full_name>
         <argument line="8">
           <name>$user_id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1112,7 +1112,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>setUserName</full_name>
         <argument line="14">
           <name>$username</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1125,7 +1125,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>setCurrentDate</full_name>
         <argument line="20">
           <name>$cur_date</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1157,7 +1157,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\DAO</full_name>
       <property final="false" static="false" visibility="private" line="6" namespace="global" package="Default">
         <name>$mysqli</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
         <name>__construct</name>
@@ -1168,7 +1168,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>sanitizeString</full_name>
         <argument line="12">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1177,7 +1177,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>query</full_name>
         <argument line="16">
           <name>$query</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1215,11 +1215,11 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\DatabaseLayer</full_name>
       <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
         <name>$dao</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
         <name>$sh</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
         <name>__construct</name>
@@ -1258,17 +1258,17 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>retrieveUser</full_name>
         <argument line="39">
           <name>$username</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="39">
           <name>$password</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="39">
           <name>$error_msg</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1327,7 +1327,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\InputValidator</full_name>
       <property final="false" static="false" visibility="private" line="5" namespace="global" package="Default">
         <name>$dao</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="7" package="Default">
         <name>__construct</name>
@@ -1338,7 +1338,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>sanitizeString</full_name>
         <argument line="11">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1347,7 +1347,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>nullStringCheck</full_name>
         <argument line="16">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1356,12 +1356,12 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>equalStringCheck</full_name>
         <argument line="21">
           <name>$string1</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="21">
           <name>$string2</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1395,36 +1395,36 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\JournalPageModel</full_name>
       <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
         <name>$error_msg</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="public" line="9" namespace="global" package="Default">
         <name>$tasksc</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="public" line="10" namespace="global" package="Default">
         <name>$tasksp</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="public" line="11" namespace="global" package="Default">
         <name>$issues</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
         <name>saveData</name>
         <full_name>saveData</full_name>
         <argument line="13">
           <name>$tasksp</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="13">
           <name>$tasksc</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="13">
           <name>$issues</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1449,7 +1449,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>setErrorMsg</full_name>
         <argument line="56">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1485,7 +1485,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="2" code="50000">No DocBlock was found for \Model</error>
     </parse_markers>
   </file>
-  <file path="models\PersistenceLayer.php" hash="903ec48276d3b429652af24538a6e31c" package="Default"/>
+  <file path="models\PersistenceLayer.php" hash="408b385c3235f4cdca13e637e0174a47" package="Default"/>
   <file path="models\QRO.php" hash="ce287cc85eeaba5e6fb00d4120075beb" package="Default">
     <class final="false" abstract="false" namespace="global" line="2" package="Default">
       <extends/>
@@ -1493,14 +1493,14 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\QRO</full_name>
       <property final="false" static="false" visibility="private" line="3" namespace="global" package="Default">
         <name>$mysqli_result</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <argument line="5">
           <name>$mysqli_result</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1527,7 +1527,142 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="17" code="50010">No DocBlock was found for method fetchRow()</error>
     </parse_markers>
   </file>
-  <file path="models\SessionHandler.php" hash="c50a5212f6f47e70cce070beadc86549" package="Default">
+  <file path="models\ReadModel.php" hash="dea351e0fed53add14b128918f1374df" package="workjournalpackage">
+    <docblock line="2">
+      <description>Contains the ReadModel class.</description>
+      <long-description></long-description>
+      <tag line="2" name="package" description="workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="version" description="0.0.2"/>
+    </docblock>
+    <include line="11" type="Require Once" package="Default">
+      <name>Model.php</name>
+      <docblock line="10">
+        <description>Include the base class of the ReadModel class.</description>
+        <long-description></long-description>
+      </docblock>
+    </include>
+    <include line="14" type="Require Once" package="Default">
+      <name>PersistenceLayer.php</name>
+      <docblock line="13">
+        <description>Include the persistence layer.</description>
+        <long-description></long-description>
+      </docblock>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="23" package="Default">
+      <extends>\Model</extends>
+      <name>ReadModel</name>
+      <full_name>\ReadModel</full_name>
+      <docblock line="16">
+        <description>The Model class for read.php.</description>
+        <long-description>&lt;p&gt;ReadModel takes orders from ReadController, and translates them into
+actions for the PersistenceLayer.
+The ReadModel exposes the correct model to the ReadView.&lt;/p&gt;</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="33" namespace="global" package="Default">
+        <name>$error_msg</name>
+        <default></default>
+        <docblock line="25">
+          <description>Error message for the ReadModel.</description>
+          <long-description>&lt;p&gt;The error message is passed as a reference into the rest of the model, and any errors
+that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt;</long-description>
+          <tag line="25" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="42" namespace="global" package="Default">
+        <name>$pl</name>
+        <default></default>
+        <docblock line="35">
+          <description>Persistence Layer for the application.</description>
+          <long-description>&lt;p&gt;The persistence layer handles the database, session, and cookie variables.&lt;/p&gt;</long-description>
+          <tag line="35" name="var" description="" type="\PersistenceLayer">
+            <type by_reference="false">\PersistenceLayer</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="45" package="Default">
+        <name>_construct</name>
+        <full_name>_construct</full_name>
+        <docblock line="44">
+          <description>Constructs the delegates of the class.</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Default">
+        <name>exposeDay</name>
+        <full_name>exposeDay</full_name>
+        <docblock line="51">
+          <description>Exposes today's entries.</description>
+          <long-description>&lt;p&gt;Exposes all the entries written today.&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="65" package="Default">
+        <name>exposeWeek</name>
+        <full_name>exposeWeek</full_name>
+        <docblock line="60">
+          <description>Exposes this week's entries.</description>
+          <long-description>&lt;p&gt;Exposes all the entries written this week.&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="74" package="Default">
+        <name>exposeMonth</name>
+        <full_name>exposeMonth</full_name>
+        <docblock line="69">
+          <description>Exposes this month's entries.</description>
+          <long-description>&lt;p&gt;Exposes all the entries written this month.&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="83" package="Default">
+        <name>exposeSemester</name>
+        <full_name>exposeSemester</full_name>
+        <docblock line="78">
+          <description>Exposes this semester's entries.</description>
+          <long-description>&lt;p&gt;Exposes all the entries written this semester.&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="96" package="Default">
+        <name>getReading</name>
+        <full_name>getReading</full_name>
+        <docblock line="89">
+          <description>Gets the current reading.</description>
+          <long-description>&lt;p&gt;Gets the exposed entries from the model.&lt;/p&gt;</long-description>
+          <tag line="89" name="return" description="An array of exposed entries." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="Default">
+        <name>getErrorMsg</name>
+        <full_name>getErrorMsg</full_name>
+        <docblock line="102">
+          <description>Gets the current error message.</description>
+          <long-description>&lt;p&gt;Gets the current error message from the model.&lt;/p&gt;</long-description>
+          <tag line="102" name="return" description="The model's error message." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="118" package="Default">
+        <name>setErrorMsg</name>
+        <full_name>setErrorMsg</full_name>
+        <docblock line="113">
+          <description>Set the current error message.</description>
+          <long-description>&lt;p&gt;Sets the current error message depending on what the error is.&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="118">
+          <name>$string</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="113" code="50015">Argument $string is missing from the Docblock of setErrorMsg()</error>
+    </parse_markers>
+  </file>
+  <file path="models\SessionHandler.php" hash="b0f05428b0d3683123da6e5763b3e870" package="Default">
     <class final="false" abstract="false" namespace="global" line="2" package="Default">
       <extends>\Model</extends>
       <name>SessionHandler</name>
@@ -1571,6 +1706,45 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <name>getDate</name>
         <full_name>getDate</full_name>
       </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>setWorkingEntry</name>
+        <full_name>setWorkingEntry</full_name>
+        <argument line="21">
+          <name>$entry</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Default">
+        <name>getWorkingEntry</name>
+        <full_name>getWorkingEntry</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Default">
+        <name>setWorkingEntryId</name>
+        <full_name>setWorkingEntryId</full_name>
+        <argument line="27">
+          <name>$entry_id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="30" package="Default">
+        <name>getWorkingEntryId</name>
+        <full_name>getWorkingEntryId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="Default">
+        <name>setReading</name>
+        <full_name>setReading</full_name>
+        <argument line="33">
+          <name>$reading</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Default">
+        <name>getReading</name>
+        <full_name>getReading</full_name>
+      </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file models\SessionHandler.php</error>
@@ -1581,6 +1755,12 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="12" code="50010">No DocBlock was found for method getUserName()</error>
       <error line="15" code="50010">No DocBlock was found for method setDate()</error>
       <error line="18" code="50010">No DocBlock was found for method getDate()</error>
+      <error line="21" code="50010">No DocBlock was found for method setWorkingEntry()</error>
+      <error line="24" code="50010">No DocBlock was found for method getWorkingEntry()</error>
+      <error line="27" code="50010">No DocBlock was found for method setWorkingEntryId()</error>
+      <error line="30" code="50010">No DocBlock was found for method getWorkingEntryId()</error>
+      <error line="33" code="50010">No DocBlock was found for method setReading()</error>
+      <error line="36" code="50010">No DocBlock was found for method getReading()</error>
     </parse_markers>
   </file>
   <file path="models\SignInInputValidator.php" hash="804f1021e377bb8d4db506aff57449fb" package="Default">
@@ -1597,17 +1777,17 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>signInFilter</full_name>
         <argument line="6">
           <name>$username</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="6">
           <name>$password</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="6">
           <name>$error_msg</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1635,15 +1815,15 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\SignInModel</full_name>
       <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
         <name>$error_msg</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
         <name>$iv</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
         <name>$pl</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
         <name>__construct</name>
@@ -1654,12 +1834,12 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>signIn</full_name>
         <argument line="17">
           <name>$username</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="17">
           <name>$password</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1672,7 +1852,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>setErrorMsg</full_name>
         <argument line="27">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1706,15 +1886,15 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\SignUpModel</full_name>
       <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
         <name>$error_msg</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
         <name>$iv</name>
-        <default></default>
+        <default/>
       </property>
       <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
         <name>$pl</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
         <name>__construct</name>
@@ -1725,17 +1905,17 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>signUp</full_name>
         <argument line="15">
           <name>$username</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="15">
           <name>$password1</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="15">
           <name>$password2</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1748,7 +1928,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>setErrorMsg</full_name>
         <argument line="23">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1778,7 +1958,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>String2Array</full_name>
         <argument line="5">
           <name>$text</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1787,7 +1967,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>Array2String</full_name>
         <argument line="8">
           <name>$array</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1799,6 +1979,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="8" code="50010">No DocBlock was found for method Array2String()</error>
     </parse_markers>
   </file>
+  <file path="models\TemplatesModel.php" hash="c00988cc1434458c14e8dac97848771c" package="Default"/>
   <file path="models\User.php" hash="eb5da1a9c904556b8d215daabe8d07e5" package="Default">
     <include line="2" type="Require Once" package="Default">
       <name>Model.php</name>
@@ -1822,97 +2003,209 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="7" code="50000">No DocBlock was found for \User</error>
     </parse_markers>
   </file>
-  <file path="models\WriteModel.php" hash="e50a428628cb4688ca24925c66fba84b" package="Default">
-    <include line="2" type="Require Once" package="Default">
+  <file path="models\WriteModel.php" hash="79f659fc4bd128e1bf08e830a1bbad3d" package="workjournalpackage">
+    <docblock line="2">
+      <description>Contains the WriteModel class.</description>
+      <long-description></long-description>
+      <tag line="2" name="package" description="workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="version" description="0.0.2"/>
+    </docblock>
+    <include line="11" type="Require Once" package="Default">
       <name>Model.php</name>
+      <docblock line="10">
+        <description>Include the base class of the WriteModel class.</description>
+        <long-description></long-description>
+      </docblock>
     </include>
-    <include line="3" type="Require Once" package="Default">
-      <name>DAO.php</name>
+    <include line="14" type="Require Once" package="Default">
+      <name>PersistenceLayer.php</name>
+      <docblock line="13">
+        <description>Include the persistence layer.</description>
+        <long-description></long-description>
+      </docblock>
     </include>
-    <include line="4" type="Require Once" package="Default">
-      <name>QRO.php</name>
+    <include line="17" type="Require Once" package="Default">
+      <name>WriteInputValidator.php</name>
+      <docblock line="16">
+        <description>Include the input validator for the WriteModel class.</description>
+        <long-description></long-description>
+      </docblock>
     </include>
-    <include line="5" type="Require Once" package="Default">
-      <name>../utilities/constants.php</name>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="7" package="Default">
+    <class final="false" abstract="false" namespace="global" line="27" package="Default">
       <extends>\Model</extends>
       <name>WriteModel</name>
       <full_name>\WriteModel</full_name>
-      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+      <docblock line="19">
+        <description>The Model class for write.php.</description>
+        <long-description>&lt;p&gt;WriteModel takes orders from WriteController, and translates them into
+actions for the PersistenceLayer.
+The WriteModel exposes the correct model to the WriteView.
+It also acts as a gatekeeper for input passed on from the WriteController.&lt;/p&gt;</long-description>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="37" namespace="global" package="Default">
         <name>$error_msg</name>
         <default></default>
+        <docblock line="29">
+          <description>Error message for the WriteModel.</description>
+          <long-description>&lt;p&gt;The error message is passed as a reference into the rest of the model, and any errors
+that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt;</long-description>
+          <tag line="29" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
       </property>
-      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+      <property final="false" static="false" visibility="private" line="45" namespace="global" package="Default">
         <name>$iv</name>
         <default></default>
+        <docblock line="39">
+          <description>Input Validator for the WriteModel.</description>
+          <long-description>&lt;p&gt;The input validator filters input acquired from the controller. They also pass error messages to the model.&lt;/p&gt;</long-description>
+          <tag line="39" name="var" description="" type="\WriteInputValidator">
+            <type by_reference="false">\WriteInputValidator</type>
+          </tag>
+        </docblock>
       </property>
-      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+      <property final="false" static="false" visibility="private" line="54" namespace="global" package="Default">
         <name>$pl</name>
         <default></default>
+        <docblock line="47">
+          <description>Persistence Layer for the application.</description>
+          <long-description>&lt;p&gt;The persistence layer handles the database, session, and cookie variables.&lt;/p&gt;</long-description>
+          <tag line="47" name="var" description="" type="\PersistenceLayer">
+            <type by_reference="false">\PersistenceLayer</type>
+          </tag>
+        </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="57" package="Default">
         <name>_construct</name>
         <full_name>_construct</full_name>
+        <docblock line="56">
+          <description>Constructs the delegates of the class.</description>
+          <long-description></long-description>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="Default">
         <name>createNewEntry</name>
         <full_name>createNewEntry</full_name>
-        <argument line="18">
+        <docblock line="64">
+          <description>Create a new entry.</description>
+          <long-description>&lt;p&gt;Creates a blank entry with headers corresponding to the selected template. Set it as the working entry.&lt;/p&gt;</long-description>
+          <tag line="64" name="param" description="The name of the template." type="string" variable="$template_name">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="71">
           <name>$template_name</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="82" package="Default">
         <name>saveEntry</name>
         <full_name>saveEntry</full_name>
-        <argument line="21">
+        <docblock line="75">
+          <description>Save the current entry.</description>
+          <long-description>&lt;p&gt;Saves the current entry into the database.&lt;/p&gt;</long-description>
+          <tag line="75" name="param" description="The entry to be saved." type="mixed" variable="$entry">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="82">
           <name>$entry</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="94" package="Default">
         <name>deleteEntry</name>
         <full_name>deleteEntry</full_name>
+        <docblock line="89">
+          <description>Delete the current entry.</description>
+          <long-description>&lt;p&gt;Deletes the current entry from the database. A blank entry becomes the working entry.&lt;/p&gt;</long-description>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="28" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="104" package="Default">
         <name>clearEntry</name>
         <full_name>clearEntry</full_name>
+        <docblock line="99">
+          <description>Clear the current entry.</description>
+          <long-description>&lt;p&gt;Erases all the responses in current entry. Makes no changes to the database.&lt;/p&gt;</long-description>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="113" package="Default">
         <name>showDefaultEntry</name>
         <full_name>showDefaultEntry</full_name>
+        <docblock line="108">
+          <description>Show the default entry.</description>
+          <long-description>&lt;p&gt;Shows a blank entry with one empty header and one empty response.&lt;/p&gt;</long-description>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="122" package="Default">
         <name>incrementDate</name>
         <full_name>incrementDate</full_name>
+        <docblock line="117">
+          <description>Go to the next day.</description>
+          <long-description>&lt;p&gt;Goes to the entries of the next day. Discards the working entry.&lt;/p&gt;</long-description>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="38" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="132" package="Default">
         <name>decrementDate</name>
         <full_name>decrementDate</full_name>
+        <docblock line="127">
+          <description>Go to the previous day.</description>
+          <long-description>&lt;p&gt;Goes to the entries of the previous day. Discards the working entry.&lt;/p&gt;</long-description>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="146" package="Default">
         <name>getDate</name>
         <full_name>getDate</full_name>
+        <docblock line="139">
+          <description>Get the working date.</description>
+          <long-description>&lt;p&gt;Retrieve the date that the user wants to go to.&lt;/p&gt;</long-description>
+          <tag line="139" name="return" description="The working date." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="46" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="157" package="Default">
         <name>getTemplateNames</name>
         <full_name>getTemplateNames</full_name>
+        <docblock line="150">
+          <description>Get the template names.</description>
+          <long-description>&lt;p&gt;Get the names of the templates that exist.&lt;/p&gt;</long-description>
+          <tag line="150" name="return" description="An array of template names." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="Default">
         <name>getEntry</name>
         <full_name>getEntry</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="54" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="179" package="Default">
+        <name>checkEntryId</name>
+        <full_name>checkEntryId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="192" package="Default">
         <name>getErrorMsg</name>
         <full_name>getErrorMsg</full_name>
+        <docblock line="185">
+          <description>Gets the current error message.</description>
+          <long-description>&lt;p&gt;Gets the current error message from the model.&lt;/p&gt;</long-description>
+          <tag line="185" name="return" description="The model's error message." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="57" package="Default">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="201" package="Default">
         <name>setErrorMsg</name>
         <full_name>setErrorMsg</full_name>
-        <argument line="57">
+        <docblock line="196">
+          <description>Set the current error message.</description>
+          <long-description>&lt;p&gt;Sets the current error message depending on what the error is.&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="201">
           <name>$string</name>
           <default></default>
           <type/>
@@ -1920,46 +2213,31 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\WriteModel.php</error>
-      <error line="7" code="50000">No DocBlock was found for \WriteModel</error>
-      <error line="8" code="50018">No DocBlock was found for property $error_msg</error>
-      <error line="9" code="50018">No DocBlock was found for property $iv</error>
-      <error line="10" code="50018">No DocBlock was found for property $pl</error>
-      <error line="12" code="50010">No DocBlock was found for method _construct()</error>
-      <error line="18" code="50010">No DocBlock was found for method createNewEntry()</error>
-      <error line="21" code="50010">No DocBlock was found for method saveEntry()</error>
-      <error line="25" code="50010">No DocBlock was found for method deleteEntry()</error>
-      <error line="28" code="50010">No DocBlock was found for method clearEntry()</error>
-      <error line="31" code="50010">No DocBlock was found for method showDefaultEntry()</error>
-      <error line="35" code="50010">No DocBlock was found for method incrementDate()</error>
-      <error line="38" code="50010">No DocBlock was found for method decrementDate()</error>
-      <error line="43" code="50010">No DocBlock was found for method getDate()</error>
-      <error line="46" code="50010">No DocBlock was found for method getTemplateNames()</error>
-      <error line="49" code="50010">No DocBlock was found for method getEntry()</error>
-      <error line="54" code="50010">No DocBlock was found for method getErrorMsg()</error>
-      <error line="57" code="50010">No DocBlock was found for method setErrorMsg()</error>
+      <error line="168" code="50010">No DocBlock was found for method getEntry()</error>
+      <error line="179" code="50010">No DocBlock was found for method checkEntryId()</error>
+      <error line="196" code="50015">Argument $string is missing from the Docblock of setErrorMsg()</error>
     </parse_markers>
   </file>
   <file path="utilities\connect_vars.php" hash="2e3ed868e19655dbd98cf4e623800075" package="Default">
     <constant namespace="global" line="3" package="Default">
       <name>DB_HOST</name>
       <full_name>\DB_HOST</full_name>
-      <value></value>
+      <value/>
     </constant>
     <constant namespace="global" line="4" package="Default">
       <name>DB_USER</name>
       <full_name>\DB_USER</full_name>
-      <value></value>
+      <value/>
     </constant>
     <constant namespace="global" line="5" package="Default">
       <name>DB_PASSWORD</name>
       <full_name>\DB_PASSWORD</full_name>
-      <value></value>
+      <value/>
     </constant>
     <constant namespace="global" line="6" package="Default">
       <name>DB_NAME</name>
       <full_name>\DB_NAME</full_name>
-      <value></value>
+      <value/>
     </constant>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file utilities\connect_vars.php</error>
@@ -2005,7 +2283,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>redirect</full_name>
         <argument line="3">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2034,7 +2312,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>display</full_name>
         <argument line="6">
           <name>$model</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2045,7 +2323,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="6" code="50010">No DocBlock was found for method display()</error>
     </parse_markers>
   </file>
-  <file path="views\ReadView.php" hash="81df9bec6f84f19b71d38175937e9430" package="Default"/>
+  <file path="views\ReadView.php" hash="af0d428df0cc356b0debfff236f84186" package="Default"/>
   <file path="views\SignInView.php" hash="93f4ec3160a6541cf9a5bf7d16432a4c" package="Default">
     <include line="2" type="Require Once" package="Default">
       <name>View.php</name>
@@ -2059,7 +2337,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>display</full_name>
         <argument line="5">
           <name>$model</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2083,7 +2361,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>display</full_name>
         <argument line="5">
           <name>$model</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2105,7 +2383,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
         <full_name>display</full_name>
         <argument line="3">
           <name>$model</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2116,7 +2394,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="3" code="50010">No DocBlock was found for method display()</error>
     </parse_markers>
   </file>
-  <file path="views\WriteView.php" hash="4c74d07430b41a90258755732f36a5ba" package="Default"/>
+  <file path="views\WriteView.php" hash="6908bc5b04f9f0e4e7f6345558f6673d" package="Default"/>
   <package name="Default" full_name="Default"/>
   <package name="workjournalpackage" full_name="workjournalpackage"/>
   <namespace name="global" full_name="global"/>

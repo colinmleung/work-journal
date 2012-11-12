@@ -8,13 +8,13 @@
  */
  
  /** Include the base class of the SignInController class. */
-require_once('ControllerFactory.php');
+require_once(__DIR__.'\ControllerFactory.php');
 
 /** Include the view of the SignInController class. */
-require_once('../views/SignInView.php');
+require_once(__DIR__.'\..\views\SignInView.php');
 
 /** Include the model of the SignInController class. */
-require_once('../models/SignInModel.php');
+require_once(__DIR__.'\..\models\page_models\SignInModel.php');
 
 /**
  * The Controller class for signin.php.

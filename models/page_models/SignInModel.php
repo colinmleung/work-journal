@@ -1,7 +1,7 @@
 <?php
-require_once('Model.php');
-require_once('PersistenceLayer.php');
-require_once('InputValidator.php');
+require_once(__DIR__.'\..\Model.php');
+require_once(__DIR__.'\..\data_models\PersistenceLayer.php');
+require_once(__DIR__.'\helper_models\SignInInputValidator.php');
 
 class SignInModel extends Model {
 	private $error_msg;

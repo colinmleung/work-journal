@@ -45,7 +45,13 @@ echo $date
 				</select>
 				<input type="submit" value="Create New Entry" name="create"/>
 				<input type="submit" value="Save" name="save"/>
-				<input type="submit" value="Delete" name="delete"/>
+				<input type="submit" value="Delete" name="delete"
+<?php
+$check = $model->checkEntryId();
+if (!($check))
+	echo 'disable="disabled"';
+?>
+				/>
 				<input type="submit" value="Clear" name="clear"/>
 				<input type="submit" value="Forward" name="forward"/>
 				<input type="submit" value="Backward" name="backward"/>
@@ -59,17 +65,4 @@ echo $date
 			</form>
 		</div>
 	</body>
-</html>['response'][$i] . '</textarea>';
-			}
-?>				
-			</form>
-		</div>
-	</body>
-</html>extarea>';
-			}
-?>				
-			</form>
-		</div>
-	</body>
-</html>dy>
 </html>

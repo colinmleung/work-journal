@@ -34,8 +34,7 @@ class ReadView extends View {
 		<div id="journal">
 			<div id="entry">
 <?php
-			$entry_headers = $model->getEntryHeaders();
-			$entry_responses = $model->getEntryResponses();
+			$reading = $model->getReading();
 			for ($i = 0; $i < count($entry_headers); $i++) {
 				$entry_header = $entry_headers[$i];
 				$entry_response = $entry_responses[$i];
