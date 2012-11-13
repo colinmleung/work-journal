@@ -4,24 +4,27 @@
  *
  * PHP Version 5
  * 
- * @category Work-journal
+ * @category Workjournal
  * @package  Workjournalpackage
  * @author   Colin M. Leung <colinmleung@gmail.com>
- * @license  http://opensource.org/licenses/gpl-3.0.html GNU General Public License
- * Version 0.0.2
+ * @license  http://opensource.org/licenses/gpl-3.0.html
+                GNU General Public License
+ * Version   0.0.2
  * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /SignInView.html
+                /SignUpView.html
  */
+
 require_once __DIR__.'\View.php';
 
 /**
  * SignInView
  *
- * @category Work-journal
+ * @category Workjournal
  * @package  Workjournalpackage
  * @author   Colin M. Leung <colinmleung@gmail.com>
- * @license  http://opensource.org/licenses/gpl-3.0.html GNU General Public License
- * Version 0.0.2
+ * @license  http://opensource.org/licenses/gpl-3.0.html 
+                GNU General Public License
+ * Version   0.0.2
  * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
                 /SignInView.html
  */
@@ -29,9 +32,11 @@ class SignInView extends View
 {
 
     /**
-     * The display function.
+     * Displays the signin.php page.
+     *
+     * Exposes the SignInModel in the context of an html page.
      * 
-     * @param SignInModel $model The model.
+     * @param SignInModel $model The SignInModel.
      * 
      * @return none
      */
