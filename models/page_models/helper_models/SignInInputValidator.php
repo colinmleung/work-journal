@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__.'\InputValidator.php');
+require_once(__DIR__.'/InputValidator.php');
 class SignInInputValidator extends InputValidator {
 	function __construct() {
 		parent::__construct();

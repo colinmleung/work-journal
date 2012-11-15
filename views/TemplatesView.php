@@ -28,7 +28,7 @@ require_once __DIR__.'\View.php';
  * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
                 /TemplatesView.html
  */
-class TemplateView extends View
+class TemplatesView extends View
 {
 
     /**
@@ -38,7 +38,7 @@ class TemplateView extends View
      * 
      * @param TemplatesModel $model The TemplatesModel.
      * 
-     * @return none
+     * @return void
      */
     public function display($model)
     {
@@ -73,33 +73,50 @@ class TemplateView extends View
                                 <option value="blank">Blank</option>
         <?php
         $template_names = $model->getTemplateNames();
-        foreach ($template_names as $template_name) {
-            echo '<option value="' . $template_name . '">' . 
-                $template_name . '</option>';
+        if (isset($template_names)) {
+            foreach ($template_names as $template_name) {
+                echo '<option value="' . $template_name . '">' . 
+                    $template_name . '</option>';
+            }
         }
         ?>
                             </select>
                             <input type="submit" value="Create New Template" 
                                 name="create"/>
                             <input type="submit" value="Save" name="save"/>
-                            <input type="submit" value="Delete" name="delete"/>
-                            <input type="submit" value="Clear" name="clear"/>
+                            <input type="submit" value="Delete" name="delete"
+        <?php
+        $check = $model->checkTemplateName();
+        if (!($check)) {
+            echo 'disabled="disabled"';
+        }
+        ?>
+                        />
                         </form>
                     </div>
                     <div id="template">
                         <form name="template" method="post" 
                             action="<?php echo $_SERVER['PHP_SELF'] ?>">
         <?php
-        $template_questions = $model->getTemplateQuestions();
-        for ($i = 0; $i < count($template_questions); $i++) {
-            $template_question = $template_questions[$i];
-            echo '<textarea form="entry" rows="1" cols="200" name="' . 
-                $template_question . '">' . $template_question . '</textarea>';
-            echo '<input type="submit" value="Delete" name="delete_' . 
-                $template_question . '"/>' . PHP_EOL;
+        $template = $model->getWorkingTemplate();
+        $template_name = $template['name'];
+        $template_headers = $template['header'];
+        
+        echo '<textarea form="entry" rows="1" cols="200" 
+            name="template[\'name\']">' . $template_name . '</textarea>';
+        $template_count = count($template_headers);
+        for ($i = 0; $i < $template_count; $i++) {
+            $template_header = $template_headers[$i];
+            echo '<textarea form="entry" rows="1" cols="200"
+                name="template[\'header\'][' . $i . ']">' . $template_header . 
+                    '</textarea>';
+            if ($template_count > 1) {
+                echo '<input type="submit" value="Delete" name="delete_header[' . 
+                    $i . ']"/>' . PHP_EOL;
+            }
             echo '';
         }
-        echo '<input type="submit" value="Add" name="add_question"/>';
+        echo '<input type="submit" value="Add" name="add_header"/>';
         ?>				
                         </form>
                     </div>

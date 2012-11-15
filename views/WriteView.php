@@ -28,7 +28,7 @@ require_once __DIR__.'\View.php';
  * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
                 /WriteView.html
  */
-class SignInView extends View
+class WriteView extends View
 {
     /**
      * Displays the write.php page.
@@ -37,7 +37,7 @@ class SignInView extends View
      * 
      * @param WriteModel $model The WriteModel.
      * 
-     * @return none
+     * @return void
      */
     public function display($model)
     {
@@ -74,15 +74,17 @@ class SignInView extends View
                     </form>
                 </nav>
                 <div id="entry">
-                    <form name="entry" method="post" 
+                    <form name="entry" id="entry" method="post" 
                         action="<?php echo $_SERVER['PHP_SELF'] ?>">
                         <select name="template_name">
                             <option value="blank">Blank</option>
         <?php
         $template_names = $model->getTemplateNames();
-        foreach ($template_names as $template_name) {
-            echo '<option value="' . $template_name . '">' . 
-                $template_name . '</option>';
+        if ($template_names != null) {
+            foreach ($template_names as $template_name) {
+                echo '<option value="' . $template_name . '">' . 
+                    $template_name . '</option>';
+            }
         }
         ?>
                         </select>
@@ -92,7 +94,7 @@ class SignInView extends View
         <?php
         $check = $model->checkEntryId();
         if (!($check)) {
-            echo 'disable="disabled"';
+            echo 'disabled="disabled"';
         }
         ?>
                         />
@@ -101,13 +103,12 @@ class SignInView extends View
                         <input type="submit" value="Backward" name="backward"/>
         <?php
         $entry = $model->getEntry();
-        for ($i = 0; $i < count($entry); $i++) {
-            echo '<textarea form="entry" rows="1" cols="200" 
-                name="entry[' . $i . '][\'header\']">' . 
-                $entry[$i]['header'] . '</textarea>';
-            echo '<textarea form="entry" rows="10" cols="200" 
-                name="entry[' . $i . '][\'response\']">' . 
-                $entry[$i]['response'] . '</textarea>';
+        $entry_count = (count($entry, COUNT_RECURSIVE)-2)/2;
+        for ($i = 0; $i < $entry_count; $i++) {
+            echo '<textarea rows="1" cols="200" 
+                name="entry[header]['.$i.']">'.$entry['header'][$i].'</textarea>';
+            echo '<textarea rows="10" cols="200" 
+                name="entry[response]['.$i.']">'.$entry['response'][$i].'</textarea>';
         }
         ?>				
                     </form>
@@ -117,4 +118,5 @@ class SignInView extends View
         <?php
     }
 }
+
 ?>

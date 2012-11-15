@@ -14,7 +14,7 @@
                 /SignUpView.html
  */
 
-require_once __DIR__.'\View.php';
+require_once __DIR__.'/View.php';
 
 /**
  * SignInView
@@ -38,7 +38,7 @@ class SignInView extends View
      * 
      * @param SignInModel $model The SignInModel.
      * 
-     * @return none
+     * @return void
      */
     public function display($model)
     {

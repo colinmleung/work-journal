@@ -180,103 +180,122 @@
       </docblock>
     </include>
   </file>
-  <file path="controllers\ControllerFactory.php" hash="aa45eaa5251922e48540a0ba9e400d02" package="Default">
-    <class final="true" abstract="true" namespace="global" line="17" package="workjournalpackage">
+  <file path="controllers\ControllerFactory.php" hash="5a2cf73fbba884ba4e5ba499d7b724c7" package="Workjournalpackage">
+    <docblock line="2">
+      <description>ControllerFactory</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html GNU General Public License&#13;&#10;Version   0.0.2"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ControllerFactory.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ControllerFactory.html"/>
+    </docblock>
+    <class final="true" abstract="true" namespace="global" line="40" package="Workjournalpackage">
       <extends/>
       <name>ControllerFactory</name>
       <full_name>\ControllerFactory</full_name>
-      <docblock line="2">
-        <description>Abstract Factory for maintaining the MVC relationships.</description>
-        <long-description>&lt;p&gt;ControllerFactory is the base class of the other controllers.
-Each controller must have a model, a view, and a helper utility class.
-The models and views are dynamically created at runtime based on the type of controller.
-The controller's has 3 roles:
+      <docblock line="17">
+        <description>ControllerFactory</description>
+        <long-description>&lt;p&gt;Abstract Factory for maintaining the MVC relationships. ControllerFactory is
+the base class of the other controllers. Each controller must have a model,
+a view, and a helper utility class. The models and views are dynamically
+created at runtime based on the type of controller. The controller's has
+3 roles:
 1. Get information from $_POST
 2. Decide what course of action to take
-3. Tell the browser, model, or view what to do&lt;/p&gt;</long-description>
-        <tag line="2" name="package" description="workjournalpackage"/>
-        <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
-        <tag line="2" name="version" description="0.0.2"/>
+3. Tell the browser, model, or view what to do&lt;/p&gt;
+
+&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+        <tag line="17" name="category" description="Workjournal"/>
+        <tag line="17" name="package" description="Workjournalpackage"/>
+        <tag line="17" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="17" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+        <tag line="17" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ControllerFactory.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ControllerFactory.html"/>
       </docblock>
-      <property final="false" static="false" visibility="protected" line="27" namespace="global" package="Default">
+      <property final="false" static="false" visibility="protected" line="51" namespace="global" package="Default">
         <name>$view</name>
         <default/>
-        <docblock line="19">
+        <docblock line="43">
           <description>View part of the MVC.</description>
           <long-description>&lt;p&gt;The View represents the part of the MVC that displays the Model to the user.
 It grabs relevant variables from the Model.&lt;/p&gt;</long-description>
-          <tag line="19" name="var" description="" type="mixed">
+          <tag line="43" name="var" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="35" namespace="global" package="Default">
+      <property final="false" static="false" visibility="protected" line="60" namespace="global" package="Default">
         <name>$model</name>
         <default/>
-        <docblock line="29">
+        <docblock line="53">
           <description>Model part of the MVC.</description>
-          <long-description>&lt;p&gt;The Model represents all the logic of the application, as well as connections to the persistent data stores.&lt;/p&gt;</long-description>
-          <tag line="29" name="var" description="" type="\Model">
+          <long-description>&lt;p&gt;The Model represents all the logic of the application, as well as
+connections to the persistent data stores.&lt;/p&gt;</long-description>
+          <tag line="53" name="var" description="" type="\Model">
             <type by_reference="false">\Model</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="false" visibility="protected" line="38" namespace="global" package="Default">
+      <property final="false" static="false" visibility="protected" line="63" namespace="global" package="Default">
         <name>$utility</name>
         <default/>
-        <docblock line="37">
+        <docblock line="62">
           <description/>
           <long-description/>
-          <tag line="37" name="var" description="" type="\Utility">
+          <tag line="62" name="var" description="" type="\Utility">
             <type by_reference="false">\Utility</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="45" package="workjournalpackage">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="Workjournalpackage">
         <name>__construct</name>
         <full_name>__construct</full_name>
-        <docblock line="40">
-          <description>The constructor dynamically constructs the appropriate views and models as well as the utility object.</description>
+        <docblock line="65">
+          <description>The constructor dynamically constructs the appropriate views and models
+as well as the utility object.</description>
           <long-description/>
-          <tag line="40" name="return" description="" type="mixed">
+          <tag line="65" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="true" static="false" visibility="protected" namespace="global" line="55" package="workjournalpackage">
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="global" line="83" package="Workjournalpackage">
         <name>createView</name>
         <full_name>createView</full_name>
-        <docblock line="50">
+        <docblock line="78">
           <description>Constructs the appropriate view.</description>
           <long-description/>
-          <tag line="50" name="return" description="" type="mixed">
+          <tag line="78" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="true" static="false" visibility="protected" namespace="global" line="62" package="workjournalpackage">
+      <method final="false" abstract="true" static="false" visibility="protected" namespace="global" line="90" package="Workjournalpackage">
         <name>createModel</name>
         <full_name>createModel</full_name>
-        <docblock line="57">
+        <docblock line="85">
           <description>Constructs the approriate model.</description>
           <long-description/>
-          <tag line="57" name="return" description="" type="mixed">
+          <tag line="85" name="return" description="" type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="65" package="workjournalpackage">
+      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="98" package="Workjournalpackage">
         <name>performAction</name>
         <full_name>performAction</full_name>
-        <docblock line="64">
-          <description>All constructors must respond to user actions and perform the approriate operations.</description>
+        <docblock line="92">
+          <description>All controllers must respond to user actions and perform the approriate
+operations.</description>
           <long-description/>
+          <tag line="92" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
         </docblock>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file controllers\ControllerFactory.php</error>
-      <critical line="37" code="50019">No short description for property $utility</critical>
+      <critical line="62" code="50019">No short description for property $utility</critical>
     </parse_markers>
   </file>
   <file path="controllers\JournalPageController.php" hash="436ab689bf2621e452c86a9e80cb55b7" package="workjournalpackage">
@@ -542,7 +561,7 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
       </method>
     </class>
   </file>
-  <file path="controllers\SignInController.php" hash="9710f08d54f3b35410b267eec76a5f8b" package="workjournalpackage">
+  <file path="controllers\SignInController.php" hash="dc58fe28fd872fde9d15b51c1771770b" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the SignInController class.</description>
       <long-description/>
@@ -551,21 +570,21 @@ and delegates tasks to the ReadModel and ReadView.&lt;/p&gt;</long-description>
       <tag line="2" name="version" description="0.0.2"/>
     </docblock>
     <include line="11" type="Require Once" package="Default">
-      <name>ControllerFactory.php</name>
+      <name/>
       <docblock line="10">
         <description>Include the base class of the SignInController class.</description>
         <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
-      <name>../views/SignInView.php</name>
+      <name/>
       <docblock line="13">
         <description>Include the view of the SignInController class.</description>
         <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
-      <name>../models/SignInModel.php</name>
+      <name/>
       <docblock line="16">
         <description>Include the model of the SignInController class.</description>
         <long-description/>
@@ -1076,7 +1095,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="128" code="50010">No DocBlock was found for method showDefaultEntry()</error>
     </parse_markers>
   </file>
-  <file path="models\CookieHandler.php" hash="c2a1e4112a387714da1c8e0295f0ea31" package="Default">
+  <file path="models\data_models\CookieHandler.php" hash="c2a1e4112a387714da1c8e0295f0ea31" package="Default">
     <class final="false" abstract="false" namespace="global" line="2" package="Default">
       <extends>\Model</extends>
       <name>CookieHandler</name>
@@ -1135,7 +1154,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\CookieHandler.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\data_models\CookieHandler.php</error>
       <error line="2" code="50000">No DocBlock was found for \CookieHandler</error>
       <error line="3" code="50018">No DocBlock was found for property $cookie_lifetime</error>
       <error line="5" code="50010">No DocBlock was found for method setLifetime()</error>
@@ -1147,7 +1166,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="23" code="50010">No DocBlock was found for method getCurrentDate()</error>
     </parse_markers>
   </file>
-  <file path="models\DAO.php" hash="1ce3b3f07028e5450a948b011e6eaeba" package="Default">
+  <file path="models\data_models\DAO.php" hash="1ce3b3f07028e5450a948b011e6eaeba" package="Default">
     <include line="2" type="Require Once" package="Default">
       <name>../utilities/connect_vars.php</name>
     </include>
@@ -1187,7 +1206,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\DAO.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\data_models\DAO.php</error>
       <error line="5" code="50000">No DocBlock was found for \DAO</error>
       <error line="6" code="50018">No DocBlock was found for property $mysqli</error>
       <error line="8" code="50010">No DocBlock was found for method __construct()</error>
@@ -1196,9 +1215,9 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="20" code="50010">No DocBlock was found for method __destruct()</error>
     </parse_markers>
   </file>
-  <file path="models\DatabaseLayer.php" hash="05208d1738ac9f0ea404a272d7638aba" package="Default">
+  <file path="models\data_models\PersistenceLayer.php" hash="3c98edbb6289b8afc42415e7c5fc90d6" package="Default">
     <include line="2" type="Require Once" package="Default">
-      <name>Model.php</name>
+      <name/>
     </include>
     <include line="3" type="Require Once" package="Default">
       <name>DAO.php</name>
@@ -1207,94 +1226,394 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <name>QRO.php</name>
     </include>
     <include line="5" type="Require Once" package="Default">
-      <name>SessionHandler.php</name>
+      <name>SessionHandlerDep.php</name>
     </include>
-    <class final="false" abstract="false" namespace="global" line="7" package="Default">
+    <include line="6" type="Require Once" package="Default">
+      <name>CookieHandler.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="10" package="Default">
       <extends>\Model</extends>
-      <name>DatabaseLayer</name>
-      <full_name>\DatabaseLayer</full_name>
-      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+      <name>PersistenceLayer</name>
+      <full_name>\PersistenceLayer</full_name>
+      <property final="false" static="false" visibility="private" line="11" namespace="global" package="Default">
         <name>$dao</name>
         <default/>
       </property>
-      <property final="false" static="false" visibility="private" line="9" namespace="global" package="Default">
+      <property final="false" static="false" visibility="private" line="12" namespace="global" package="Default">
         <name>$sh</name>
         <default/>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+      <property final="false" static="false" visibility="private" line="13" namespace="global" package="Default">
+        <name>$ch</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
         <name>__construct</name>
         <full_name>__construct</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
-        <name>insertEntry</name>
-        <full_name>insertEntry</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>setWorkingEntry</name>
+        <full_name>setWorkingEntry</full_name>
+        <argument line="21">
+          <name>$entry</name>
+          <default/>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
-        <name>retrieveEntry</name>
-        <full_name>retrieveEntry</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="Default">
-        <name>deleteEntry</name>
-        <full_name>deleteEntry</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="26" package="Default">
-        <name>retrieveTemplate</name>
-        <full_name>retrieveTemplate</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="Default">
+        <name>retrieveWorkingEntry</name>
+        <full_name>retrieveWorkingEntry</full_name>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="Default">
-        <name>insertTemplate</name>
-        <full_name>insertTemplate</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="32" package="Default">
-        <name>deleteTemplate</name>
-        <full_name>deleteTemplate</full_name>
+        <name>setBlankWorkingEntry</name>
+        <full_name>setBlankWorkingEntry</full_name>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="Default">
-        <name>insertUser</name>
-        <full_name>insertUser</full_name>
+        <name>createNewEntry</name>
+        <full_name>createNewEntry</full_name>
+        <argument line="35">
+          <name>$template_name</name>
+          <default/>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="39" package="Default">
-        <name>retrieveUser</name>
-        <full_name>retrieveUser</full_name>
-        <argument line="39">
-          <name>$username</name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="Default">
+        <name>clearWorkingEntry</name>
+        <full_name>clearWorkingEntry</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="48" package="Default">
+        <name>insertEntry</name>
+        <full_name>insertEntry</full_name>
+        <argument line="48">
+          <name>$entry</name>
           <default/>
           <type/>
         </argument>
-        <argument line="39">
-          <name>$password</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="39">
+        <argument line="48">
           <name>$error_msg</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="63" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="66" package="Default">
+        <name>retrieveEntry</name>
+        <full_name>retrieveEntry</full_name>
+        <argument line="66">
+          <name>$entries</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="66">
+          <name>$date</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="66">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="79" package="Default">
+        <name>checkEntryId</name>
+        <full_name>checkEntryId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="84" package="Default">
+        <name>deleteEntry</name>
+        <full_name>deleteEntry</full_name>
+        <argument line="84">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="97" package="Default">
+        <name>retrieveTemplate</name>
+        <full_name>retrieveTemplate</full_name>
+        <argument line="97">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="97">
+          <name>$template_name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="97">
+          <name>$template</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="97">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="111" package="Default">
+        <name>insertTemplate</name>
+        <full_name>insertTemplate</full_name>
+        <argument line="111">
+          <name>$template</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="111">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="127" package="Default">
+        <name>deleteTemplate</name>
+        <full_name>deleteTemplate</full_name>
+        <argument line="127">
+          <name>$template_name</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="127">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="139" package="Default">
+        <name>insertUser</name>
+        <full_name>insertUser</full_name>
+        <argument line="139">
+          <name>$username</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="139">
+          <name>$password</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="139">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="153" package="Default">
+        <name>retrieveUser</name>
+        <full_name>retrieveUser</full_name>
+        <argument line="153">
+          <name>$username</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="153">
+          <name>$password</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="153">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="170" package="Default">
         <name>deleteUser</name>
         <full_name>deleteUser</full_name>
+        <argument line="170">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="185" package="Default">
+        <name>getDate</name>
+        <full_name>getDate</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="189" package="Default">
+        <name>getReading</name>
+        <full_name>getReading</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="193" package="Default">
+        <name>setReading</name>
+        <full_name>setReading</full_name>
+        <argument line="193">
+          <name>$num_days</name>
+          <default/>
+          <type/>
+        </argument>
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\DatabaseLayer.php</error>
-      <error line="7" code="50000">No DocBlock was found for \DatabaseLayer</error>
-      <error line="8" code="50018">No DocBlock was found for property $dao</error>
-      <error line="9" code="50018">No DocBlock was found for property $sh</error>
-      <error line="11" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="17" code="50010">No DocBlock was found for method insertEntry()</error>
-      <error line="20" code="50010">No DocBlock was found for method retrieveEntry()</error>
-      <error line="23" code="50010">No DocBlock was found for method deleteEntry()</error>
-      <error line="26" code="50010">No DocBlock was found for method retrieveTemplate()</error>
-      <error line="29" code="50010">No DocBlock was found for method insertTemplate()</error>
-      <error line="32" code="50010">No DocBlock was found for method deleteTemplate()</error>
-      <error line="35" code="50010">No DocBlock was found for method insertUser()</error>
-      <error line="39" code="50010">No DocBlock was found for method retrieveUser()</error>
-      <error line="63" code="50010">No DocBlock was found for method deleteUser()</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\data_models\PersistenceLayer.php</error>
+      <error line="10" code="50000">No DocBlock was found for \PersistenceLayer</error>
+      <error line="11" code="50018">No DocBlock was found for property $dao</error>
+      <error line="12" code="50018">No DocBlock was found for property $sh</error>
+      <error line="13" code="50018">No DocBlock was found for property $ch</error>
+      <error line="15" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="21" code="50010">No DocBlock was found for method setWorkingEntry()</error>
+      <error line="25" code="50010">No DocBlock was found for method retrieveWorkingEntry()</error>
+      <error line="29" code="50010">No DocBlock was found for method setBlankWorkingEntry()</error>
+      <error line="35" code="50010">No DocBlock was found for method createNewEntry()</error>
+      <error line="40" code="50010">No DocBlock was found for method clearWorkingEntry()</error>
+      <error line="48" code="50010">No DocBlock was found for method insertEntry()</error>
+      <error line="66" code="50010">No DocBlock was found for method retrieveEntry()</error>
+      <error line="79" code="50010">No DocBlock was found for method checkEntryId()</error>
+      <error line="84" code="50010">No DocBlock was found for method deleteEntry()</error>
+      <error line="97" code="50010">No DocBlock was found for method retrieveTemplate()</error>
+      <error line="111" code="50010">No DocBlock was found for method insertTemplate()</error>
+      <error line="127" code="50010">No DocBlock was found for method deleteTemplate()</error>
+      <error line="139" code="50010">No DocBlock was found for method insertUser()</error>
+      <error line="153" code="50010">No DocBlock was found for method retrieveUser()</error>
+      <error line="170" code="50010">No DocBlock was found for method deleteUser()</error>
+      <error line="185" code="50010">No DocBlock was found for method getDate()</error>
+      <error line="189" code="50010">No DocBlock was found for method getReading()</error>
+      <error line="193" code="50010">No DocBlock was found for method setReading()</error>
     </parse_markers>
   </file>
-  <file path="models\Entry.php" hash="35d1d6fee1d8635f9aadb917d8476b8f" package="Default">
+  <file path="models\data_models\QRO.php" hash="ce287cc85eeaba5e6fb00d4120075beb" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends/>
+      <name>QRO</name>
+      <full_name>\QRO</full_name>
+      <property final="false" static="false" visibility="private" line="3" namespace="global" package="Default">
+        <name>$mysqli_result</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="5">
+          <name>$mysqli_result</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+        <name>numRows</name>
+        <full_name>numRows</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
+        <name>fetchArray</name>
+        <full_name>fetchArray</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
+        <name>fetchRow</name>
+        <full_name>fetchRow</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\data_models\QRO.php</error>
+      <error line="2" code="50000">No DocBlock was found for \QRO</error>
+      <error line="3" code="50018">No DocBlock was found for property $mysqli_result</error>
+      <error line="5" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="9" code="50010">No DocBlock was found for method numRows()</error>
+      <error line="13" code="50010">No DocBlock was found for method fetchArray()</error>
+      <error line="17" code="50010">No DocBlock was found for method fetchRow()</error>
+    </parse_markers>
+  </file>
+  <file path="models\data_models\SessionHandlerDep.php" hash="4a23deaba6ce302b57ba2a0f94d00e5f" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends>\Model</extends>
+      <name>SessionHandlerDep</name>
+      <full_name>\SessionHandlerDep</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="3" package="Default">
+        <name>setUserId</name>
+        <full_name>setUserId</full_name>
+        <argument line="3">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="6" package="Default">
+        <name>getUserId</name>
+        <full_name>getUserId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+        <name>setUserName</name>
+        <full_name>setUserName</full_name>
+        <argument line="9">
+          <name>$username</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
+        <name>getUserName</name>
+        <full_name>getUserName</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
+        <name>setDate</name>
+        <full_name>setDate</full_name>
+        <argument line="15">
+          <name>$date</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+        <name>getDate</name>
+        <full_name>getDate</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
+        <name>setWorkingEntry</name>
+        <full_name>setWorkingEntry</full_name>
+        <argument line="21">
+          <name>$entry</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Default">
+        <name>getWorkingEntry</name>
+        <full_name>getWorkingEntry</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Default">
+        <name>setWorkingEntryId</name>
+        <full_name>setWorkingEntryId</full_name>
+        <argument line="27">
+          <name>$entry_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="30" package="Default">
+        <name>getWorkingEntryId</name>
+        <full_name>getWorkingEntryId</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="Default">
+        <name>setReading</name>
+        <full_name>setReading</full_name>
+        <argument line="33">
+          <name>$reading</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Default">
+        <name>getReading</name>
+        <full_name>getReading</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\data_models\SessionHandlerDep.php</error>
+      <error line="2" code="50000">No DocBlock was found for \SessionHandlerDep</error>
+      <error line="3" code="50010">No DocBlock was found for method setUserId()</error>
+      <error line="6" code="50010">No DocBlock was found for method getUserId()</error>
+      <error line="9" code="50010">No DocBlock was found for method setUserName()</error>
+      <error line="12" code="50010">No DocBlock was found for method getUserName()</error>
+      <error line="15" code="50010">No DocBlock was found for method setDate()</error>
+      <error line="18" code="50010">No DocBlock was found for method getDate()</error>
+      <error line="21" code="50010">No DocBlock was found for method setWorkingEntry()</error>
+      <error line="24" code="50010">No DocBlock was found for method getWorkingEntry()</error>
+      <error line="27" code="50010">No DocBlock was found for method setWorkingEntryId()</error>
+      <error line="30" code="50010">No DocBlock was found for method getWorkingEntryId()</error>
+      <error line="33" code="50010">No DocBlock was found for method setReading()</error>
+      <error line="36" code="50010">No DocBlock was found for method getReading()</error>
+    </parse_markers>
+  </file>
+  <file path="models\entity_models\Entry.php" hash="35d1d6fee1d8635f9aadb917d8476b8f" package="Default">
     <include line="2" type="Require Once" package="Default">
       <name>Model.php</name>
     </include>
@@ -1313,13 +1632,47 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <full_name>\Entry</full_name>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\Entry.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\entity_models\Entry.php</error>
       <error line="7" code="50000">No DocBlock was found for \Entry</error>
     </parse_markers>
   </file>
-  <file path="models\InputValidator.php" hash="94901d051dd040594f6325225d9a888f" package="Default">
+  <file path="models\entity_models\User.php" hash="eb5da1a9c904556b8d215daabe8d07e5" package="Default">
     <include line="2" type="Require Once" package="Default">
+      <name>Model.php</name>
+    </include>
+    <include line="3" type="Require Once" package="Default">
       <name>DAO.php</name>
+    </include>
+    <include line="4" type="Require Once" package="Default">
+      <name>QRO.php</name>
+    </include>
+    <include line="5" type="Require Once" package="Default">
+      <name>../utilities/constants.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="7" package="Default">
+      <extends>\Model</extends>
+      <name>User</name>
+      <full_name>\User</full_name>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\entity_models\User.php</error>
+      <error line="7" code="50000">No DocBlock was found for \User</error>
+    </parse_markers>
+  </file>
+  <file path="models\Model.php" hash="84383c870582c4bb18eb2225b831c1b3" package="Default">
+    <class final="true" abstract="true" namespace="global" line="2" package="Default">
+      <extends/>
+      <name>Model</name>
+      <full_name>\Model</full_name>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\Model.php</error>
+      <error line="2" code="50000">No DocBlock was found for \Model</error>
+    </parse_markers>
+  </file>
+  <file path="models\page_models\helper_models\InputValidator.php" hash="4e56b92e3eaa5c0041bd87d1360171d2" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
     </include>
     <class final="true" abstract="true" namespace="global" line="4" package="Default">
       <extends>\Model</extends>
@@ -1367,7 +1720,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\InputValidator.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\page_models\helper_models\InputValidator.php</error>
       <error line="4" code="50000">No DocBlock was found for \InputValidator</error>
       <error line="5" code="50018">No DocBlock was found for property $dao</error>
       <error line="7" code="50010">No DocBlock was found for method __construct()</error>
@@ -1376,7 +1729,81 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="21" code="50010">No DocBlock was found for method equalStringCheck()</error>
     </parse_markers>
   </file>
-  <file path="models\JournalPageModel.php" hash="44645af8dfd59bb3bdba985974fd28b0" package="Default">
+  <file path="models\page_models\helper_models\SignInInputValidator.php" hash="d632e872f4e4ebe6d4f2a0a337a840c0" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\InputValidator</extends>
+      <name>SignInInputValidator</name>
+      <full_name>\SignInInputValidator</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="7" package="Default">
+        <name>signInFilter</name>
+        <full_name>signInFilter</full_name>
+        <argument line="7">
+          <name>$username</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="7">
+          <name>$password</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="7">
+          <name>$error_msg</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\page_models\helper_models\SignInInputValidator.php</error>
+      <error line="3" code="50000">No DocBlock was found for \SignInInputValidator</error>
+      <error line="4" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="7" code="50010">No DocBlock was found for method signInFilter()</error>
+    </parse_markers>
+  </file>
+  <file path="models\page_models\helper_models\SignUpInputValidator.php" hash="e7ce69f4f3d9395665d7d7d34b4f5fda" package="Default"/>
+  <file path="models\page_models\helper_models\TCO.php" hash="d445f13bcecd05f331378fb9f157268f" package="Default">
+    <include line="2" type="Require Once" package="Default">
+      <name>Model.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends>\Model</extends>
+      <name>TCO</name>
+      <full_name>\TCO</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+        <name>String2Array</name>
+        <full_name>String2Array</full_name>
+        <argument line="5">
+          <name>$text</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
+        <name>Array2String</name>
+        <full_name>Array2String</full_name>
+        <argument line="8">
+          <name>$array</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\page_models\helper_models\TCO.php</error>
+      <error line="4" code="50000">No DocBlock was found for \TCO</error>
+      <error line="5" code="50010">No DocBlock was found for method String2Array()</error>
+      <error line="8" code="50010">No DocBlock was found for method Array2String()</error>
+    </parse_markers>
+  </file>
+  <file path="models\page_models\JournalPageModel.php" hash="44645af8dfd59bb3bdba985974fd28b0" package="Default">
     <include line="2" type="Require Once" package="Default">
       <name>Model.php</name>
     </include>
@@ -1459,7 +1886,7 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\JournalPageModel.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\page_models\JournalPageModel.php</error>
       <error line="7" code="50000">No DocBlock was found for \JournalPageModel</error>
       <error line="8" code="50018">No DocBlock was found for property $error_msg</error>
       <error line="9" code="50018">No DocBlock was found for property $tasksc</error>
@@ -1474,63 +1901,10 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <error line="59" code="50010">No DocBlock was found for method getData()</error>
     </parse_markers>
   </file>
-  <file path="models\Model.php" hash="84383c870582c4bb18eb2225b831c1b3" package="Default">
-    <class final="true" abstract="true" namespace="global" line="2" package="Default">
-      <extends/>
-      <name>Model</name>
-      <full_name>\Model</full_name>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\Model.php</error>
-      <error line="2" code="50000">No DocBlock was found for \Model</error>
-    </parse_markers>
-  </file>
-  <file path="models\PersistenceLayer.php" hash="408b385c3235f4cdca13e637e0174a47" package="Default"/>
-  <file path="models\QRO.php" hash="ce287cc85eeaba5e6fb00d4120075beb" package="Default">
-    <class final="false" abstract="false" namespace="global" line="2" package="Default">
-      <extends/>
-      <name>QRO</name>
-      <full_name>\QRO</full_name>
-      <property final="false" static="false" visibility="private" line="3" namespace="global" package="Default">
-        <name>$mysqli_result</name>
-        <default/>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-        <argument line="5">
-          <name>$mysqli_result</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
-        <name>numRows</name>
-        <full_name>numRows</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
-        <name>fetchArray</name>
-        <full_name>fetchArray</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="17" package="Default">
-        <name>fetchRow</name>
-        <full_name>fetchRow</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\QRO.php</error>
-      <error line="2" code="50000">No DocBlock was found for \QRO</error>
-      <error line="3" code="50018">No DocBlock was found for property $mysqli_result</error>
-      <error line="5" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="9" code="50010">No DocBlock was found for method numRows()</error>
-      <error line="13" code="50010">No DocBlock was found for method fetchArray()</error>
-      <error line="17" code="50010">No DocBlock was found for method fetchRow()</error>
-    </parse_markers>
-  </file>
-  <file path="models\ReadModel.php" hash="dea351e0fed53add14b128918f1374df" package="workjournalpackage">
+  <file path="models\page_models\ReadModel.php" hash="dea351e0fed53add14b128918f1374df" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the ReadModel class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -1539,14 +1913,14 @@ and delegates tasks to the WriteModel and WriteView.&lt;/p&gt;</long-description
       <name>Model.php</name>
       <docblock line="10">
         <description>Include the base class of the ReadModel class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>PersistenceLayer.php</name>
       <docblock line="13">
         <description>Include the persistence layer.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="23" package="Default">
@@ -1561,7 +1935,7 @@ The ReadModel exposes the correct model to the ReadView.&lt;/p&gt;</long-descrip
       </docblock>
       <property final="false" static="false" visibility="private" line="33" namespace="global" package="Default">
         <name>$error_msg</name>
-        <default></default>
+        <default/>
         <docblock line="25">
           <description>Error message for the ReadModel.</description>
           <long-description>&lt;p&gt;The error message is passed as a reference into the rest of the model, and any errors
@@ -1573,7 +1947,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       </property>
       <property final="false" static="false" visibility="private" line="42" namespace="global" package="Default">
         <name>$pl</name>
-        <default></default>
+        <default/>
         <docblock line="35">
           <description>Persistence Layer for the application.</description>
           <long-description>&lt;p&gt;The persistence layer handles the database, session, and cookie variables.&lt;/p&gt;</long-description>
@@ -1587,7 +1961,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
         <full_name>_construct</full_name>
         <docblock line="44">
           <description>Constructs the delegates of the class.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="56" package="Default">
@@ -1653,7 +2027,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
         </docblock>
         <argument line="118">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1662,152 +2036,15 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       <error line="113" code="50015">Argument $string is missing from the Docblock of setErrorMsg()</error>
     </parse_markers>
   </file>
-  <file path="models\SessionHandler.php" hash="b0f05428b0d3683123da6e5763b3e870" package="Default">
-    <class final="false" abstract="false" namespace="global" line="2" package="Default">
-      <extends>\Model</extends>
-      <name>SessionHandler</name>
-      <full_name>\SessionHandler</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="3" package="Default">
-        <name>setUserId</name>
-        <full_name>setUserId</full_name>
-        <argument line="3">
-          <name>$user_id</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="6" package="Default">
-        <name>getUserId</name>
-        <full_name>getUserId</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
-        <name>setUserName</name>
-        <full_name>setUserName</full_name>
-        <argument line="9">
-          <name>$username</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="12" package="Default">
-        <name>getUserName</name>
-        <full_name>getUserName</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
-        <name>setDate</name>
-        <full_name>setDate</full_name>
-        <argument line="15">
-          <name>$date</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
-        <name>getDate</name>
-        <full_name>getDate</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Default">
-        <name>setWorkingEntry</name>
-        <full_name>setWorkingEntry</full_name>
-        <argument line="21">
-          <name>$entry</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Default">
-        <name>getWorkingEntry</name>
-        <full_name>getWorkingEntry</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Default">
-        <name>setWorkingEntryId</name>
-        <full_name>setWorkingEntryId</full_name>
-        <argument line="27">
-          <name>$entry_id</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="30" package="Default">
-        <name>getWorkingEntryId</name>
-        <full_name>getWorkingEntryId</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="Default">
-        <name>setReading</name>
-        <full_name>setReading</full_name>
-        <argument line="33">
-          <name>$reading</name>
-          <default></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Default">
-        <name>getReading</name>
-        <full_name>getReading</full_name>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\SessionHandler.php</error>
-      <error line="2" code="50000">No DocBlock was found for \SessionHandler</error>
-      <error line="3" code="50010">No DocBlock was found for method setUserId()</error>
-      <error line="6" code="50010">No DocBlock was found for method getUserId()</error>
-      <error line="9" code="50010">No DocBlock was found for method setUserName()</error>
-      <error line="12" code="50010">No DocBlock was found for method getUserName()</error>
-      <error line="15" code="50010">No DocBlock was found for method setDate()</error>
-      <error line="18" code="50010">No DocBlock was found for method getDate()</error>
-      <error line="21" code="50010">No DocBlock was found for method setWorkingEntry()</error>
-      <error line="24" code="50010">No DocBlock was found for method getWorkingEntry()</error>
-      <error line="27" code="50010">No DocBlock was found for method setWorkingEntryId()</error>
-      <error line="30" code="50010">No DocBlock was found for method getWorkingEntryId()</error>
-      <error line="33" code="50010">No DocBlock was found for method setReading()</error>
-      <error line="36" code="50010">No DocBlock was found for method getReading()</error>
-    </parse_markers>
-  </file>
-  <file path="models\SignInInputValidator.php" hash="804f1021e377bb8d4db506aff57449fb" package="Default">
-    <class final="false" abstract="false" namespace="global" line="2" package="Default">
-      <extends>\InputValidator</extends>
-      <name>SignInInputValidator</name>
-      <full_name>\SignInInputValidator</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="3" package="Default">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="6" package="Default">
-        <name>signInFilter</name>
-        <full_name>signInFilter</full_name>
-        <argument line="6">
-          <name>$username</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="6">
-          <name>$password</name>
-          <default/>
-          <type/>
-        </argument>
-        <argument line="6">
-          <name>$error_msg</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\SignInInputValidator.php</error>
-      <error line="2" code="50000">No DocBlock was found for \SignInInputValidator</error>
-      <error line="3" code="50010">No DocBlock was found for method __construct()</error>
-      <error line="6" code="50010">No DocBlock was found for method signInFilter()</error>
-    </parse_markers>
-  </file>
-  <file path="models\SignInModel.php" hash="859a09e4b816745e2d9da07368fcf930" package="Default">
+  <file path="models\page_models\SignInModel.php" hash="3c8b2254f4efa4f6c38e86c01ad689eb" package="Default">
     <include line="2" type="Require Once" package="Default">
-      <name>Model.php</name>
+      <name/>
     </include>
     <include line="3" type="Require Once" package="Default">
-      <name>PersistenceLayer.php</name>
+      <name/>
     </include>
     <include line="4" type="Require Once" package="Default">
-      <name>InputValidator.php</name>
+      <name/>
     </include>
     <class final="false" abstract="false" namespace="global" line="6" package="Default">
       <extends>\Model</extends>
@@ -1858,7 +2095,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\SignInModel.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\page_models\SignInModel.php</error>
       <error line="6" code="50000">No DocBlock was found for \SignInModel</error>
       <error line="7" code="50018">No DocBlock was found for property $error_msg</error>
       <error line="8" code="50018">No DocBlock was found for property $iv</error>
@@ -1869,8 +2106,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       <error line="27" code="50010">No DocBlock was found for method setErrorMsg()</error>
     </parse_markers>
   </file>
-  <file path="models\SignUpInputValidator.php" hash="e7ce69f4f3d9395665d7d7d34b4f5fda" package="Default"/>
-  <file path="models\SignUpModel.php" hash="241bc846e040ad69cfe8f2787af34a9c" package="Default">
+  <file path="models\page_models\SignUpModel.php" hash="241bc846e040ad69cfe8f2787af34a9c" package="Default">
     <include line="2" type="Require Once" package="Default">
       <name>Model.php</name>
     </include>
@@ -1934,7 +2170,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       </method>
     </class>
     <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\SignUpModel.php</error>
+      <error line="0" code="50007">No page-level DocBlock was found in file models\page_models\SignUpModel.php</error>
       <error line="6" code="50000">No DocBlock was found for \SignUpModel</error>
       <error line="7" code="50018">No DocBlock was found for property $error_msg</error>
       <error line="8" code="50018">No DocBlock was found for property $iv</error>
@@ -1945,68 +2181,11 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       <error line="23" code="50010">No DocBlock was found for method setErrorMsg()</error>
     </parse_markers>
   </file>
-  <file path="models\TCO.php" hash="d445f13bcecd05f331378fb9f157268f" package="Default">
-    <include line="2" type="Require Once" package="Default">
-      <name>Model.php</name>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="4" package="Default">
-      <extends>\Model</extends>
-      <name>TCO</name>
-      <full_name>\TCO</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
-        <name>String2Array</name>
-        <full_name>String2Array</full_name>
-        <argument line="5">
-          <name>$text</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
-        <name>Array2String</name>
-        <full_name>Array2String</full_name>
-        <argument line="8">
-          <name>$array</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\TCO.php</error>
-      <error line="4" code="50000">No DocBlock was found for \TCO</error>
-      <error line="5" code="50010">No DocBlock was found for method String2Array()</error>
-      <error line="8" code="50010">No DocBlock was found for method Array2String()</error>
-    </parse_markers>
-  </file>
-  <file path="models\TemplatesModel.php" hash="c00988cc1434458c14e8dac97848771c" package="Default"/>
-  <file path="models\User.php" hash="eb5da1a9c904556b8d215daabe8d07e5" package="Default">
-    <include line="2" type="Require Once" package="Default">
-      <name>Model.php</name>
-    </include>
-    <include line="3" type="Require Once" package="Default">
-      <name>DAO.php</name>
-    </include>
-    <include line="4" type="Require Once" package="Default">
-      <name>QRO.php</name>
-    </include>
-    <include line="5" type="Require Once" package="Default">
-      <name>../utilities/constants.php</name>
-    </include>
-    <class final="false" abstract="false" namespace="global" line="7" package="Default">
-      <extends>\Model</extends>
-      <name>User</name>
-      <full_name>\User</full_name>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file models\User.php</error>
-      <error line="7" code="50000">No DocBlock was found for \User</error>
-    </parse_markers>
-  </file>
-  <file path="models\WriteModel.php" hash="79f659fc4bd128e1bf08e830a1bbad3d" package="workjournalpackage">
+  <file path="models\page_models\TemplatesModel.php" hash="c00988cc1434458c14e8dac97848771c" package="Default"/>
+  <file path="models\page_models\WriteModel.php" hash="79f659fc4bd128e1bf08e830a1bbad3d" package="workjournalpackage">
     <docblock line="2">
       <description>Contains the WriteModel class.</description>
-      <long-description></long-description>
+      <long-description/>
       <tag line="2" name="package" description="workjournalpackage"/>
       <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
       <tag line="2" name="version" description="0.0.2"/>
@@ -2015,21 +2194,21 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       <name>Model.php</name>
       <docblock line="10">
         <description>Include the base class of the WriteModel class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="14" type="Require Once" package="Default">
       <name>PersistenceLayer.php</name>
       <docblock line="13">
         <description>Include the persistence layer.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <include line="17" type="Require Once" package="Default">
       <name>WriteInputValidator.php</name>
       <docblock line="16">
         <description>Include the input validator for the WriteModel class.</description>
-        <long-description></long-description>
+        <long-description/>
       </docblock>
     </include>
     <class final="false" abstract="false" namespace="global" line="27" package="Default">
@@ -2045,7 +2224,7 @@ It also acts as a gatekeeper for input passed on from the WriteController.&lt;/p
       </docblock>
       <property final="false" static="false" visibility="private" line="37" namespace="global" package="Default">
         <name>$error_msg</name>
-        <default></default>
+        <default/>
         <docblock line="29">
           <description>Error message for the WriteModel.</description>
           <long-description>&lt;p&gt;The error message is passed as a reference into the rest of the model, and any errors
@@ -2057,7 +2236,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       </property>
       <property final="false" static="false" visibility="private" line="45" namespace="global" package="Default">
         <name>$iv</name>
-        <default></default>
+        <default/>
         <docblock line="39">
           <description>Input Validator for the WriteModel.</description>
           <long-description>&lt;p&gt;The input validator filters input acquired from the controller. They also pass error messages to the model.&lt;/p&gt;</long-description>
@@ -2068,7 +2247,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       </property>
       <property final="false" static="false" visibility="private" line="54" namespace="global" package="Default">
         <name>$pl</name>
-        <default></default>
+        <default/>
         <docblock line="47">
           <description>Persistence Layer for the application.</description>
           <long-description>&lt;p&gt;The persistence layer handles the database, session, and cookie variables.&lt;/p&gt;</long-description>
@@ -2082,7 +2261,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
         <full_name>_construct</full_name>
         <docblock line="56">
           <description>Constructs the delegates of the class.</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="Default">
@@ -2097,7 +2276,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
         </docblock>
         <argument line="71">
           <name>$template_name</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2113,7 +2292,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
         </docblock>
         <argument line="82">
           <name>$entry</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2207,7 +2386,7 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
         </docblock>
         <argument line="201">
           <name>$string</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -2218,23 +2397,54 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       <error line="196" code="50015">Argument $string is missing from the Docblock of setErrorMsg()</error>
     </parse_markers>
   </file>
-  <file path="utilities\connect_vars.php" hash="2e3ed868e19655dbd98cf4e623800075" package="Default">
-    <constant namespace="global" line="3" package="Default">
+  <file path="tests\SignInViewTest.php" hash="55def014334fec169dc9b2b6e831ebd7" package="Default">
+    <include line="3" type="Require Once" package="Default">
+      <name>/../../../php/pear/PHPUnit/Extensions/Database/TestCase.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="5" package="Default">
+      <extends>\PHPUnit_Extensions_Database_TestCase</extends>
+      <name>SignInViewTest</name>
+      <full_name>\SignInViewTest</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>getConnection</name>
+        <full_name>getConnection</full_name>
+        <docblock line="7">
+          <description/>
+          <long-description/>
+          <tag line="7" name="return" description="" type="\PHPUnit_Extensions_Database_DB_IDatabaseConnection">
+            <type by_reference="false">\PHPUnit_Extensions_Database_DB_IDatabaseConnection</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="Default">
+        <name>getDataSet</name>
+        <full_name>getDataSet</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file tests\SignInViewTest.php</error>
+      <error line="5" code="50000">No DocBlock was found for \SignInViewTest</error>
+      <error line="7" code="50012">No short description for method getConnection()</error>
+      <error line="16" code="50010">No DocBlock was found for method getDataSet()</error>
+    </parse_markers>
+  </file>
+  <file path="utilities\connect_vars.php" hash="fa14b705c5d8eb9be6a4b18e959b79c6" package="Default">
+    <constant namespace="global" line="4" package="Default">
       <name>DB_HOST</name>
       <full_name>\DB_HOST</full_name>
       <value/>
     </constant>
-    <constant namespace="global" line="4" package="Default">
+    <constant namespace="global" line="5" package="Default">
       <name>DB_USER</name>
       <full_name>\DB_USER</full_name>
       <value/>
     </constant>
-    <constant namespace="global" line="5" package="Default">
+    <constant namespace="global" line="6" package="Default">
       <name>DB_PASSWORD</name>
       <full_name>\DB_PASSWORD</full_name>
       <value/>
     </constant>
-    <constant namespace="global" line="6" package="Default">
+    <constant namespace="global" line="7" package="Default">
       <name>DB_NAME</name>
       <full_name>\DB_NAME</full_name>
       <value/>
@@ -2299,103 +2509,334 @@ that occur are proprogated so the WriteView can display it to the user.&lt;/p&gt
       <error line="7" code="50010">No DocBlock was found for method startSession()</error>
     </parse_markers>
   </file>
-  <file path="views\JournalPageView.php" hash="9f6229d2959bedc1647bce9af239534b" package="Default">
-    <include line="2" type="Require Once" package="Default">
-      <name>View.php</name>
+  <file path="views\JournalPageView.php" hash="c392f524dd90276561d1689afa20387c" package="Workjournalpackage">
+    <docblock line="2">
+      <description>JournalPageView</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.1"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/JournalPageView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/JournalPageView.html"/>
+    </docblock>
+    <include line="17" type="Require Once" package="Default">
+      <name/>
     </include>
-    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+    <class final="false" abstract="false" namespace="global" line="31" package="Workjournalpackage">
       <extends>\View</extends>
       <name>JournalPageView</name>
       <full_name>\JournalPageView</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="6" package="Default">
+      <docblock line="19">
+        <description>JournalPageView</description>
+        <long-description/>
+        <tag line="19" name="category" description="Workjournal"/>
+        <tag line="19" name="package" description="Workjournalpackage"/>
+        <tag line="19" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.1"/>
+        <tag line="19" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/JournalPageView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/JournalPageView.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Workjournalpackage">
         <name>display</name>
         <full_name>display</full_name>
-        <argument line="6">
+        <docblock line="34">
+          <description>Displays the journalpage.php page.</description>
+          <long-description>&lt;p&gt;Exposes the JournalPageModel in the context of an html page.&lt;/p&gt;</long-description>
+          <tag line="34" name="param" description="The JournalPageModel." type="\JournalPageModel" variable="$model">
+            <type by_reference="false">\JournalPageModel</type>
+          </tag>
+          <tag line="34" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
+        </docblock>
+        <argument line="43">
           <name>$model</name>
           <default/>
           <type/>
         </argument>
       </method>
     </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file views\JournalPageView.php</error>
-      <error line="4" code="50000">No DocBlock was found for \JournalPageView</error>
-      <error line="6" code="50010">No DocBlock was found for method display()</error>
-    </parse_markers>
   </file>
-  <file path="views\ReadView.php" hash="af0d428df0cc356b0debfff236f84186" package="Default"/>
-  <file path="views\SignInView.php" hash="93f4ec3160a6541cf9a5bf7d16432a4c" package="Default">
-    <include line="2" type="Require Once" package="Default">
-      <name>View.php</name>
+  <file path="views\ReadView.php" hash="c7f4d86b9c77b1ed90dc72efe9a7f3a0" package="Workjournalpackage">
+    <docblock line="2">
+      <description>ReadView</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ReadView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ReadView.html"/>
+    </docblock>
+    <include line="17" type="Require Once" package="Default">
+      <name/>
     </include>
-    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+    <class final="false" abstract="false" namespace="global" line="31" package="Workjournalpackage">
+      <extends>\View</extends>
+      <name>ReadView</name>
+      <full_name>\ReadView</full_name>
+      <docblock line="19">
+        <description>ReadView</description>
+        <long-description/>
+        <tag line="19" name="category" description="Workjournal"/>
+        <tag line="19" name="package" description="Workjournalpackage"/>
+        <tag line="19" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+        <tag line="19" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ReadView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/ReadView.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Workjournalpackage">
+        <name>display</name>
+        <full_name>display</full_name>
+        <docblock line="34">
+          <description>Displays the read.php page.</description>
+          <long-description>&lt;p&gt;Exposes the ReadModel in the context of an html page.&lt;/p&gt;</long-description>
+          <tag line="34" name="param" description="The ReadModel." type="\ReadModel" variable="$model">
+            <type by_reference="false">\ReadModel</type>
+          </tag>
+          <tag line="34" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$model</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="views\SignInView.php" hash="6ce6445a8c490b1341e4b42b452bc579" package="Workjournalpackage">
+    <docblock line="2">
+      <description>SignInView</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignUpView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignUpView.html"/>
+    </docblock>
+    <include line="17" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="31" package="Workjournalpackage">
       <extends>\View</extends>
       <name>SignInView</name>
       <full_name>\SignInView</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+      <docblock line="19">
+        <description>SignInView</description>
+        <long-description/>
+        <tag line="19" name="category" description="Workjournal"/>
+        <tag line="19" name="package" description="Workjournalpackage"/>
+        <tag line="19" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+        <tag line="19" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignInView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignInView.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Workjournalpackage">
         <name>display</name>
         <full_name>display</full_name>
-        <argument line="5">
+        <docblock line="34">
+          <description>Displays the signin.php page.</description>
+          <long-description>&lt;p&gt;Exposes the SignInModel in the context of an html page.&lt;/p&gt;</long-description>
+          <tag line="34" name="param" description="The SignInModel." type="\SignInModel" variable="$model">
+            <type by_reference="false">\SignInModel</type>
+          </tag>
+          <tag line="34" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
+        </docblock>
+        <argument line="43">
           <name>$model</name>
           <default/>
           <type/>
         </argument>
       </method>
     </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file views\SignInView.php</error>
-      <error line="4" code="50000">No DocBlock was found for \SignInView</error>
-      <error line="5" code="50010">No DocBlock was found for method display()</error>
-    </parse_markers>
   </file>
-  <file path="views\SignUpView.php" hash="b48c76056114e3c9c1370919f4db8a33" package="Default">
-    <include line="2" type="Require Once" package="Default">
-      <name>View.php</name>
+  <file path="views\SignUpView.php" hash="4dfc936d8bcfdee3ee459744267ec037" package="Workjournalpackage">
+    <docblock line="2">
+      <description>SignUpView</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignUpView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignUpView.html"/>
+    </docblock>
+    <include line="17" type="Require Once" package="Default">
+      <name/>
     </include>
-    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+    <class final="false" abstract="false" namespace="global" line="31" package="Workjournalpackage">
       <extends>\View</extends>
       <name>SignUpView</name>
       <full_name>\SignUpView</full_name>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="5" package="Default">
+      <docblock line="19">
+        <description>SignUpView</description>
+        <long-description/>
+        <tag line="19" name="category" description="Workjournal"/>
+        <tag line="19" name="package" description="Workjournalpackage"/>
+        <tag line="19" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+        <tag line="19" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignUpView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/SignUpView.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Workjournalpackage">
         <name>display</name>
         <full_name>display</full_name>
-        <argument line="5">
+        <docblock line="34">
+          <description>Displays the signup.php page.</description>
+          <long-description>&lt;p&gt;Exposes the SignUpModel in the context of an html page.&lt;/p&gt;</long-description>
+          <tag line="34" name="param" description="The SignUpModel." type="\SignUpModel" variable="$model">
+            <type by_reference="false">\SignUpModel</type>
+          </tag>
+          <tag line="34" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
+        </docblock>
+        <argument line="43">
           <name>$model</name>
           <default/>
           <type/>
         </argument>
       </method>
     </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file views\SignUpView.php</error>
-      <error line="4" code="50000">No DocBlock was found for \SignUpView</error>
-      <error line="5" code="50010">No DocBlock was found for method display()</error>
-    </parse_markers>
   </file>
-  <file path="views\TemplateView.php" hash="0499999c4d1dd04f65964f85458db92d" package="Default"/>
-  <file path="views\View.php" hash="402c715b136664c32680cd23bdcf18b4" package="Default">
-    <class final="true" abstract="true" namespace="global" line="2" package="Default">
+  <file path="views\TemplatesView.php" hash="db574988ce0d6aba87f401c2ade6bb3c" package="Workjournalpackage">
+    <docblock line="2">
+      <description>TemplatesView</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/TemplatesView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/TemplatesView.html"/>
+    </docblock>
+    <include line="17" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="31" package="Workjournalpackage">
+      <extends>\View</extends>
+      <name>TemplateView</name>
+      <full_name>\TemplateView</full_name>
+      <docblock line="19">
+        <description>TemplatesView</description>
+        <long-description/>
+        <tag line="19" name="category" description="Workjournal"/>
+        <tag line="19" name="package" description="Workjournalpackage"/>
+        <tag line="19" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+        <tag line="19" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/TemplatesView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/TemplatesView.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="43" package="Workjournalpackage">
+        <name>display</name>
+        <full_name>display</full_name>
+        <docblock line="34">
+          <description>Displays the templates.php page.</description>
+          <long-description>&lt;p&gt;Exposes the TemplatesModel in the context of an html page.&lt;/p&gt;</long-description>
+          <tag line="34" name="param" description="The TemplatesModel." type="\TemplatesModel" variable="$model">
+            <type by_reference="false">\TemplatesModel</type>
+          </tag>
+          <tag line="34" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
+        </docblock>
+        <argument line="43">
+          <name>$model</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="views\View.php" hash="e755c93db833b8bf2b9f30b6d4669247" package="Workjournalpackage">
+    <docblock line="2">
+      <description>View</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/View.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/View.html"/>
+    </docblock>
+    <class final="true" abstract="true" namespace="global" line="29" package="Workjournalpackage">
       <extends/>
       <name>View</name>
       <full_name>\View</full_name>
-      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="3" package="Default">
+      <docblock line="17">
+        <description>View</description>
+        <long-description/>
+        <tag line="17" name="category" description="Workjournal"/>
+        <tag line="17" name="package" description="Workjournalpackage"/>
+        <tag line="17" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="17" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+        <tag line="17" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/View.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/View.html"/>
+      </docblock>
+      <method final="false" abstract="true" static="false" visibility="public" namespace="global" line="41" package="Workjournalpackage">
         <name>display</name>
         <full_name>display</full_name>
-        <argument line="3">
+        <docblock line="32">
+          <description>Displays the page.</description>
+          <long-description>&lt;p&gt;Exposes the Model in the context of an html page.&lt;/p&gt;</long-description>
+          <tag line="32" name="param" description="The Model." type="\Model" variable="$model">
+            <type by_reference="false">\Model</type>
+          </tag>
+          <tag line="32" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
+        </docblock>
+        <argument line="41">
           <name>$model</name>
           <default/>
           <type/>
         </argument>
       </method>
     </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file views\View.php</error>
-      <error line="2" code="50000">No DocBlock was found for \View</error>
-      <error line="3" code="50010">No DocBlock was found for method display()</error>
-    </parse_markers>
   </file>
-  <file path="views\WriteView.php" hash="6908bc5b04f9f0e4e7f6345558f6673d" package="Default"/>
+  <file path="views\WriteView.php" hash="51d8cfeab9238f5b43299a4744d62b98" package="Workjournalpackage">
+    <docblock line="2">
+      <description>WriteView</description>
+      <long-description>&lt;p&gt;PHP Version 5&lt;/p&gt;</long-description>
+      <tag line="2" name="category" description="Workjournal"/>
+      <tag line="2" name="package" description="Workjournalpackage"/>
+      <tag line="2" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+      <tag line="2" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+      <tag line="2" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/WriteView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/WriteView.html"/>
+    </docblock>
+    <include line="17" type="Require Once" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="31" package="Workjournalpackage">
+      <extends>\View</extends>
+      <name>SignInView</name>
+      <full_name>\SignInView</full_name>
+      <docblock line="19">
+        <description>WriteView</description>
+        <long-description/>
+        <tag line="19" name="category" description="Workjournal"/>
+        <tag line="19" name="package" description="Workjournalpackage"/>
+        <tag line="19" name="author" description="Colin M. Leung &lt;colinmleung@gmail.com&gt;"/>
+        <tag line="19" name="license" description="http://opensource.org/licenses/gpl-3.0.html&#13;&#10;GNU General Public License&#13;&#10;Version   0.0.2"/>
+        <tag line="19" name="link" description="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/WriteView.html" link="file://localhost/C:/xampp/htdocs/work-journal/docs/classes&#13;&#10;/WriteView.html"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="42" package="Workjournalpackage">
+        <name>display</name>
+        <full_name>display</full_name>
+        <docblock line="33">
+          <description>Displays the write.php page.</description>
+          <long-description>&lt;p&gt;Exposes the WriteModel in the context of an html page.&lt;/p&gt;</long-description>
+          <tag line="33" name="param" description="The WriteModel." type="\WriteModel" variable="$model">
+            <type by_reference="false">\WriteModel</type>
+          </tag>
+          <tag line="33" name="return" description="" type="\none">
+            <type by_reference="false">\none</type>
+          </tag>
+        </docblock>
+        <argument line="42">
+          <name>$model</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
   <package name="Default" full_name="Default"/>
+  <package name="Workjournalpackage" full_name="Workjournalpackage"/>
   <package name="workjournalpackage" full_name="workjournalpackage"/>
   <namespace name="global" full_name="global"/>
   <marker count="0">todo</marker>

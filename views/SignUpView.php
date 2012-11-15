@@ -38,7 +38,7 @@ class SignUpView extends View
      * 
      * @param SignUpModel $model The SignUpModel.
      * 
-     * @return none
+     * @return void
      */
     public function display($model)
     {

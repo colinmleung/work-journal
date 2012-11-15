@@ -21,7 +21,7 @@
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a>Packages</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
-<li><a href="../packages/workjournalpackage.html"><i class="icon-folder-open"></i> workjournalpackage</a></li>
+<li><a href="../packages/Workjournalpackage.html"><i class="icon-folder-open"></i> Workjournalpackage</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">131</span></a></li>
+                <span class="label label-info">132</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -69,25 +69,22 @@
 <li><a href="#WriteController" title="The Controller class for write.php.">WriteController</a></li>
 <li><a href="#CookieHandler" title="">CookieHandler</a></li>
 <li><a href="#DAO" title="">DAO</a></li>
-<li><a href="#DatabaseLayer" title="">DatabaseLayer</a></li>
-<li><a href="#Entry" title="">Entry</a></li>
-<li><a href="#InputValidator" title="">InputValidator</a></li>
-<li><a href="#JournalPageModel" title="">JournalPageModel</a></li>
-<li><a href="#Model" title="">Model</a></li>
+<li><a href="#PersistenceLayer" title="">PersistenceLayer</a></li>
 <li><a href="#QRO" title="">QRO</a></li>
-<li><a href="#ReadModel" title="The Model class for read.php.">ReadModel</a></li>
-<li><a href="#SessionHandler" title="">SessionHandler</a></li>
+<li><a href="#SessionHandlerDep" title="">SessionHandlerDep</a></li>
+<li><a href="#Entry" title="">Entry</a></li>
+<li><a href="#User" title="">User</a></li>
+<li><a href="#Model" title="">Model</a></li>
+<li><a href="#InputValidator" title="">InputValidator</a></li>
 <li><a href="#SignInInputValidator" title="">SignInInputValidator</a></li>
+<li><a href="#TCO" title="">TCO</a></li>
+<li><a href="#JournalPageModel" title="">JournalPageModel</a></li>
+<li><a href="#ReadModel" title="The Model class for read.php.">ReadModel</a></li>
 <li><a href="#SignInModel" title="">SignInModel</a></li>
 <li><a href="#SignUpModel" title="">SignUpModel</a></li>
-<li><a href="#TCO" title="">TCO</a></li>
-<li><a href="#User" title="">User</a></li>
 <li><a href="#WriteModel" title="The Model class for write.php.">WriteModel</a></li>
+<li><a href="#SignInViewTest" title="">SignInViewTest</a></li>
 <li><a href="#Utility" title="">Utility</a></li>
-<li><a href="#JournalPageView" title="">JournalPageView</a></li>
-<li><a href="#SignInView" title="">SignInView</a></li>
-<li><a href="#SignUpView" title="">SignUpView</a></li>
-<li><a href="#View" title="">View</a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
 <li class="constant  "><a href="#constant_DAY" title="DAY :: "><span class="description">DAY</span><pre>DAY</pre></a></li>
@@ -120,13 +117,6 @@
 <div class="details collapse"></div>
 <a href="../classes/DAO.html" class="more">« More »</a>
 </div>
-<div id="DatabaseLayer" class="element ajax clickable class">
-<h1>DatabaseLayer<a href="../classes/DatabaseLayer.html">¶</a>
-</h1>
-<p class="short_description"></p>
-<div class="details collapse"></div>
-<a href="../classes/DatabaseLayer.html" class="more">« More »</a>
-</div>
 <div id="Entry" class="element ajax clickable class">
 <h1>Entry<a href="../classes/Entry.html">¶</a>
 </h1>
@@ -155,19 +145,19 @@
 <div class="details collapse"></div>
 <a href="../classes/JournalPageModel.html" class="more">« More »</a>
 </div>
-<div id="JournalPageView" class="element ajax clickable class">
-<h1>JournalPageView<a href="../classes/JournalPageView.html">¶</a>
-</h1>
-<p class="short_description"></p>
-<div class="details collapse"></div>
-<a href="../classes/JournalPageView.html" class="more">« More »</a>
-</div>
 <div id="Model" class="element ajax clickable class">
 <h1>Model<a href="../classes/Model.html">¶</a>
 </h1>
 <p class="short_description"></p>
 <div class="details collapse"></div>
 <a href="../classes/Model.html" class="more">« More »</a>
+</div>
+<div id="PersistenceLayer" class="element ajax clickable class">
+<h1>PersistenceLayer<a href="../classes/PersistenceLayer.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/PersistenceLayer.html" class="more">« More »</a>
 </div>
 <div id="QRO" class="element ajax clickable class">
 <h1>QRO<a href="../classes/QRO.html">¶</a>
@@ -190,12 +180,12 @@
 <div class="details collapse"></div>
 <a href="../classes/ReadModel.html" class="more">« More »</a>
 </div>
-<div id="SessionHandler" class="element ajax clickable class">
-<h1>SessionHandler<a href="../classes/SessionHandler.html">¶</a>
+<div id="SessionHandlerDep" class="element ajax clickable class">
+<h1>SessionHandlerDep<a href="../classes/SessionHandlerDep.html">¶</a>
 </h1>
 <p class="short_description"></p>
 <div class="details collapse"></div>
-<a href="../classes/SessionHandler.html" class="more">« More »</a>
+<a href="../classes/SessionHandlerDep.html" class="more">« More »</a>
 </div>
 <div id="SignInController" class="element ajax clickable class">
 <h1>SignInController<a href="../classes/SignInController.html">¶</a>
@@ -218,12 +208,12 @@
 <div class="details collapse"></div>
 <a href="../classes/SignInModel.html" class="more">« More »</a>
 </div>
-<div id="SignInView" class="element ajax clickable class">
-<h1>SignInView<a href="../classes/SignInView.html">¶</a>
+<div id="SignInViewTest" class="element ajax clickable class">
+<h1>SignInViewTest<a href="../classes/SignInViewTest.html">¶</a>
 </h1>
 <p class="short_description"></p>
 <div class="details collapse"></div>
-<a href="../classes/SignInView.html" class="more">« More »</a>
+<a href="../classes/SignInViewTest.html" class="more">« More »</a>
 </div>
 <div id="SignUpController" class="element ajax clickable class">
 <h1>SignUpController<a href="../classes/SignUpController.html">¶</a>
@@ -238,13 +228,6 @@
 <p class="short_description"></p>
 <div class="details collapse"></div>
 <a href="../classes/SignUpModel.html" class="more">« More »</a>
-</div>
-<div id="SignUpView" class="element ajax clickable class">
-<h1>SignUpView<a href="../classes/SignUpView.html">¶</a>
-</h1>
-<p class="short_description"></p>
-<div class="details collapse"></div>
-<a href="../classes/SignUpView.html" class="more">« More »</a>
 </div>
 <div id="TCO" class="element ajax clickable class">
 <h1>TCO<a href="../classes/TCO.html">¶</a>
@@ -273,13 +256,6 @@
 <p class="short_description"></p>
 <div class="details collapse"></div>
 <a href="../classes/Utility.html" class="more">« More »</a>
-</div>
-<div id="View" class="element ajax clickable class">
-<h1>View<a href="../classes/View.html">¶</a>
-</h1>
-<p class="short_description"></p>
-<div class="details collapse"></div>
-<a href="../classes/View.html" class="more">« More »</a>
 </div>
 <div id="WriteController" class="element ajax clickable class">
 <h1>WriteController<a href="../classes/WriteController.html">¶</a>
@@ -345,7 +321,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a11</a> and<br>
-            generated on 2012-11-12T01:05:34-08:00.<br></footer></div>
+            generated on 2012-11-12T21:48:24-08:00.<br></footer></div>
 </div>
 </body>
 </html>

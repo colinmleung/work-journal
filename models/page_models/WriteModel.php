@@ -8,13 +8,13 @@
  */
 
 /** Include the base class of the WriteModel class. */
-require_once('Model.php');
+require_once __DIR__.'/../Model.php';
 
 /** Include the persistence layer. */
-require_once('PersistenceLayer.php');
+require_once __DIR__.'/../data_models/WritePersistenceLayer.php';
 
 /** Include the input validator for the WriteModel class. */
-require_once('WriteInputValidator.php');
+require_once __DIR__.'/helper_models/WriteInputValidator.php';
 
 /**
  * The Model class for write.php.
@@ -54,12 +54,16 @@ class WriteModel extends Model {
 	private $pl;
 	
 /** Constructs the delegates of the class. */
-	function _construct() {
+	function __construct() {
 		$this->iv = new WriteInputValidator();
-		$this->pl = new PersistenceLayer();
+		$this->pl = new WritePersistenceLayer();
 	}
 	
 // Control Functions
+
+    function signOut() {
+        $this->pl->signOut();
+    }
 	
 /**
  * Create a new entry.
@@ -69,7 +73,7 @@ class WriteModel extends Model {
  * @param string $template_name The name of the template.
  */
 	function createNewEntry($template_name) {
-		$this->pl->setWorkingEntry($this->pl->createNewEntry($template_name));
+		$this->pl->createNewEntry($template_name);
 	}
 	
 /** 
@@ -80,8 +84,7 @@ class WriteModel extends Model {
  * @param mixed $entry The entry to be saved.
 */
 	function saveEntry($entry) {
-		$this->pl->setWorkingEntry($entry);
-		if ($this->iv->writeFilter($entry, &$this->error_msg)) {
+		if ($this->iv->writeFilter($entry, $this->error_msg)) {
 			$this->pl->insertEntry($entry);
 		}
 	}
@@ -179,8 +182,6 @@ class WriteModel extends Model {
 	function checkEntryId() {
 		return $this->pl->checkEntryId();
 	}
-	
-// Error Message Functions
 
 /**
  * Gets the current error message.
@@ -191,15 +192,6 @@ class WriteModel extends Model {
 */
 	function getErrorMsg() {
 		return $this->error_msg;
-	}
-	
-/**
- * Set the current error message.
- *
- * Sets the current error message depending on what the error is.
-*/
-	private function setErrorMsg($string) {
-		$this->error_msg = $string;
 	}
 }
 ?>

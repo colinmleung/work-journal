@@ -21,7 +21,7 @@
                                     API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a>Packages</a></li>
 <li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
-<li><a href="../packages/workjournalpackage.html"><i class="icon-folder-open"></i> workjournalpackage</a></li>
+<li><a href="../packages/Workjournalpackage.html"><i class="icon-folder-open"></i> Workjournalpackage</a></li>
 </ul>
 </li>
 <li class="dropdown" id="charts-menu">
@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">131</span></a></li>
+                <span class="label label-info">132</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -113,15 +113,11 @@ and delegates tasks to the WriteModel and WriteView.</p></div>
 <table class="table table-bordered">
 <tr>
 <th>package</th>
-<td><a href="../packages/Default.html">workjournalpackage</a></td>
+<td><a href="../packages/Default.html">Workjournalpackage</a></td>
 </tr>
 <tr>
 <th>author</th>
 <td><a href="mailto:colinmleung@gmail.com">Colin M. Leung</a></td>
-</tr>
-<tr>
-<th>version</th>
-<td>0.0.2</td>
 </tr>
 </table>
 <h3>
@@ -138,9 +134,10 @@ and delegates tasks to the WriteModel and WriteView.</p></div>
 </div>
 <a id="method_performAction"></a><div class="element clickable method public method_performAction" data-toggle="collapse" data-target=".method_performAction .collapse">
 <h2>Makes decisions based on $_POST variables, and calls class functions to perform the appropriate action.</h2>
-<pre>performAction() </pre>
+<pre>performAction() : \none</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>On the write page, the user can:
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>On the write page, the user can:
 1. sign out
 2. go the read page
 3. go the templates page
@@ -149,7 +146,10 @@ and delegates tasks to the WriteModel and WriteView.</p></div>
 6. delete the current entry
 7. clear the current entry
 8. go to the next day
-9. go the previous day</p></div></div></div>
+9. go the previous day</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\none</code></div>
+</div></div>
 </div>
 <a id="method_createModel"></a><div class="element clickable method protected method_createModel" data-toggle="collapse" data-target=".method_createModel .collapse">
 <h2>Constructs a WriteModel</h2>
@@ -239,7 +239,8 @@ and delegates tasks to the WriteModel and WriteView.</p></div>
 <pre>$model : <a href="../classes/Model.html">\Model</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>The Model represents all the logic of the application, as well as connections to the persistent data stores.</p></div>
+<div class="long_description"><p>The Model represents all the logic of the application, as well as
+connections to the persistent data stores.</p></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\ControllerFactory::$$model</td>
@@ -278,7 +279,7 @@ It grabs relevant variables from the Model.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a11</a> and<br>
-            generated on 2012-11-12T01:05:34-08:00.<br></footer></div>
+            generated on 2012-11-12T21:48:24-08:00.<br></footer></div>
 </div>
 </body>
 </html>

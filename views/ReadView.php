@@ -38,7 +38,7 @@ class ReadView extends View
      * 
      * @param ReadModel $model The ReadModel.
      * 
-     * @return none
+     * @return void
      */
     public function display($model)
     {
@@ -80,9 +80,9 @@ class ReadView extends View
                         <div id="entry">
         <?php
         $reading = $model->getReading();
-        for ($i = 0; $i < count($entry_headers); $i++) {
-            $entry_header = $entry_headers[$i];
-            $entry_response = $entry_responses[$i];
+        for ($i = 0; $i < count($reading); $i++) {
+            $entry_header = $reading[$i]['header'];
+            $entry_response = $reading[$i]['response'];
             echo '<p>' . $entry_header . '</p>';
             echo '<p>' . $entry_response . '</p>';
         }

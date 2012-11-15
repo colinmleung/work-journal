@@ -8,13 +8,13 @@
  */
  
 /** Include the base class of the TemplatesModel class. */
-require_once('Model.php');
+require_once __DIR__.'/../Model.php';
 
 /** Include the persistence layer. */
-require_once('PersistenceLayer.php');
+require_once __DIR__.'/../data_models/TemplatesPersistenceLayer.php';
 
 /** Include the input validator for the TemplatesModel class. */
-require_once('TemplatesInputValidator.php');
+require_once __DIR__.'/helper_models/TemplatesInputValidator.php';
 
 /**
  * The Model class for templates.php.
@@ -54,10 +54,66 @@ class TemplatesModel extends Model {
 	private $pl;
 	
 /** Constructs the delegates of the class. */
-	function _construct() {
+	function __construct()
+    {
 		$this->iv = new TemplatesInputValidator();
-		$this->pl = new PersistenceLayer();
+		$this->pl = new TemplatesPersistenceLayer();
 	}
 	
 // Control Functions
+
+    function signOut() {
+        $this->pl->signOut();
+    }
+
+    function createNewTemplate()
+    {
+        $template = $this->pl->createNewTemplate();
+        $this->pl->setWorkingTemplate($template);
+    }
+    
+    function saveTemplate($template)
+    {
+        $this->pl->setWorkingTemplate($template);
+		if ($this->iv->templatesFilter($template, $this->error_msg)) {
+			$this->pl->insertTemplate($template);
+		}
+	}
+    
+    function deleteTemplate()
+    {
+        $this->pl->deleteTemplate();
+		$this->pl->setBlankWorkingTemplate();
+    }
+    
+    function deleteTemplateHeader($delete_array)
+    {
+        $this->pl->deleteTemplateHeader($delete_array);
+        
+    }
+    
+    function addTemplateHeader()
+    {
+        $this->pl->addTemplateHeader();
+    }
+
+// View Functions
+
+    function getTemplateNames()
+    {
+        $this->pl->getTemplateNames();
+    }
+    
+    function getWorkingTemplate()
+    {
+        return $this->pl->getWorkingTemplate();
+    }
+    
+    function insertTemplate()
+    {
+
+    }
+    
+    
+}
 ?>

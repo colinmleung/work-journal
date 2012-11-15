@@ -8,10 +8,10 @@
  */
  
 /** Include the base class of the ReadModel class. */
-require_once('Model.php');
+require_once __DIR__.'/../Model.php';
 
 /** Include the persistence layer. */
-require_once('PersistenceLayer.php');
+require_once __DIR__.'/../data_models/ReadPersistenceLayer.php';
 
 /**
  * The Model class for read.php.
@@ -42,11 +42,16 @@ class ReadModel extends Model {
 	private $pl;
 
 /** Constructs the delegates of the class. */
-	function _construct() {
-		$this->pl = new PersistenceLayer();
+	function __construct() {
+		$this->pl = new ReadPersistenceLayer();
 	}
 	
 // Control Functions
+
+    function signOut()
+    {
+        $this->pl->
+    }
 
 /**
  * Exposes today's entries.
@@ -54,7 +59,8 @@ class ReadModel extends Model {
  * Exposes all the entries written today.
 */
 	function exposeDay() {
-		$this->pl->setReading(DAY);
+        // DAY = 1
+		$this->pl->setReading(1);
 	}
 	
 /**
@@ -108,15 +114,6 @@ class ReadModel extends Model {
 */
 	function getErrorMsg() {
 		return $this->error_msg;
-	}
-	
-/**
- * Set the current error message.
- *
- * Sets the current error message depending on what the error is.
-*/
-	private function setErrorMsg($string) {
-		$this->error_msg = $string;
 	}
 }
 ?>

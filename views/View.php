@@ -36,7 +36,7 @@ abstract class View
      * 
      * @param Model $model The Model.
      * 
-     * @return none
+     * @return void
      */
     abstract public function display($model);
 }

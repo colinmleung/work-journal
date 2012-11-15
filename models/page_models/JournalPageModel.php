@@ -53,9 +53,7 @@ class JournalPageModel extends Model {
 	public function getErrorMsg() {
 		return $this->error_msg;
 	}
-	private function setErrorMsg($string) {
-		$this->error_msg = $string;
-	}
+
 	public function getData() {
 		$dbc = new DAO;
 		$query = "SELECT tasksp, tasksc, issues FROM workjournal_data WHERE user_id ='".$_SESSION['user_id']."' AND date = '".$_SESSION['curdate']."'";
