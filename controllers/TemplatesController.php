@@ -167,7 +167,7 @@ class TemplatesController extends ControllerFactory
      */
     private function _deleteTemplate()
     {
-        $this->model->deleteTemplate($_POST['template']['name']);
+        $this->model->deleteTemplate();
         $this->view->display($this->model);
     }
 
@@ -178,7 +178,7 @@ class TemplatesController extends ControllerFactory
      */
     private function _deleteTemplateHeader()
     {
-        $this->model->deleteTemplateHeader($_POST['delete_header']);
+        $this->model->deleteTemplateHeader($_POST['delete_header'], $_POST['template']);
         $this->view->display($this->model);
     }
     
@@ -189,7 +189,7 @@ class TemplatesController extends ControllerFactory
      */
     private function _addTemplateHeader()
     {
-        $this->model->addTemplateHeader();
+        $this->model->addTemplateHeader($_POST['template']);
         $this->view->display($this->model);
     }
 }

@@ -50,7 +50,7 @@ class ReadModel extends Model {
 
     function signOut()
     {
-        $this->pl->
+        $this->pl->signOut();
     }
 
 /**
@@ -69,7 +69,8 @@ class ReadModel extends Model {
  * Exposes all the entries written this week.
 */
 	function exposeWeek() {
-		$this->pl->setReading(WEEK);
+        // WEEK = 7
+		$this->pl->setReading(7);
 	}
 
 /**
@@ -78,7 +79,8 @@ class ReadModel extends Model {
  * Exposes all the entries written this month.
 */
 	function exposeMonth() {
-		$this->pl->setReading(MONTH);
+        // MONTH = 30
+		$this->pl->setReading(30);
 	}
 	
 /**
@@ -87,7 +89,8 @@ class ReadModel extends Model {
  * Exposes all the entries written this semester.
 */
 	function exposeSemester() {
-		$this->pl->setReading(SEMESTER);
+        // SEMESTER = 120
+		$this->pl->setReading(120);
 	}
 	
 // View Functions

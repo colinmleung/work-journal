@@ -80,11 +80,18 @@ class ReadView extends View
                         <div id="entry">
         <?php
         $reading = $model->getReading();
-        for ($i = 0; $i < count($reading); $i++) {
-            $entry_header = $reading[$i]['header'];
-            $entry_response = $reading[$i]['response'];
-            echo '<p>' . $entry_header . '</p>';
-            echo '<p>' . $entry_response . '</p>';
+        $count = count($reading);
+        for ($i = 0; $i < $count; $i++) {
+            $entry_headers = $reading[$i]['header'];
+            $entry_responses = $reading[$i]['response'];
+            $inner_count = count($entry_headers);
+            for ($j = 0; $j < $inner_count; $j++) {
+                $entry_header = $entry_headers[$j];
+                $entry_response = $entry_responses[$j];
+                echo '<p>' . $entry_header . '</p>';
+                echo '<p>' . $entry_response . '</p>';
+            }
+            
         }
         ?>
                         </div>

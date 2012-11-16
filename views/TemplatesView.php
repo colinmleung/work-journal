@@ -65,12 +65,11 @@ class TemplatesView extends View
                         <input type="submit" value="Sign Out" name="signout"/>
                     </form>
                 </nav>
-                <div id="journal">
-                    <div id="actionBar">
-                        <form name="actionBar" method="post" 
-                            action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                            <select>
-                                <option value="blank">Blank</option>
+                <div id="template">
+                    <form name="template" method="post" 
+                        action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                        <select>
+                            <option value="blank">Blank</option>
         <?php
         $template_names = $model->getTemplateNames();
         if (isset($template_names)) {
@@ -80,35 +79,30 @@ class TemplatesView extends View
             }
         }
         ?>
-                            </select>
-                            <input type="submit" value="Create New Template" 
-                                name="create"/>
-                            <input type="submit" value="Save" name="save"/>
-                            <input type="submit" value="Delete" name="delete"
+                        </select>
+                        <input type="submit" value="Create New Template" 
+                            name="create"/>
+                        <input type="submit" value="Save" name="save"/>
+                        <input type="submit" value="Delete" name="delete"
         <?php
-        $check = $model->checkTemplateName();
+        $check = $model->checkTemplateId();
         if (!($check)) {
             echo 'disabled="disabled"';
         }
         ?>
-                        />
-                        </form>
-                    </div>
-                    <div id="template">
-                        <form name="template" method="post" 
-                            action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                    />
         <?php
         $template = $model->getWorkingTemplate();
         $template_name = $template['name'];
         $template_headers = $template['header'];
         
-        echo '<textarea form="entry" rows="1" cols="200" 
-            name="template[\'name\']">' . $template_name . '</textarea>';
+        echo '<textarea rows="1" cols="200" 
+            name="template[name]">' . $template_name . '</textarea>';
         $template_count = count($template_headers);
         for ($i = 0; $i < $template_count; $i++) {
             $template_header = $template_headers[$i];
-            echo '<textarea form="entry" rows="1" cols="200"
-                name="template[\'header\'][' . $i . ']">' . $template_header . 
+            echo '<textarea rows="1" cols="200"
+                name="template[header][' . $i . ']">' . $template_header . 
                     '</textarea>';
             if ($template_count > 1) {
                 echo '<input type="submit" value="Delete" name="delete_header[' . 
@@ -118,8 +112,7 @@ class TemplatesView extends View
         }
         echo '<input type="submit" value="Add" name="add_header"/>';
         ?>				
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </body>
         </html>

@@ -95,7 +95,7 @@ class WriteModel extends Model {
  * Deletes the current entry from the database. A blank entry becomes the working entry.
 */
 	function deleteEntry() {
-		$this->pl->deleteEntry();
+		$this->pl->deleteEntry($this->error_msg);
 		$this->pl->setBlankWorkingEntry();
 	}
 	

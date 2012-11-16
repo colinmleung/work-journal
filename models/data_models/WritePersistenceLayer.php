@@ -11,16 +11,16 @@ class WritePersistenceLayer extends PersistenceLayer
         {
             $this->setBlankWorkingEntry();
         } else {
-            $search_query = "SELECT template FROM workjournal_template WHERE template_name = '$template_name'";
+            $search_query = "SELECT header FROM workjournal_template WHERE template_name = '$template_name'";
             $qro = new QRO($this->dao->query($search_query));
             $row = $qro->fetchArray();
             // insert it into the new entry
             $tco = new TCO;
-            $template_raw_array = $tco->String2Array($row['template']);
-            $template['name'] = array_shift($template_raw_array);
+            $template_raw_array = $tco->String2Array($row['header']);
+            $template['name'] = $template_name;
             $template['header'] = $template_raw_array;
             $new_entry = array("header" => $template['header'],
-                                        "response" => '');
+                                        "response" => array(0 => ""));
             $new_entry['response'] = array_fill(0, count($template['header']), "");
             $this->setWorkingEntry($new_entry);
         }
@@ -72,14 +72,15 @@ class WritePersistenceLayer extends PersistenceLayer
 	
 	function deleteEntry(&$error_msg) {
 		$user_id = $this->sh->getUserId();
-		$entry_id = $this->getWorkingEntryId();
+		$entry_id = $this->sh->getWorkingEntryId();
 		$delete_query = "DELETE FROM workjournal_entry WHERE user_id= '$user_id' AND entry_id = '$entry_id'";;
 		$qro = new QRO($this->dao->query($delete_query));
 		// ENTRY_DELETED = 1
-		if ($qro->numRows() != ENTRY_DELETED) {
+		if ($qro == null) {
 			$error_msg = 'Entry does not exist.';
 			return false;
 		}
+        $this->sh->deleteWorkingEntryId();
 		return true;
 	}
     
@@ -91,12 +92,16 @@ class WritePersistenceLayer extends PersistenceLayer
         $user_id = $this->sh->getUserId();
         $search_query = "SELECT template_name FROM workjournal_template WHERE user_id = '$user_id'";
         $qro = new QRO($this->dao->query($search_query));
-        if ($qro) {
+        if (!$qro) {
             return null;
         }
         else {
-            $row = $qro->fetchArray();
-            return $row['template_name'];
+            $count = $qro->numRows();
+            for ($i = 0; $i < $count; $i++) {
+                $row = $qro->fetchRow();
+                $template_names[$i] = $row[0];
+            }
+            return $template_names;
         }
     }
     

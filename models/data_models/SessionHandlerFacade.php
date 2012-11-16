@@ -153,6 +153,11 @@ class SessionHandlerFacade //extends SessionHandler
         //return parent::read('entry_id');
         return $_SESSION['entry_id'];
     }
+    
+    function deleteWorkingEntryId()
+    {
+        $_SESSION['entry_id'] = null;
+    }
 
      /**
      * Set the reading
@@ -184,6 +189,21 @@ class SessionHandlerFacade //extends SessionHandler
     function getWorkingTemplate()
     {
         return $_SESSION['template'];
+    }
+    
+    function setWorkingTemplateId($template_id)
+    {
+        $_SESSION['template_id'] = $template_id;
+    }
+    
+    function deleteWorkingTemplateId()
+    {
+        $_SESSION['template_id'] = null;
+    }
+    
+    function getWorkingTemplateId()
+    {
+        return $_SESSION['template_id'];
     }
 }
 ?>

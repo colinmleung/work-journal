@@ -76,25 +76,24 @@ class TemplatesModel extends Model {
     {
         $this->pl->setWorkingTemplate($template);
 		if ($this->iv->templatesFilter($template, $this->error_msg)) {
-			$this->pl->insertTemplate($template);
+			$this->pl->insertTemplate($template, $this->error_msg);
 		}
 	}
     
     function deleteTemplate()
     {
         $this->pl->deleteTemplate();
-		$this->pl->setBlankWorkingTemplate();
+        $this->createNewTemplate();
     }
     
-    function deleteTemplateHeader($delete_array)
+    function deleteTemplateHeader($delete_array, $template)
     {
-        $this->pl->deleteTemplateHeader($delete_array);
-        
+        $this->pl->deleteTemplateHeader($delete_array, $template);
     }
     
-    function addTemplateHeader()
+    function addTemplateHeader($template)
     {
-        $this->pl->addTemplateHeader();
+        $this->pl->addTemplateHeader($template);
     }
 
 // View Functions
@@ -109,11 +108,14 @@ class TemplatesModel extends Model {
         return $this->pl->getWorkingTemplate();
     }
     
-    function insertTemplate()
+    function checkTemplateId()
     {
-
+        return $this->pl->checkTemplateId();
     }
-    
+    function getErrorMessage()
+    {
+        return $this->error_msg;
+    }
     
 }
 ?>
