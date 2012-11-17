@@ -38,7 +38,7 @@ class WritePersistenceLayer extends PersistenceLayer
 		$response = $tco->Array2String($entry['response']);
 		$insert_query = "INSERT INTO workjournal_entry (user_id, date, header, response) VALUES ('$user_id', '$date', '$header', '$response')";
 		$this->dao->query($insert_query);
-		
+        
 		//set the entry id
 		$search_query = "SELECT entry_id FROM workjournal_entry WHERE user_id = '$user_id' AND date = '$date' AND header = '$header' AND response = '$response'";
 		$qro = new QRO($this->dao->query($search_query));
