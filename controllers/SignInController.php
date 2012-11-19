@@ -109,6 +109,7 @@ class SignInController extends ControllerFactory
      */
     private function _signInRequested()
     {
+        echo "sup2";
         if ($this->model->signIn($_POST['username'], $_POST['password'])) {
             $this->utility->redirect('write');
         } else {

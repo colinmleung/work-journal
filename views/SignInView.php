@@ -97,9 +97,12 @@ class SignInView extends View
                             <label for="password">Password</label>
                             <input type="password" id="password" name="password"/>
                         </div>
-                        <input type="submit" value="Sign In" name="signin"/>
+                        <input type="submit" value="Sign In" id="signin" name="signin"/>
                     </form>
                 </div>
+                <p id="message"></p>
+                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
+                <script src="../ajax/js/signin.js"></script>
             </body>
         </html>
         <?php

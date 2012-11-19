@@ -14,6 +14,8 @@
                 /CookieHandler.html
  */
 
+ require_once __DIR__.'/../Model.php';
+ 
 /**
  * CookieHandler
  *
