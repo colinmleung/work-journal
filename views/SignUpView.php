@@ -55,7 +55,7 @@ class SignUpView extends View
             </head>
             <body>
                 <p>Sign Up</p>
-                <form name="signUpForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" 
+                <form name="signUpForm" id="signUpForm" action="<?php echo $_SERVER['PHP_SELF'] ?>" 
                     method="post">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" 
@@ -78,6 +78,9 @@ class SignUpView extends View
             echo '<p class="error">' . $error_msg . '</p>';
         }
         ?>
+                <p id="message"></p>
+                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
+                <script src="../ajax/js/signup.js"></script>
             </body>
         </html>
         <?php
