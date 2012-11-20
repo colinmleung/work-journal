@@ -68,18 +68,18 @@ class TemplatesView extends View
                 <div id="template">
                     <form name="template" method="post" 
                         action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                        <select>
+                        <!--<select>
                             <option value="blank">Blank</option>
         <?php
-        $template_names = $model->getTemplateNames();
-        if (isset($template_names)) {
+        /*$template_names = $model->getTemplateNames();
+        if ($template_names != null) {
             foreach ($template_names as $template_name) {
                 echo '<option value="' . $template_name . '">' . 
                     $template_name . '</option>';
             }
-        }
+        }*/
         ?>
-                        </select>
+                        </select>-->
                         <input type="submit" value="Create New Template" 
                             name="create"/>
                         <input type="submit" value="Save" name="save"/>

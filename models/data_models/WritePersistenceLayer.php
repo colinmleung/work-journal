@@ -59,6 +59,7 @@ class WritePersistenceLayer extends PersistenceLayer
 	}
 
 	function clearWorkingEntry() {
+        $user_id = $this->sh->getUserId();
 		$working_entry = $this->sh->getWorkingEntry();
 		$header_count = count($working_entry['response']);
         $working_entry['response'] = array_fill(0, $header_count, "");
@@ -92,6 +93,7 @@ class WritePersistenceLayer extends PersistenceLayer
         $user_id = $this->sh->getUserId();
         $search_query = "SELECT template_name FROM workjournal_template WHERE user_id = '$user_id'";
         $qro = new QRO($this->dao->query($search_query));
+        var_dump($qro);
         if (!$qro) {
             return null;
         }

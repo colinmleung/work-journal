@@ -8,12 +8,17 @@ class TemplatesPersistenceLayer extends PersistenceLayer
         $user_id = $this->sh->getUserId();
         $search_query = "SELECT template_name FROM workjournal_template WHERE user_id = '$user_id'";
         $qro = new QRO($this->dao->query($search_query));
-        if ($qro) {
+        var_dump($qro);
+        if (!$qro) {
             return null;
         }
         else {
-            $row = $qro->fetchArray();
-            return $row['template_name'];
+            $count = $qro->numRows();
+            for ($i = 0; $i < $count; $i++) {
+                $row = $qro->fetchRow();
+                $template_names[$i] = $row[0];
+            }
+            return $template_names;
         }
     }
     
@@ -46,12 +51,18 @@ class TemplatesPersistenceLayer extends PersistenceLayer
 	//$template is an array of questions, with a name at index 0
 	function insertTemplate($template, &$error_msg) {
 		$user_id = $this->sh->getUserId();
+        echo "user id : ".$user_id;
 		$tco = new TCO;
 		$search_query = "SELECT * FROM workjournal_template WHERE user_id = '$user_id' AND template_name = '$template[name]'";
 		$qro = new QRO($this->dao->query($search_query));
         // TEMPLATE_EXISTS = 1
 		if ($qro->numRows() != 1) {
+            echo "inserting";
+            echo $qro->numRows();
 			$template_header = $tco->Array2String($template['header']);
+            echo $user_id;
+            echo $template['name'];
+            echo $template_header;
 			$insert_query = "INSERT INTO workjournal_template (user_id, template_name, header) VALUES ('$user_id', '$template[name]', '$template_header')";
 			$this->dao->query($insert_query);
             // get the template id

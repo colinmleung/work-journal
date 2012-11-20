@@ -17,7 +17,7 @@ class SignInModel extends Model {
 	function signIn($username, $password) {	
 		if ($this->iv->signInFilter($username, $password, $this->error_msg)) {
 			if ($this->pl->retrieveUser($username, $password, $this->error_msg)) {
-            return true;
+                return true;
             }
 		}
         return false;
