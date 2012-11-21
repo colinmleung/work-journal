@@ -15,13 +15,13 @@
  */
  
 /** Include the base class of the ReadController class. */
-require_once __DIR__.'\ControllerFactory.php';
+require_once __DIR__.'/ControllerFactory.php';
 
 /** Include the view of the ReadController class. */
-require_once __DIR__.'\..\views\ReadView.php';
+require_once __DIR__.'/../views/ReadView.php';
 
 /** Include the model of the ReadController class. */
-require_once __DIR__.'\..\models\page_models\ReadModel.php';
+require_once __DIR__.'/../models/page_models/ReadModel.php';
 
 /**
  * ReadController

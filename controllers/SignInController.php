@@ -23,6 +23,8 @@ require_once __DIR__.'/../views/SignInView.php';
 /** Include the model of the SignInController class. */
 require_once __DIR__.'/../models/page_models/SignInModel.php';
 
+require_once __DIR__.'/../utilities/Utility.php';
+
 /**
  * SignInController
  *

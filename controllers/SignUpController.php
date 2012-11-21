@@ -15,13 +15,13 @@
  */
  
 /** Include the base class of the SignUpController class. */
-require_once __DIR__.'\ControllerFactory.php';
+require_once __DIR__.'/ControllerFactory.php';
 
 /** Include the view of the SignUpController class. */
-require_once __DIR__.'\..\views\SignUpView.php';
+require_once __DIR__.'/../views/SignUpView.php';
 
 /** Include the model of the SignUpController class. */
-require_once __DIR__.'\..\models\page_models\SignUpModel.php';
+require_once __DIR__.'/../models/page_models/SignUpModel.php';
 
 /**
  * SignUpController

@@ -8,7 +8,7 @@ class TemplatesPersistenceLayer extends PersistenceLayer
         $user_id = $this->sh->getUserId();
         $search_query = "SELECT template_name FROM workjournal_template WHERE user_id = '$user_id'";
         $qro = new QRO($this->dao->query($search_query));
-        var_dump($qro);
+//        var_dump($qro);
         if (!$qro) {
             return null;
         }
@@ -51,25 +51,19 @@ class TemplatesPersistenceLayer extends PersistenceLayer
 	//$template is an array of questions, with a name at index 0
 	function insertTemplate($template, &$error_msg) {
 		$user_id = $this->sh->getUserId();
-        echo "user id : ".$user_id;
 		$tco = new TCO;
 		$search_query = "SELECT * FROM workjournal_template WHERE user_id = '$user_id' AND template_name = '$template[name]'";
 		$qro = new QRO($this->dao->query($search_query));
         // TEMPLATE_EXISTS = 1
 		if ($qro->numRows() != 1) {
-            echo "inserting";
-            echo $qro->numRows();
 			$template_header = $tco->Array2String($template['header']);
-            echo $user_id;
-            echo $template['name'];
-            echo $template_header;
 			$insert_query = "INSERT INTO workjournal_template (user_id, template_name, header) VALUES ('$user_id', '$template[name]', '$template_header')";
 			$this->dao->query($insert_query);
             // get the template id
             $search_query = "SELECT template_id FROM workjournal_template WHERE user_id = '$user_id' AND template_name = '$template[name]'";
             $qro = new QRO($this->dao->query($search_query));
             $row = $qro->fetchArray();
-            $this->setTemplateId($row['template_id']);
+            $this->sh->setWorkingTemplateId($row['template_id']);
 			return true;
 		} else {
 			$error_msg = 'Template name taken.';
@@ -92,10 +86,10 @@ class TemplatesPersistenceLayer extends PersistenceLayer
 	}
     
     function signOut() {
-        $this->sh->deleteUserId($row['user_id']);
-		$this->sh->deleteUserName($row['username']);
-		$this->ch->deleteUserId($row['user_id']);
-        $this->ch->deleteUserName($row['username']);
+        $this->sh->deleteUserId();
+		$this->sh->deleteUserName();
+		/*$this->ch->deleteUserId($row['user_id']);
+        $this->ch->deleteUserName($row['username']);*/
     }
     
     function addTemplateHeader($template) {
@@ -110,12 +104,12 @@ class TemplatesPersistenceLayer extends PersistenceLayer
             $template['header'][$i] = $template['header'][$i+1];
         }
         array_pop($template['header']);
-        $this->setWorkingTemplate($template);
+        $this->sh->setWorkingTemplate($template);
     }
     
-    function setTemplateId($template_id) {
+    /*function setTemplateId($template_id) {
         $this->sh->setWorkingTemplateId($template_id);
-    }
+    }*/
     
     function checkTemplateId() {
         return isset($_SESSION['template_id']);

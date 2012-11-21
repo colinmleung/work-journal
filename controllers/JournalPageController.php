@@ -15,13 +15,13 @@
  */
  
 /** Include the base class of the JournalPageController class. */
-require_once __DIR__.'\ControllerFactory.php';
+require_once __DIR__.'/ControllerFactory.php';
 
 /** Include the view of the JournalPageController class. */
-require_once __DIR__.'\..\views\JournalPageView.php';
+require_once __DIR__.'/../views/JournalPageView.php';
 
 /** Include the model of the JournalPageController class. */
-require_once __DIR__.'\..\models\page_models\JournalPageModel.php';
+require_once __DIR__.'/../models/page_models/JournalPageModel.php';
 
 /**
  * JournalPageController

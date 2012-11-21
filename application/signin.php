@@ -16,8 +16,8 @@
  */
 
 /** Necessary for adding more detailed error reports. */
-//require_once __DIR__.'\..\utilities\error_reporting.php';
-require_once __DIR__.'/../utilities/error_reporting.php';
+//require_once __DIR__.'/../utilities/error_reporting.php';
+//require_once __DIR__.'/../utilities/error_reporting.php';
 
 /** Include the page controller */
 require_once __DIR__.'/../controllers/SignInController.php';
@@ -26,8 +26,10 @@ require_once __DIR__.'/../controllers/SignInController.php';
 require_once __DIR__.'/../utilities/Utility.php';
 
 /** @var Utility */
-$util = new Utility();
-$util->startSession();
+//$util = new Utility();
+//$util->startSession();
+
+session_start();
 
 /** @var SignInController */
 $sic = new SignInController();

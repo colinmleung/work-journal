@@ -38,10 +38,10 @@ class ReadPersistenceLayer extends PersistenceLayer
 	}
 
     function signOut() {
-        $this->sh->deleteUserId($row['user_id']);
-		$this->sh->deleteUserName($row['username']);
-		$this->ch->deleteUserId($row['user_id']);
-        $this->ch->deleteUserName($row['username']);
+        $this->sh->deleteUserId();
+		$this->sh->deleteUserName();
+		/*$this->ch->deleteUserId($row['user_id']);
+        $this->ch->deleteUserName($row['username']);*/
     }
 }
 ?>

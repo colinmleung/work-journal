@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'\InputValidator.php';
+require_once __DIR__.'/InputValidator.php';
 class SignUpInputValidator extends InputValidator
 {
 	// sanitize all strings, check if passwords are equal

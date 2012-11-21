@@ -15,13 +15,13 @@
  */
  
 /** Include the base class of the TemplatesController class. */
-require_once __DIR__.'\ControllerFactory.php';
+require_once __DIR__.'/ControllerFactory.php';
 
 /** Include the view of the TemplatesController class. */
-require_once __DIR__.'\..\views\TemplatesView.php';
+require_once __DIR__.'/../views/TemplatesView.php';
 
 /** Include the model of the TemplatesController class. */
-require_once __DIR__.'\..\models\page_models\TemplatesModel.php';
+require_once __DIR__.'/../models/page_models/TemplatesModel.php';
 
 /**
  * TemplatesController

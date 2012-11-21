@@ -16,13 +16,13 @@
  */
  
 /** Necessary for adding more detailed error reports. */
-require_once __DIR__.'\..\utilities\error_reporting.php';
+require_once __DIR__.'/../utilities/error_reporting.php';
 
 /** Include the page controller */
-require_once __DIR__.'\..\controllers\ReadController.php';
+require_once __DIR__.'/../controllers/ReadController.php';
 
 /** Include a catch-all utility class */
-require_once __DIR__.'\..\utilities\Utility.php';
+require_once __DIR__.'/../utilities/Utility.php';
 
 /** @var Utility */
 $util = new Utility();

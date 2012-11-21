@@ -15,13 +15,13 @@
  */
  
 /** Include the base class of the WriteController class. */
-require_once __DIR__.'\ControllerFactory.php';
+require_once __DIR__.'/ControllerFactory.php';
 
 /** Include the view of the WriteController class. */
-require_once __DIR__.'\..\views\WriteView.php';
+require_once __DIR__.'/../views/WriteView.php';
 
 /** Include the model of the WriteController class. */
-require_once __DIR__.'\..\models\page_models\WriteModel.php';
+require_once __DIR__.'/../models/page_models/WriteModel.php';
 
 /**
  * WriteController

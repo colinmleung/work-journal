@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__.'\..\Model.php');
-require_once(__DIR__.'\..\data_models\SignUpPersistenceLayer.php');
-require_once(__DIR__.'\helper_models\SignUpInputValidator.php');
+require_once(__DIR__.'/../Model.php');
+require_once(__DIR__.'/../data_models/SignUpPersistenceLayer.php');
+require_once(__DIR__.'/helper_models/SignUpInputValidator.php');
 
 class SignUpModel extends Model {
 	private $error_msg;
