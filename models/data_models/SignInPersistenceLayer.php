@@ -17,7 +17,8 @@ class SignInPersistenceLayer extends PersistenceLayer
 			$row = $qro->fetchArray();
 			$this->sh->setUserId($row['user_id']);
 			//$this->sh->setUserName($row['username']);
-            $this->sh->setDate(date('Y-m-d'));
+            $this->sh->setWritingDate(date('Y-m-d'));
+            $this->sh->setReadingDate(date('Y-m-d'));
             /*$this->ch->setLifetime(2592000);
 			$this->ch->setUserId($row['user_id']);
 			$this->ch->setUserName($row['username']);*/

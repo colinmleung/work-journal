@@ -124,6 +124,7 @@ class WriteModel extends Model {
 */
 	function incrementDate() {
 		$this->pl->incrementDate();
+        $this->pl->clearWorkspace();
 		$this->pl->setBlankWorkingEntry();
 	}
 	
@@ -134,8 +135,13 @@ class WriteModel extends Model {
 */
 	function decrementDate() {
 		$this->pl->decrementDate();
+        $this->pl->clearWorkspace();
 		$this->pl->setBlankWorkingEntry();
 	}
+    
+    function clearWorkspace() {
+        $this->pl->clearWorkspace();
+    }
 	
 // View Functions
 

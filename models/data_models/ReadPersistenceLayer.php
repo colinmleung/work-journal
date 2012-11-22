@@ -10,7 +10,7 @@ class ReadPersistenceLayer extends PersistenceLayer
 	
 	function setReading($num_days) {
 		$user_id = $this->sh->getUserId();
-		$date = $this->sh->getDate();
+		$date = $this->sh->getReadingDate();
 		for ($i = 0; $i < $num_days; $i++) {
 			$this->retrieveEntry($reading[$i], $date);
             $date = date("Y-m-d", strtotime($date . "- 1 day"));
@@ -28,20 +28,22 @@ class ReadPersistenceLayer extends PersistenceLayer
             $numRows = $qro->numRows();
             $entries['header'] = array();
             $entries['response'] = array();
+            $entries['date'] = $date;
             for ($i = 0; $i < $numRows; $i++) {
                 $row = $qro->fetchRow();
-                array_push($entries['header'], $row[0]);
-                array_push($entries['response'], $row[1]);
+                $entries['header'] = array_merge((array)$entries['header'], (array)$tco->String2Array($row[0]));
+                $entries['response'] = array_merge((array)$entries['response'], (array)$tco->String2Array($row[1]));
             }
             return true;
         }
 	}
 
     function signOut() {
-        $this->sh->deleteUserId();
-		$this->sh->deleteUserName();
-		/*$this->ch->deleteUserId($row['user_id']);
-        $this->ch->deleteUserName($row['username']);*/
+        $this->sh->clearAll();
+    }
+    
+    function clearWorkspace() {
+        $this->sh->clearReadWorkspace();
     }
 }
 ?>

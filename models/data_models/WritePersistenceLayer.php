@@ -31,7 +31,7 @@ class WritePersistenceLayer extends PersistenceLayer
     }
 
     function insertEntry($entry) {
-		$date = date('Y-m-d', strtotime(str_replace('-','/',$this->sh->getDate()))); // mysql acceptable date
+		$date = date('Y-m-d', strtotime(str_replace('-','/',$this->sh->getWritingDate()))); // mysql acceptable date
 		$user_id = $this->sh->getUserId();
 		$tco = new TCO;
 		$header = $tco->Array2String($entry['header']);
@@ -86,15 +86,15 @@ class WritePersistenceLayer extends PersistenceLayer
 	}
     
     function getDate() {
-		return $this->sh->getDate();
+		return $this->sh->getWritingDate();
 	}
     
     function getTemplateNames() {
         $user_id = $this->sh->getUserId();
         $search_query = "SELECT template_name FROM workjournal_template WHERE user_id = '$user_id'";
         $qro = new QRO($this->dao->query($search_query));
-        var_dump($qro);
-        if (!$qro) {
+        $count = $qro->numRows();
+        if ($qro->numRows() == 0) {
             return null;
         }
         else {
@@ -108,18 +108,19 @@ class WritePersistenceLayer extends PersistenceLayer
     }
     
     function signOut() {
-        $this->sh->deleteUserId();
-		$this->sh->deleteUserName();
-		/*$this->ch->deleteUserId($row['user_id']);
-        $this->ch->deleteUserName($row['username']);*/
+        $this->sh->clearAll();
     }
     
     function incrementDate() {
-        $this->sh->setDate(date("Y-m-d", strtotime($this->getDate() . "+ 1 day")));
+        $this->sh->setWritingDate(date("Y-m-d", strtotime($this->sh->getWritingDate() . "+ 1 day")));
     }
     
     function decrementDate() {
-        $this->sh->setDate(date("Y-m-d", strtotime($this->getDate() . "- 1 day")));
+        $this->sh->setWritingDate(date("Y-m-d", strtotime($this->sh->getWritingDate() . "- 1 day")));
+    }
+    
+    function clearWorkspace() {
+       $this->sh->clearWriteWorkspace();
     }
 }
 ?>

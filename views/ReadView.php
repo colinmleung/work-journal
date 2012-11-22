@@ -82,6 +82,8 @@ class ReadView extends View
         $reading = $model->getReading();
         $count = count($reading);
         for ($i = 0; $i < $count; $i++) {
+            $date = $reading[$i]['date'];
+            echo '<p>' . $date . '<p>';
             $entry_headers = $reading[$i]['header'];
             $entry_responses = $reading[$i]['response'];
             $inner_count = count($entry_headers);

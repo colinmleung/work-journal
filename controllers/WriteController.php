@@ -87,7 +87,9 @@ class WriteController extends ControllerFactory
     */
     function performAction()
     {
-        if (isset($_POST['signout'])) {
+        if (!isset($_SESSION['user_id'])) {
+            $this->_userNotLoggedIn();
+        } else if (isset($_POST['signout'])) {
             $this->_signOut();
         } else if (isset($_POST['read'])) {
             $this->_read();
@@ -110,6 +112,10 @@ class WriteController extends ControllerFactory
         }
     }
 
+    private function _userNotLoggedIn() {
+        $this->utility->redirect('signin');
+    }
+    
     /**
      * Sign out the user.
      *
@@ -128,6 +134,7 @@ class WriteController extends ControllerFactory
      */
     private function _read()
     {
+        $this->model->clearWorkspace();
         $this->utility->redirect('read');
     }
 
@@ -138,6 +145,7 @@ class WriteController extends ControllerFactory
      */
     private function _templates()
     {
+        $this->model->clearWorkspace();
         $this->utility->redirect('templates');
     }
 

@@ -113,6 +113,12 @@ class TemplatesView extends View
         echo '<input type="submit" value="Add" name="add_header"/>';
         ?>				
                     </form>
+        <?php
+        $error_msg = $model->getErrorMsg();
+        if (isset($error_msg)) {
+            echo '<p class="error">' . $error_msg . '</p>';
+        }
+        ?>
                 </div>
             </body>
         </html>

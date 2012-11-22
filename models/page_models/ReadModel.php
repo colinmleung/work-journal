@@ -52,6 +52,10 @@ class ReadModel extends Model {
     {
         $this->pl->signOut();
     }
+    
+    function clearWorkspace() {
+        $this->pl->clearWorkspace();
+    }
 
 /**
  * Exposes today's entries.

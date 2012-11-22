@@ -86,10 +86,7 @@ class TemplatesPersistenceLayer extends PersistenceLayer
 	}
     
     function signOut() {
-        $this->sh->deleteUserId();
-		$this->sh->deleteUserName();
-		/*$this->ch->deleteUserId($row['user_id']);
-        $this->ch->deleteUserName($row['username']);*/
+        $this->sh->clearAll();
     }
     
     function addTemplateHeader($template) {
@@ -113,6 +110,10 @@ class TemplatesPersistenceLayer extends PersistenceLayer
     
     function checkTemplateId() {
         return isset($_SESSION['template_id']);
+    }
+    
+    function clearWorkspace() {
+        $this->sh->clearTemplatesWorkspace();
     }
 }
 ?>

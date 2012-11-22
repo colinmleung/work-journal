@@ -85,7 +85,9 @@ class TemplatesController extends ControllerFactory
     */
     function performAction()
     {
-        if (isset($_POST['signout'])) {
+        if (!isset($_SESSION['user_id'])) {
+            $this->_userNotLoggedIn();
+        } else if (isset($_POST['signout'])) {
             $this->_signOut();
         } else if (isset($_POST['read'])) {
             $this->_read();
@@ -106,6 +108,10 @@ class TemplatesController extends ControllerFactory
             $this->_createNewTemplate();
         }
     }
+    
+    private function _userNotLoggedIn() {
+        $this->utility->redirect('signin');
+    }
 
     /**
      * Sign out the user.
@@ -125,6 +131,7 @@ class TemplatesController extends ControllerFactory
      */
     private function _write()
     {
+        $this->model->clearWorkspace();
         $this->utility->redirect('write');
     }
 
@@ -135,6 +142,7 @@ class TemplatesController extends ControllerFactory
      */
     private function _read()
     {
+        $this->model->clearWorkspace();
         $this->utility->redirect('read');
     }
 

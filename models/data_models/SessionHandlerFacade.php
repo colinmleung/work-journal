@@ -105,6 +105,36 @@ class SessionHandlerFacade //extends SessionHandler
         return $_SESSION['date'];
     }
     
+    function setReadingDate($date)
+    {
+        $_SESSION['reading_date'] = $date;
+    }
+    
+    function getReadingDate()
+    {
+        return $_SESSION['reading_date'];
+    }
+    
+    function deleteReadingDate()
+    {
+        $_SESSION['reading_date'] = null;
+    }
+    
+    function setWritingDate($date)
+    {
+        $_SESSION['writing_date'] = $date;
+    }
+    
+    function getWritingDate()
+    {
+        return $_SESSION['writing_date'];
+    }
+    
+    function deleteWritingDate()
+    {
+        $_SESSION['writing_date'] = null;
+    }
+    
     function deleteDate()
     {
         $_SESSION['date'] = null;
@@ -130,6 +160,11 @@ class SessionHandlerFacade //extends SessionHandler
     {
         //return parent::read('entry');
         return $_SESSION['entry'];
+    }
+    
+    function deleteWorkingEntry()
+    {
+        $_SESSION['entry'] = null;
     }
 
     /**
@@ -181,6 +216,11 @@ class SessionHandlerFacade //extends SessionHandler
        return $_SESSION['reading'];
     }
     
+    function deleteReading()
+    {
+        $_SESSION['reading'] = null;
+    }
+    
     function setWorkingTemplate($template)
     {
         $_SESSION['template'] = $template;
@@ -189,6 +229,11 @@ class SessionHandlerFacade //extends SessionHandler
     function getWorkingTemplate()
     {
         return $_SESSION['template'];
+    }
+    
+    function deleteWorkingTemplate()
+    {
+        $_SESSION['template'] = null;
     }
     
     function setWorkingTemplateId($template_id)
@@ -204,6 +249,37 @@ class SessionHandlerFacade //extends SessionHandler
     function getWorkingTemplateId()
     {
         return $_SESSION['template_id'];
+    }
+    
+    function clearAll()
+    {
+        $this->deleteUserId();
+        $this->deleteUserName();
+        $this->deleteDate();
+        $this->deleteWorkingEntry();
+        $this->deleteWorkingEntryId();
+        $this->deleteReading();
+        $this->deleteWorkingTemplate();
+        $this->deleteWorkingTemplateId();
+        $this->deleteReadingDate();
+        $this->deleteWritingDate();
+    }
+    
+    function clearTemplatesWorkspace()
+    {
+        $this->deleteWorkingTemplate();
+        $this->deleteWorkingTemplateId();
+    }
+    
+    function clearWriteWorkspace()
+    {
+        $this->deleteWorkingEntry();
+        $this->deleteWorkingEntryId();
+    }
+    
+    function clearReadWorkspace()
+    {
+        $this->deleteReading();;
     }
 }
 ?>

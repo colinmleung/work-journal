@@ -85,7 +85,9 @@ class ReadController extends ControllerFactory
      */
     function performAction() 
     {
-        if (isset($_POST['signout'])) {
+        if (!isset($_SESSION['user_id'])) {
+            $this->_userNotLoggedIn();
+        } else if (isset($_POST['signout'])) {
             $this->_signOut();
         } else if (isset($_POST['write'])) {
             $this->_write();
@@ -102,6 +104,10 @@ class ReadController extends ControllerFactory
         } else {
             $this->_readDay();
         }
+    }
+    
+    private function _userNotLoggedIn() {
+        $this->utility->redirect('signin');
     }
 
     /**
@@ -122,6 +128,7 @@ class ReadController extends ControllerFactory
      */
     private function _write() 
     {
+        $this->model->clearWorkspace();
         $this->utility->redirect('write');
     }
 
@@ -132,6 +139,7 @@ class ReadController extends ControllerFactory
      */
     private function _templates() 
     {
+        $this->model->clearWorkspace();
         $this->utility->redirect('templates');
     }
 

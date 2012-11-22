@@ -95,6 +95,11 @@ class TemplatesModel extends Model {
     {
         $this->pl->addTemplateHeader($template);
     }
+    
+    function clearWorkspace()
+    {
+        $this->pl->clearWorkspace();
+    }
 
 // View Functions
 
@@ -112,7 +117,7 @@ class TemplatesModel extends Model {
     {
         return $this->pl->checkTemplateId();
     }
-    function getErrorMessage()
+    function getErrorMsg()
     {
         return $this->error_msg;
     }

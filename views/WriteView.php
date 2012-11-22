@@ -80,7 +80,7 @@ class WriteView extends View
                             <option value="blank">Blank</option>
         <?php
         $template_names = $model->getTemplateNames();
-        var_dump($template_names);
+        //var_dump($template_names);
         if ($template_names != null) {
             foreach ($template_names as $template_name) {
                 echo '<option value="' . $template_name . '">' . 
