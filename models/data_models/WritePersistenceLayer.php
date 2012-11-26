@@ -23,6 +23,7 @@ class WritePersistenceLayer extends PersistenceLayer
                                         "response" => array(0 => ""));
             $new_entry['response'] = array_fill(0, count($template['header']), "");
             $this->setWorkingEntry($new_entry);
+            return $new_entry;
         }
     }
 

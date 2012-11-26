@@ -101,8 +101,8 @@ class SignInView extends View
                     </form>
                 </div>
                 <p id="message"></p>
-                <!--<script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
-                <script src="../ajax/js/signin.js"></script> -->
+                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
+                <script src="../ajax/js/signin.js"></script>
             </body>
         </html>
         <?php

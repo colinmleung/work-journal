@@ -59,7 +59,7 @@ class WriteView extends View
             </head>
             <body>
                 <header>
-                    <h1>
+                    <h1 id="date">
         <?php
         echo $date
         ?>
@@ -76,7 +76,7 @@ class WriteView extends View
                 <div id="entry">
                     <form name="entry" id="entry" method="post" 
                         action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                        <select name="template_name">
+                        <select name="template_name" id="template_name">
                             <option value="blank">Blank</option>
         <?php
         $template_names = $model->getTemplateNames();
@@ -89,9 +89,9 @@ class WriteView extends View
         }
         ?>
                         </select>
-                        <input type="submit" value="Create New Entry" name="create"/>
-                        <input type="submit" value="Save" name="save"/>
-                        <input type="submit" value="Delete" name="delete"
+                        <input type="submit" value="Create New Entry" id="create" name="create"/>
+                        <input type="submit" value="Save" id="save" name="save"/>
+                        <input type="submit" value="Delete" id="delete" name="delete"
         <?php
         $check = $model->checkEntryId();
         if (!($check)) {
@@ -99,21 +99,27 @@ class WriteView extends View
         }
         ?>
                         />
-                        <input type="submit" value="Clear" name="clear"/>
-                        <input type="submit" value="Forward" name="forward"/>
-                        <input type="submit" value="Backward" name="backward"/>
+                        <input type="submit" value="Clear" id="clear" name="clear"/>
+                        <input type="submit" value="Forward" id="forward" name="forward"/>
+                        <input type="submit" value="Backward" id="backward" name="backward"/>
         <?php
         $entry = $model->getEntry();
         $entry_count = (count($entry, COUNT_RECURSIVE)-2)/2;
         for ($i = 0; $i < $entry_count; $i++) {
             echo '<textarea rows="1" cols="200" 
-                name="entry[header]['.$i.']">'.$entry['header'][$i].'</textarea>';
+                name="entry[header]['.$i.']"
+                id="entry[header]['.$i.']">'.$entry['header'][$i].'</textarea>';
             echo '<textarea rows="10" cols="200" 
-                name="entry[response]['.$i.']">'.$entry['response'][$i].'</textarea>';
+                name="entry[response]['.$i.']"
+                id="entry[response]['.$i.']">'.$entry['response'][$i].'</textarea>';
         }
         ?>				
                     </form>
                 </div>
+                <p id="message"></p>
+                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
+                <script src="../ajax/js/date.js"></script>
+                <script src="../ajax/js/write.js"></script>
             </body>
         </html>
         <?php

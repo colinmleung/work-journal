@@ -73,7 +73,7 @@ class WriteModel extends Model {
  * @param string $template_name The name of the template.
  */
 	function createNewEntry($template_name) {
-		$this->pl->createNewEntry($template_name);
+		return $this->pl->createNewEntry($template_name);
 	}
 	
 /** 
@@ -86,7 +86,9 @@ class WriteModel extends Model {
 	function saveEntry($entry) {
 		if ($this->iv->writeFilter($entry, $this->error_msg)) {
 			$this->pl->insertEntry($entry);
+            return true;
 		}
+        return false;
 	}
 	
 /**
@@ -97,6 +99,7 @@ class WriteModel extends Model {
 	function deleteEntry() {
 		$this->pl->deleteEntry($this->error_msg);
 		$this->pl->setBlankWorkingEntry();
+        return true;
 	}
 	
 /**

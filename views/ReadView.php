@@ -68,16 +68,16 @@ class ReadView extends View
                     </nav>
                     <div id="actionBar">
                         <form method="post" 
-                            action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                            <input type="submit" value="Daily View" name="day"/>
-                            <input type="submit" value="Weekly View" name="week"/>
-                            <input type="submit" value="Monthly View" name="month"/>
-                            <input type="submit" value="Semesterly View" 
+                            action="<?php echo $_SERVER['PHP_SELF'] ?>" id="read_form">
+                            <input type="submit" value="Daily View" id="day" name="day"/>
+                            <input type="submit" value="Weekly View" id="week" name="week"/>
+                            <input type="submit" value="Monthly View" id="month" name="month"/>
+                            <input type="submit" value="Semesterly View" id="semester"
                                 name="semester"/>
                         </form>
                     </div>
                     <div id="journal">
-                        <div id="entry">
+                        <div id="reading">
         <?php
         $reading = $model->getReading();
         $count = count($reading);
@@ -98,6 +98,8 @@ class ReadView extends View
         ?>
                         </div>
                     </div>
+                    <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
+                    <script src="../ajax/js/read.js"></script>
                 </body>
             </html>
         <?php

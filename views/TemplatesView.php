@@ -66,7 +66,7 @@ class TemplatesView extends View
                     </form>
                 </nav>
                 <div id="template">
-                    <form name="template" method="post" 
+                    <form name="template" method="post" id="templateForm"
                         action="<?php echo $_SERVER['PHP_SELF'] ?>">
                         <!--<select>
                             <option value="blank">Blank</option>
@@ -80,17 +80,17 @@ class TemplatesView extends View
         }*/
         ?>
                         </select>-->
-                        <input type="submit" value="Create New Template" 
+                        <input type="submit" value="Create New Template" id="create"
                             name="create"/>
-                        <input type="submit" value="Save" name="save"/>
-                        <input type="submit" value="Delete" name="delete"
+                        <input type="submit" value="Save" id="save" name="save"/>
+                        <input type="submit" value="Delete" id="delete" name="delete"
         <?php
         $check = $model->checkTemplateId();
         if (!($check)) {
             echo 'disabled="disabled"';
         }
         ?>
-                    />
+                        />
         <?php
         $template = $model->getWorkingTemplate();
         $template_name = $template['name'];
@@ -102,15 +102,17 @@ class TemplatesView extends View
         for ($i = 0; $i < $template_count; $i++) {
             $template_header = $template_headers[$i];
             echo '<textarea rows="1" cols="200"
+                id="template[header][' . $i . ']"
                 name="template[header][' . $i . ']">' . $template_header . 
                     '</textarea>';
             if ($template_count > 1) {
-                echo '<input type="submit" value="Delete" name="delete_header[' . 
-                    $i . ']"/>' . PHP_EOL;
+                echo '<input type="submit" value="Delete" 
+                id="delete_header[' . $i . ']"
+                name="delete_header[' . $i . ']"/>' . PHP_EOL;
             }
             echo '';
         }
-        echo '<input type="submit" value="Add" name="add_header"/>';
+        echo '<input type="submit" value="Add" name="add_header" id="add_header"/>';
         ?>				
                     </form>
         <?php
@@ -120,6 +122,8 @@ class TemplatesView extends View
         }
         ?>
                 </div>
+                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
+                <script src="../ajax/js/templates.js"></script>
             </body>
         </html>
         <?php
