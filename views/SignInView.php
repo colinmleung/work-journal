@@ -48,10 +48,18 @@ class SignInView extends View
             <head>
                 <meta charset="utf-8"/>
                 <title>Work Journal - Record and reflect on your work</title>
+                <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
                 <meta name="description" content="A place to think about your work. 
                 Work Journal is a questionnaire creator that improves your
                 productivity by getting you to think about the questions that 
                 really matter."/>
+                <style type="text/css">
+                    .row {
+                        padding-top: 100px;
+                    }
+                </style>
             </head>
             <body>
                 <header>

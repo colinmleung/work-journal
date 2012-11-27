@@ -125,6 +125,8 @@ class WriteController extends ControllerFactory
     {
         $this->model->signOut();
         $this->utility->redirect('signin');
+        /*if (isset($_SESSION['user_id'])) {
+            echo "its set";} else { echo "not set";}*/
     }
 
     /**

@@ -97,6 +97,7 @@ class TemplatesView extends View
         $template_headers = $template['header'];
         
         echo '<textarea rows="1" cols="200" 
+            id="template[name]"
             name="template[name]">' . $template_name . '</textarea>';
         $template_count = count($template_headers);
         for ($i = 0; $i < $template_count; $i++) {
