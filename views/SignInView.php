@@ -62,55 +62,60 @@ class SignInView extends View
                 </style>
             </head>
             <body>
-                <header>
-                    <h1>Work Journal</h1>
-                    <p>A place to think about your work.</p>
-                </header>
-                <div id="features">
-                    <div id="record">
-                        <h2>Record</h2>
-                        <p>Preserve your thoughts and feelings right when they 
-                            happen.</p>
+                <div class="row">
+                    <div class="span7 offset1">
+                        <header>
+                            <h1>Work Journal</h1>
+                            <p class="lead">A place to think about your work.</p>
+                        </header>
+                        <div id="features">
+                            <dl>
+                                <dt>Record</dt>
+                                <dd>Preserve your thoughts and feelings right when they 
+                                    happen.</dd>
+                                <dt>Reflect</dt>
+                                <dd>Get a bird's-eye view of your work and identify key 
+                                    issues.</dd>
+                                <dt>Customize</dt>
+                                <dd>Create personal templates to ask yourself those important 
+                                    questions day after day.</dd>
+                            </dl>
+                        </div>
+                        <div id="signUp">
+                            <form method="link" action="signup.php">
+                                <input type="submit" value="Sign Up" name="signup" class="btn">
+                            </form>
+                        </div>
                     </div>
-                    <div id="reflect">
-                        <h2>Reflect</h2>
-                        <p>Get a bird's-eye view of your work and identify key 
-                            issues.</p>
-                    </div>
-                    <div id="templates">
-                        <h2>Custom Templates</h2>
-                        <p>Create questionnaires to ask yourself those important 
-                            questions day after day.</p>
-                    </div>
-                </div>
-                <div id="signUp">
-                    <form method="link" action="signup.php">
-                        <input type="submit" value="Sign Up" name="signup">
-                    </form>
-                </div>
-                <div id="logIn">
+                    <div class="span3 offset1">
+                        <div id="logIn">
+                            <form id ="signinForm" name="signinForm"
+                                action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">	
+                            <h2 class="form-signin-heading">Sign In</h2>                                
+                                <div>
+                                    <label for="username">Username</label>
+                                    <input type="text" id="username" name="username" class="input-block-level" required="required"/>
+                                </div>
+                                <div>
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" class="input-block-level" required="required"/>
+                                </div>
+                                <input type="submit" value="Sign In" id="signin" name="signin" class="btn btn-large btn-primary"/>
+                            </form>
         <?php
         $error_msg = $model->getErrorMsg();
         if (isset($error_msg)) {
             echo '<p class="error">' . $error_msg . '</p>';
         }
         ?>
-                    <form id ="signinForm" name="signinForm"
-                        action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
-                        <div>
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username"/>
                         </div>
-                        <div>
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password"/>
-                        </div>
-                        <input type="submit" value="Sign In" id="signin" name="signin"/>
-                    </form>
+                    </div>
                 </div>
                 <p id="message"></p>
                 <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
                 <script src="../ajax/js/signin.js"></script>
+                <script src="http://code.jquery.com/jquery-latest.js"></script>
+                <script src="../bootstrap/js/bootstrap.min.js"></script>
             </body>
         </html>
         <?php

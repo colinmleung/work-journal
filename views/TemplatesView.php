@@ -48,26 +48,42 @@ class TemplatesView extends View
             <head>
                 <meta charset="utf-8"/>
                 <title>Work Journal - Templates</title>
+                <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
                 <meta name="description" content="A place to think about your work.
                     Work Journal is a questionnaire creator that improves your 
                     productivity by getting you to think about the questions 
                     that really matter."/>
             </head>
             <body>
-                <header>
-                    <h1>Templates</h1>
-                </header>
-                <nav>
-                    <form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                        <input type="submit" value="Write" name="write"/>
-                        <input type="submit" value="Read" name="read"/>
-                        <input type="submit" value="Templates" name="templates"/>
-                        <input type="submit" value="Sign Out" name="signout"/>
-                    </form>
-                </nav>
-                <div id="template">
-                    <form name="template" method="post" id="templateForm"
-                        action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                <div class="row">
+                    <div class="span12 offset1">
+                        <header>
+                            <h2>Templates</h2>
+                        </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12 offset1">
+                        <nav>
+                            <form method="post" 
+                                action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                                <div class="btn-group">
+                                    <input type="submit" value="Write" name="write" class="btn"/>
+                                    <input type="submit" value="Read" name="read" class="btn"/>
+                                    <input type="submit" value="Templates" name="templates" class="btn"/>
+                                </div>
+                                <input type="submit" value="Sign Out" name="signout" class="btn"/>
+                            </form>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12 offset1">
+                        <div id="template">
+                            <form name="template" method="post" id="templateForm"
+                                action="<?php echo $_SERVER['PHP_SELF'] ?>">
                         <!--<select>
                             <option value="blank">Blank</option>
         <?php
@@ -80,17 +96,21 @@ class TemplatesView extends View
         }*/
         ?>
                         </select>-->
-                        <input type="submit" value="Create New Template" id="create"
-                            name="create"/>
-                        <input type="submit" value="Save" id="save" name="save"/>
-                        <input type="submit" value="Delete" id="delete" name="delete"
+                                <div class="btn-group">
+                                    <input type="submit" value="Create New Template" id="create"
+                                        name="create" class="btn"/>
+                                    <input type="submit" value="Save" id="save" name="save" class="btn"/>
+                                    <input type="submit" value="Delete" id="delete" name="delete" class="btn"
         <?php
         $check = $model->checkTemplateId();
         if (!($check)) {
             echo 'disabled="disabled"';
         }
         ?>
-                        />
+                                    />
+                                </div>
+                            </div>
+                        </div>
         <?php
         $template = $model->getWorkingTemplate();
         $template_name = $template['name'];
@@ -108,12 +128,13 @@ class TemplatesView extends View
                     '</textarea>';
             if ($template_count > 1) {
                 echo '<input type="submit" value="Delete" 
+                class="btn"
                 id="delete_header[' . $i . ']"
                 name="delete_header[' . $i . ']"/>' . PHP_EOL;
             }
             echo '';
         }
-        echo '<input type="submit" value="Add" name="add_header" id="add_header"/>';
+        echo '<input type="submit" value="Add" name="add_header" class="btn" id="add_header"/>';
         ?>				
                     </form>
         <?php
@@ -125,6 +146,7 @@ class TemplatesView extends View
                 </div>
                 <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
                 <script src="../ajax/js/templates.js"></script>
+                <script src="../bootstrap/js/bootstrap.min.js"></script>
             </body>
         </html>
         <?php

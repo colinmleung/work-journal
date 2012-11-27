@@ -48,32 +48,51 @@ class ReadView extends View
                 <head>
                     <meta charset="utf-8"/>
                     <title>Work Journal - Read</title>
+                    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
                     <meta name="description" content="A place to think about
                         your work. Work Journal is a questionnaire creator that 
                         improves your productivity by getting you to think about 
                         the questions that really matter."/>
                 </head>
                 <body>
-                    <header>
-                        <h1>Read</h1>
-                    </header>
-                    <nav>
-                        <form method="post" 
-                            action="<?php echo $_SERVER['PHP_SELF'] ?>">
-                            <input type="submit" value="Write" name="write"/>
-                            <input type="submit" value="Read" name="read"/>
-                            <input type="submit" value="Templates" name="templates"/>
-                            <input type="submit" value="Sign Out" name="signout"/>
-                        </form>
-                    </nav>
-                    <div id="actionBar">
-                        <form method="post" 
-                            action="<?php echo $_SERVER['PHP_SELF'] ?>" id="read_form">
-                            <input type="submit" value="Daily View" id="day" name="day"/>
-                            <input type="submit" value="Weekly View" id="week" name="week"/>
-                            <input type="submit" value="Monthly View" id="month" name="month"/>
-                            <input type="submit" value="Semesterly View" id="semester"
-                                name="semester"/>
+                    <div class="row">
+                        <div class="span12 offset1">
+                            <header>
+                                <h2>Read</h2>
+                            </header>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span12 offset1">
+                            <nav>
+                                <form method="post" 
+                                    action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                                    <div class="btn-group">
+                                        <input type="submit" value="Write" name="write" class="btn"/>
+                                        <input type="submit" value="Read" name="read" class="btn"/>
+                                        <input type="submit" value="Templates" name="templates" class="btn"/>
+                                    </div>
+                                    <input type="submit" value="Sign Out" name="signout" class="btn"/>
+                                </form>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span12 offset1">
+                            <div id="actionBar">
+                                <form method="post" 
+                                    action="<?php echo $_SERVER['PHP_SELF'] ?>" id="read_form">
+                                    <div class="btn-group">
+                                        <input type="submit" value="Daily View" id="day" name="day" class="btn"/>
+                                        <input type="submit" value="Weekly View" id="week" name="week" class="btn"/>
+                                        <input type="submit" value="Monthly View" id="month" name="month" class="btn"/>
+                                        <input type="submit" value="Semesterly View" id="semester" class="btn"
+                                        name="semester"/>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <div id="journal">
@@ -100,6 +119,7 @@ class ReadView extends View
                     </div>
                     <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
                     <script src="../ajax/js/read.js"></script>
+                    <script src="../bootstrap/js/bootstrap.min.js"></script>
                 </body>
             </html>
         <?php
