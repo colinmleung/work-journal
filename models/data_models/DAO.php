@@ -1,5 +1,5 @@
 <?php 
-require_once('../utilities/connect_vars.php');
+require_once __DIR__.'/../../utilities/connect_vars.php';
 
 // The Database Access Object acts as a facade over the mysqli object.
 class DAO {

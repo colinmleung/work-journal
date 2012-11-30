@@ -112,8 +112,9 @@ class SignInView extends View
                     </div>
                 </div>
                 <p id="message"></p>
-                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
-                <script src="../ajax/js/signin.js"></script>
+                <script src="../ajax/js/dojo-toolkit/dojo/dojo.js" data-dojo-config="async: true"></script>
+                <script src="../ajax/js/work-journal/signInModel.js"></script>
+                <script src="../ajax/js/work-journal/signin.js"></script>
                 <script src="http://code.jquery.com/jquery-latest.js"></script>
                 <script src="../bootstrap/js/bootstrap.min.js"></script>
             </body>
