@@ -117,8 +117,10 @@ class ReadView extends View
         ?>
                         </div>
                     </div>
-                    <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
-                    <script src="../ajax/js/read.js"></script>
+                    <script src="../ajax/js/dojo-toolkit/dojo/dojo.js" data-dojo-config="async: true"></script>
+                    <script src="../ajax/js/work-journal/readModel.js"></script>
+                    <script src="../ajax/js/work-journal/read.js"></script>
+                    <script src="http://code.jquery.com/jquery-latest.js"></script>
                     <script src="../bootstrap/js/bootstrap.min.js"></script>
                 </body>
             </html>

@@ -1,164 +1,89 @@
-require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form", "dojo/dom-construct", "dojo/domReady!"],
-    function(dom, on, request, domForm, domConstruct){
-        read_form = dom.byId("read_form");
-        
-        daily_button = dom.byId("day");
-        weekly_button = dom.byId("week");
-        monthly_button = dom.byId("month");
-        semesterly_button = dom.byId("semester");
-        
-        read_area = dom.byId("reading");
-        
-        on(daily_button, "click", function(evt){
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            request.post("../ajax/read.php", {
-            }).then(
-                function(response){
-                    console.log(response);
-                    //erase read_area
-                    domConstruct.empty(read_area);
-                    
-                    reading_array = JSON.parse(response);
-                    for (i = 0; i < reading_array.length; i++) {
-                        date = reading_array[i].date;
-                        domConstruct.create("p", 
-                                            null,
-                                            read_area);
-                        read_area.lastElementChild.innerText = date;
-                        
-                        entry_headers = reading_array[i].header;
-                        entry_responses = reading_array[i].response;
-                        for (j = 0; j < entry_headers.length; j++) {
-                            entry_header = entry_headers[j];
-                            entry_response = entry_responses[j];
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_header;
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_response;
-                        }
-                    }
-                }
-            );
-        });
-        
-        on(weekly_button, "click", function(evt){
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            request.post("../ajax/read.php", {
-            }).then(
-                function(response){
-                    console.log(response);
-                    //erase read_area
-                    domConstruct.empty(read_area);
-                    
-                    reading_array = JSON.parse(response);
-                    for (i = 0; i < reading_array.length; i++) {
-                        date = reading_array[i].date;
-                        domConstruct.create("p", 
-                                            null,
-                                            read_area);
-                        read_area.lastElementChild.innerText = date;
-                        
-                        entry_headers = reading_array[i].header;
-                        entry_responses = reading_array[i].response;
-                        for (j = 0; j < entry_headers.length; j++) {
-                            entry_header = entry_headers[j];
-                            entry_response = entry_responses[j];
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_header;
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_response;
-                        }
-                    }
-                }
-            );
-        });
-        
-        on(monthly_button, "click", function(evt){
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            request.post("../ajax/read.php", {
-            }).then(
-                function(response){
-                    console.log(response);
-                    //erase read_area
-                    domConstruct.empty(read_area);
-                    
-                    reading_array = JSON.parse(response);
-                    for (i = 0; i < reading_array.length; i++) {
-                        date = reading_array[i].date;
-                        domConstruct.create("p", 
-                                            null,
-                                            read_area);
-                        read_area.lastElementChild.innerText = date;
-                        
-                        entry_headers = reading_array[i].header;
-                        entry_responses = reading_array[i].response;
-                        for (j = 0; j < entry_headers.length; j++) {
-                            entry_header = entry_headers[j];
-                            entry_response = entry_responses[j];
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_header;
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_response;
-                        }
-                    }
-                }
-            );
-        });
-        
-        on(semesterly_button, "click", function(evt){
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            request.post("../ajax/read.php", {
-            }).then(
-                function(response){
-                    console.log(response);
-                    //erase read_area
-                    domConstruct.empty(read_area);
-                    
-                    reading_array = JSON.parse(response);
-                    for (i = 0; i < reading_array.length; i++) {
-                        date = reading_array[i].date;
-                        domConstruct.create("p", 
-                                            null,
-                                            read_area);
-                        read_area.lastElementChild.innerText = date;
-                        
-                        entry_headers = reading_array[i].header;
-                        entry_responses = reading_array[i].response;
-                        for (j = 0; j < entry_headers.length; j++) {
-                            entry_header = entry_headers[j];
-                            entry_response = entry_responses[j];
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_header;
-                            domConstruct.create("p", 
-                                                null,
-                                               read_area);
-                            read_area.lastElementChild.innerText = entry_response;
-                        }
-                    }
-                }
-            );
-        });
+/**
+ *            Contains the main javascript for the read page
+ * @author    Colin M. Leung
+ * @version   v0.0.5
+ * @license   http://opensource.org/licenses/gpl-3.0.html
+                GNU General Public License
+ * @copyright Colin M. Leung 2012
+ */
+
+/*global workjournal, require, evt*/
+
+require([
+    "dojo/ready",
+    "dojo/dom",
+    "dojo/on"
+], function (ready, dom, on) {
+
+	"use strict";
+
+	/**
+     *           Display today's entries
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the read day button
+     */
+    function readDayAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.readModel().readDayAttempt();
     }
-);
+
+	/**
+     *           Displays last week's entries
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the read week button
+     */
+    function readWeekAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.readModel().readWeekAttempt();
+    }
+
+	/**
+     *           Display last month's entries
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the read month button
+     */
+    function readMonthAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.readModel().readMonthAttempt();
+    }
+
+	/**
+     *           Display last semester's entries
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the read semester button
+     */
+    function readSemesterAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.readModel().readSemesterAttempt();
+    }
+
+	/**
+     *           Attaches the day, week, month, semester reading event handlers to the read page buttons
+     * @requires module:dojo/ready
+     * @requires module:dojo/dom
+     * @requires module:dojo/on
+     */
+    ready(function () {
+        var day_button = dom.byId('day'),
+            week_button = dom.byId('week'),
+			month_button = dom.byId('month'),
+			semester_button = dom.byId('semester');
+
+        on(day_button, "click", readDayAttempt);
+        on(week_button, "click", readWeekAttempt);
+        on(month_button, "click", readMonthAttempt);
+        on(semester_button, "click", readSemesterAttempt);
+    });
+});

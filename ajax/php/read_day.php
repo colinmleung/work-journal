@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'\..\models\page_models\ReadModel.php';
+require_once __DIR__.'/../../models/page_models/ReadModel.php';
 
 session_start();
 

@@ -97,7 +97,6 @@ class WriteView extends View
                                     <option value="blank">Blank</option>
         <?php
         $template_names = $model->getTemplateNames();
-        //var_dump($template_names);
         if ($template_names != null) {
             foreach ($template_names as $template_name) {
                 echo '<option value="' . $template_name . '">' . 
@@ -144,9 +143,11 @@ class WriteView extends View
                     </form>
                 </div>
                 <p id="message"></p>
-                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
-                <script src="../ajax/js/date.js"></script>
-                <script src="../ajax/js/write.js"></script>
+                <script src="../ajax/js/dojo-toolkit/dojo/dojo.js" data-dojo-config="async: true"></script>
+                <script src="../ajax/js/work-journal/date.js"></script>
+                <script src="../ajax/js/work-journal/writeModel.js"></script>
+                <script src="../ajax/js/work-journal/write.js"></script>
+                <script src="http://code.jquery.com/jquery-latest.js"></script>
                 <script src="../bootstrap/js/bootstrap.min.js"></script>
             </body>
         </html>

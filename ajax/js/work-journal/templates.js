@@ -1,274 +1,149 @@
-require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form", "dojo/dom-attr", "dojo/dom-construct", "dojo/domReady!"], 
-    function(dom, on, request, domForm, domAttr, domConstruct){
-        add_header_button = dom.byId("add_header");
-        delete_template_button = dom.byId("delete");
-        template_form = dom.byId("templateForm");
-        first_header = dom.byId("template[header][0]");
-        template_name = dom.byId("template[name]");
-        save_button = dom.byId("save");
-        create_button = dom.byId("create");
-        
-        for(i = 5; i < template_form.length - 1; i = i + 2) {
-            delete_header_button = template_form.children[i];
-            on(delete_header_button, "click", function(evt){
-                // prevent the page from navigating after submit
-                evt.stopPropagation();
-                evt.preventDefault();
-                
-                // get the template_array
-                header_array = [];
-                for (j = 4; j < template_form.length - 1; j = j + 2) {
-                    header_array[(j-4)/2] = template_form.children[j].innerText;
-                }
-                
-                header_array_string = JSON.stringify(header_array);
-                
-                // get the delete array and delete button id
-                delete_button_id = evt.target.id;
-                delete_index = delete_button_id.match(/\d+/g);
-                delete_array = [];
-                delete_array[delete_index[0]] = "Delete";
+/**
+ *            Contains the main javascript for the templates page
+ * @author    Colin M. Leung
+ * @version   v0.0.5
+ * @license   http://opensource.org/licenses/gpl-3.0.html
+                GNU General Public License
+ * @copyright Colin M. Leung 2012
+ */
 
-                // get the header id
-                header_id_string = "template[header][" + delete_index[0] + "]";
-            
-                // Post the data to the server
-                request.post("../ajax/templates_save.php", {
-                    // Send the data
-                    data: {
-                        name: template_form.children[3].innerText,
-                        template_h: header_array_string,
-                        delete_a: delete_array
-                    }
-                }).then(
-                    function(response) {
-                        console.log(response);
-                        // delete the header and its delete button
-                        domConstruct.destroy(header_id_string);
-                        domConstruct.destroy(delete_button_id);
-                        
-                        // rename all the header and delete buttons
-                        for (k = 4; k < template_form.length - 1; k = k+2) {
-                            k_plus_one = +k + 1;
-                            old_header = template_form.children[k];
-                            old_delete = template_form.children[k_plus_one];
-                            
-                            new_index = (+k - 4)/2;
-                            new_header_string = "template[header][" + new_index + "]";
-                            new_delete_string = "delete_header[" + new_index + "]";
-                            domAttr.set(old_header, "name", new_header_string);
-                            domAttr.set(old_header, "id", new_header_string);
-                            domAttr.set(old_delete, "name", new_delete_string);
-                            domAttr.set(old_delete, "id", new_delete_string);
-                        }
-                        
-                        // if only one header is left, delete its delete button
-                        if (header_array.length == 2) {
-                            delete_string = "delete_header[0]";
-                            domConstruct.destroy(delete_string);
-                        }
-                    }
-                );
-            });
+/*global workjournal, require, evt*/
+
+require([
+    "dojo/ready",
+    "dojo/dom",
+    "dojo/on"
+], function (ready, dom, on) {
+
+	"use strict";
+	
+	/**
+     *           Collects the headers into an array
+     * @requires module:dojo/dom
+     */
+	function collectHeaders() {
+		var template_form = dom.byId('templateForm'),
+			headers = [],
+			i;
+			
+		for (i = 4; i < template_form.length - 1; i = i + 2) {
+            headers[(i-4)/2] = template_form[i].innerText;
         }
-        
-        on(create_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            error_msg = "placeholder";
-            
-            // Post the data to the server
-            request.post("../ajax/templates_create.php", {
-            }).then(
-                function(response){
-                    console.log(response);
-                    // set a blank entry
-                        // delete extra text areas
-                    for (i = template_form.length - 2; i > 4; i--)  {
-                        domConstruct.destroy(template_form.children[i]);
-                    }
-                        // empty out the first header and response
-                    first_header.innerText = "";
-                    template_name.innerText = "";
-                    // disable the delete button
-                    domAttr.set(delete_template_button, "disabled", "disabled");
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
-        
-        on(save_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            header_array = [];
-            // get the template_array
-            for (i = 4; i < template_form.length - 1; i = i + 2) {
-                header_array[(i-4)/2] = template_form.children[i].innerText;
-            }
-            
-            header_array = JSON.stringify(header_array);
-            
-            // Post the data to the server
-            request.post("../ajax/templates_save.php", {
-                // Send the data
-                data: {
-                    name: template_form.children[3].innerText,
-                    template_h: header_array,
-                }
-            }).then(
-                function(response){
-                console.log(response);
-                    if (response) {
-                        // enable the delete button
-                        domAttr.remove(delete_template_button, "disabled");
-                    }
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
-        
-        on(delete_template_button, "click", function(evt) {
-            evt.stopPropagation();
-            evt.preventDefault();
-           
-            request.post("../ajax/templates_delete.php",{
-            }).then(
-                function(response) {
-                    // set a blank entry
-                        // delete extra text areas
-                    for (i = template_form.length - 2; i > 4; i--) {
-                        domConstruct.destroy(template_form.children[i]);
-                    }
-                        // empty out the first header and response
-                    first_header.innerText = "";
-                    template_name.innerText = "";
-                    // disable the delete button
-                    domAttr.set(delete_template_button, "disabled", "disabled");
-                }
-            );
-        });
-        
-        on(add_header_button, "click", function(evt) {
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            header_array = [];
-            // get the template_array
-            for (i = 4; i < template_form.length - 1; i = i + 2) {
-                header_array[(i-4)/2] = template_form.children[i].innerText;
-            }
-            
-            header_array_string = JSON.stringify(header_array);
-           
-            request.post("../ajax/templates_add.php",{
-                data: {
-                        name: template_form.children[3].innerText,
-                        header: header_array_string
-                    }
-            }).then(
-                function(response) {
-                    // if this is the creation of the second header, create a delete button for the first header
-                    if (header_array.length == 1) {
-                        delete_string = "delete_header[0]";
-                        domConstruct.create("input",
-                                                {type: "submit",
-                                                value: "Delete",
-                                                name: delete_string,
-                                                id: delete_string},
-                                                add_header_button,
-                                                "before");
-                    }
-                    // insert a new header before the Add button
-                    header_string = "template[header][" + header_array.length + "]";
-                    domConstruct.create("textarea", 
-                                            {rows: "1",
-                                            cols: "200",
-                                            name: header_string,
-                                            id: header_string},
-                                            add_header_button,
-                                            "before");
-                    // insert a new delete button before the Add button
-                    delete_string = "delete_header[" + header_array.length + "]";
-                    domConstruct.create("input",
-                                            {type: "submit",
-                                            value: "Delete",
-                                            name: delete_string,
-                                            id: delete_string},
-                                            add_header_button,
-                                            "before");
-                    //beginning of COPYPASTA
-                    on(delete_header_button, "click", function(evt){
-                        // prevent the page from navigating after submit
-                        evt.stopPropagation();
-                        evt.preventDefault();
-                        
-                        // get the template_array
-                        header_array = [];
-                        for (j = 4; j < template_form.length - 1; j = j + 2) {
-                            header_array[(j-4)/2] = template_form.children[j].innerText;
-                        }
-                        
-                        header_array_string = JSON.stringify(header_array);
-                        
-                        // get the delete array and delete button id
-                        delete_button_id = evt.target.id;
-                        delete_index = delete_button_id.match(/\d+/g);
-                        delete_array = [];
-                        delete_array[delete_index[0]] = "Delete";
+		
+		return headers;
+	}
 
-                        // get the header id
-                        header_id_string = "template[header][" + delete_index[0] + "]";
-                    
-                        // Post the data to the server
-                        request.post("../ajax/templates_save.php", {
-                            // Send the data
-                            data: {
-                                name: template_form.children[3].innerText,
-                                template_h: header_array_string,
-                                delete_a: delete_array
-                            }
-                        }).then(
-                            function(response) {
-                                console.log(response);
-                                // delete the header and its delete button
-                                domConstruct.destroy(header_id_string);
-                                domConstruct.destroy(delete_button_id);
-                                
-                                // rename all the header and delete buttons
-                                for (k = 4; k < template_form.length - 1; k = k+2) {
-                                    k_plus_one = +k + 1;
-                                    old_header = template_form.children[k];
-                                    old_delete = template_form.children[k_plus_one];
-                                    
-                                    new_index = (+k - 4)/2;
-                                    new_header_string = "template[header][" + new_index + "]";
-                                    new_delete_string = "delete_header[" + new_index + "]";
-                                    domAttr.set(old_header, "name", new_header_string);
-                                    domAttr.set(old_header, "id", new_header_string);
-                                    domAttr.set(old_delete, "name", new_delete_string);
-                                    domAttr.set(old_delete, "id", new_delete_string);
-                                }
-                                
-                                // if only one header is left, delete its delete button
-                                if (header_array.length == 2) {
-                                    delete_string = "delete_header[0]";
-                                    domConstruct.destroy(delete_string);
-                                }
-                            }
-                        );
-                    }); // END OF COPYPASTA
-                }
-            );
-        });
+	/**
+     *           Creates a new template
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the create button
+     */
+    function createAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.templatesModel().createAttempt();
     }
-);
+	
+	/**
+     *           Saves the current template
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the save button
+     */
+    function saveAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+		
+		var name = dom.byId('templateForm')[3].innerText,
+		    headers = [];
+			
+		headers = collectHeaders();
+        headers = JSON.stringify(headers);
+
+        workjournal.templatesModel().saveAttempt(name, headers);
+    }
+
+	/**
+     *           Deletes the current template and creates a blank template
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the delete button
+     */
+    function deleteAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.templatesModel().deleteAttempt();
+    }
+	
+	/**
+     *           Add a header to the current template
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the add header button
+     */
+    function addHeaderAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+		
+		var name = dom.byId('templateForm')[3].innerText,
+		    headers = [];
+			
+		headers = collectHeaders();
+        headers = JSON.stringify(headers);
+
+        workjournal.templatesModel().addHeaderAttempt(name, headers);
+    }
+	
+    /**
+     *           Deletes a header from the current template
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from one of the delete header buttons
+     */
+	function deleteHeaderAttempto(evt) {
+
+		evt.stopPropagation();
+        evt.preventDefault();
+		
+		var name = dom.byId('templateForm')[3].innerText,
+		    headers = [],
+			delete_array = [],
+            delete_index;
+			
+		headers = collectHeaders();
+        headers = JSON.stringify(headers);
+		
+        delete_index = evt.target.id.match(/\d+/g);
+        delete_array[delete_index[0]] = "Delete";
+
+        workjournal.templatesModel().deleteHeaderAttempti(name, headers, delete_array);
+	}
+
+	/**
+     *           Attaches the create, save, delete, add header, delete header event handlers to the templates page buttons
+     * @requires module:dojo/ready
+     * @requires module:dojo/dom
+     * @requires module:dojo/on
+     */
+    ready(function () {
+        var template_form = dom.byId('templateForm'),
+			create_button = dom.byId('create'),
+            save_button = dom.byId('save'),
+			delete_button = dom.byId('delete'),
+			add_header_button = dom.byId('add_header'),
+			delete_header_button,
+			i;
+
+        on(create_button, "click", createAttempt);
+        on(save_button, "click", saveAttempt);
+        on(delete_button, "click", deleteAttempt);
+        on(add_header_button, "click", addHeaderAttempt);
+
+		for(i = 5; i < template_form.length - 1; i = i + 2) {
+            delete_header_button = template_form[i];
+			on(delete_header_button, "click", deleteHeaderAttempto);
+		}
+    });
+});

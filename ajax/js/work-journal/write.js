@@ -1,251 +1,138 @@
-require(["dojo/dom", "dojo/on", "dojo/request", "dojo/dom-form", "dojo/dom-attr", "dojo/dom-construct", "dojo/domReady!"], 
-    function(dom, on, request, domForm, domAttr, domConstruct){
-        var entry_form = dom.byId('entry');
-        var entry_form_children = entry_form.childNodes[1];
-        
-        create_button = dom.byId('create');
-        save_button = dom.byId('save');
-        delete_button = dom.byId('delete');
-        clear_button = dom.byId('clear');
-        forward_button = dom.byId('forward');
-        backward_button = dom.byId('backward');
-        first_header = dom.byId('entry[header][0]');
-        first_response = dom.byId('entry[response][0]');
-        date_node = dom.byId("date");
-        template_select = dom.byId("template_name");
-        
-        on(create_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            error_msg = "placeholder";
-            
-            template_name = template_select.options[template_select.selectedIndex].text;
-            
-            // Post the data to the server
-            request.post("../ajax/write_create.php", {
-                // Send the data
-                data : {template_name : template_name}
-            }).then(
-                function(response){
-                    console.log(response);
-                    new_entry = JSON.parse(response);
-                    // delete all existing blocks
-                    form_length = entry_form_children.length;
-                    for (i = 7; i < form_length; i++)  {
-                            domConstruct.destroy(entry_form_children[7]);
-                    }
-                    // create new blocks
-                    for (i = 0; i < new_entry.header.length; i++) {
-                        header_string = "entry[header]["+i+"]";
-                        response_string = "entry[response]["+i+"]";
-                        domConstruct.create("textarea", 
-                                            {rows: "1",
-                                            cols: "200",
-                                            name: header_string,
-                                            id: header_string},
-                                            entry_form_children);
-                        domConstruct.create("textarea",
-                                            {rows: "10",
-                                            cols: "200",
-                                            name: response_string,
-                                            id: response_string},
-                                            entry_form_children);
-                    }
-                    // insert the headers
-                    form_length = entry_form_children.length;
-                    for (i = 7; i < form_length; i=i+2) {
-                            index = (i-7)/2;
-                            entry_form_children[i].innerText = new_entry.header[index];
-                    }
-                    // disable the delete button
-                    domAttr.set(delete_button, "disabled", "disabled");
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
-        
-        // Attach an event handler
-        on(save_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            entry_header = [];
-            entry_response = [];
-            for (i = 7; i < entry_form_children.length; i++) {
-                if ((i % 2) == 1) {
-                    entry_header[(i-7)/2] = entry_form_children[i].innerText;
-                } else {
-                    entry_response[(i-8)/2] = entry_form_children[i].innerText;
-                }
-            }
-            
-            error_msg = "placeholder";
-            
-            entry_header = JSON.stringify(entry_header);
-            entry_response = JSON.stringify(entry_response);
-            
-            // Post the data to the server
-            request.post("../ajax/write_save.php", {
-                // Send the data
-                data: {
-                    entry_h: entry_header,
-                    entry_r: entry_response
-                }
-            }).then(
-                function(response){
-                console.log(response);
-                    if (response) {
-                        // modify the Write view
-                        // enable the delete button
-                        domAttr.remove(delete_button, "disabled");
-                    } else {
-                    }
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
-        
-        on(delete_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            error_msg = "placeholder";
-            
-            // Post the data to the server
-            request.post("../ajax/write_delete.php", {
-                // Send the data
-            }).then(
-                function(response){
-                console.log(response);
-                    if (response) {
-                        // set a blank entry
-                            // delete extra text areas
-                        for (i = 9; i < entry_form_children.length; i++)  {
-                            domConstruct.destroy(entry_form_children[i]);
-                        }
-                            // empty out the first header and response
-                        first_header.innerText = "";
-                        first_response.innerText = "";
-                        // disable the delete button
-                        domAttr.set(delete_button, "disabled", "disabled");
-                    }
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
-        
-        on(clear_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            error_msg = "placeholder";
-            
-            // Post the data to the server
-            request.post("../ajax/write_clear.php", {
-                // Send the data
-            }).then(
-                function(response){
-                console.log(response);
-                    if (response) {
-                        // empty the responses
-                        for (i = 8; i < entry_form_children.length; i=i+2) {
-                            entry_form_children[i].innerText = "";
-                        }
-                    }
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
-        
-        on(forward_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            error_msg = "placeholder";
-            
-            // Post the data to the server
-            request.post("../ajax/write_forward.php", {
-                // Send the data
-            }).then(
-                function(response){
-                console.log(response); // reponse is the timestamp
-                        // increment the date
-                            //convert php date to javascript date
-                    timestamp = +response + 86400;
-                    date_string = date_converter("Y-m-d", timestamp); // response+86400 to correct for date_converter
-                    console.log(date_string);
-                    date_node.innerText = date_string;
-                    // set a blank entry
-                        // delete extra text areas
-                    for (i = 9; i < entry_form_children.length; i++)  {
-                        domConstruct.destroy(entry_form_children[i]);
-                    }
-                        // empty put the first header and response
-                    first_header.innerText = "";
-                    first_response.innerText = "";
-                    // disable the delete button
-                    domAttr.set(delete_button, "disabled", "disabled");
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
-        
-        on(backward_button, "click", function(evt){
-            
-            // prevent the page from navigating after submit
-            evt.stopPropagation();
-            evt.preventDefault();
-            
-            error_msg = "placeholder";
-            
-            // Post the data to the server
-            request.post("../ajax/write_backward.php", {
-                // Send the data
-            }).then(
-                function(response){
-                    console.log(response); // reponse is the timestamp
-                        // increment the date
-                            //convert php date to javascript date
-                    timestamp = +response + 86400;
-                    date_string = date_converter("Y-m-d", timestamp); // response+86400 to correct for date_converter
-                    console.log(date_string);
-                    date_node.innerText = date_string;
-                    // set a blank entry
-                        // delete extra text areas
-                    for (i = 9; i < entry_form_children.length; i++)  {
-                        domConstruct.destroy(entry_form_children[i]);
-                    }
-                        // empty put the first header and response
-                    first_header.innerText = "";
-                    first_response.innerText = "";
-                    // disable the delete button
-                    domAttr.set(delete_button, "disabled", "disabled");
-                },
-                function(error){
-                        console.log(error);
-                }
-            );
-        });
+/**
+ *            Contains the main javascript for the write page
+ * @author    Colin M. Leung
+ * @version   v0.0.5
+ * @license   http://opensource.org/licenses/gpl-3.0.html
+                GNU General Public License
+ * @copyright Colin M. Leung 2012
+ */
+
+/*global workjournal, require, evt*/
+
+require([
+    "dojo/ready",
+    "dojo/dom",
+    "dojo/on"
+], function (ready, dom, on) {
+
+    "use strict";
+
+    /**
+     *           Create a new entry with the selected template headers
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the create button
+     */
+    function createAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        var template_name = dom.byId("template_name").options[dom.byId("template_name").selectedIndex].text;
+        workjournal.writeModel().createAttempt(template_name);
     }
-);
+
+    /**
+     *           Saves the current entry
+     * @function saveAttempt
+     * @requires module:dojo/dom
+     * @param    {MouseEvent} evt The click event from the save button
+     */
+    function saveAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        var entry_form_children = dom.byId('entry').childNodes[1],
+            entry_header = [],
+            entry_response = [],
+			i;
+
+        for (i = 5; i < entry_form_children.length; i = i + 1) {
+            if ((i % 2) === 1) {
+                entry_header[(i - 5) / 2] = entry_form_children[i].innerText;
+            } else {
+                entry_response[(i - 6) / 2] = entry_form_children[i].innerText;
+            }
+        }
+
+        entry_header = JSON.stringify(entry_header);
+        entry_response = JSON.stringify(entry_response);
+
+        workjournal.writeModel().saveAttempt(entry_header, entry_response);
+    }
+
+    /**
+     *           Deletes the current entry, and displays a new blank entry
+     * @function deleteAttempt
+     * @param    {MouseEvent} evt The click event from the delete button
+     */
+    function deleteAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.writeModel().deleteAttempt();
+    }
+
+    /**
+     *           Clears all the responses from the entry
+     * @function clearAttempt
+     * @param    {MouseEvent} evt The click event from the clear button
+     */
+    function clearAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.writeModel().clearAttempt();
+    }
+
+    /**
+     *           Move the date forward by one day
+     * @function forwardAttempt
+     * @param    {MouseEvent} evt The click event from the forward button
+     */
+    function forwardAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.writeModel().forwardAttempt();
+    }
+
+    /**
+     *           Move the date backward by one day
+     * @function backwardAttempt
+     * @param    {MouseEvent} evt The click event from the backward button
+     */
+    function backwardAttempt(evt) {
+
+        evt.stopPropagation();
+        evt.preventDefault();
+
+        workjournal.writeModel().backwardAttempt();
+    }
+
+    /**
+     *           Attaches the create, save, delete, clear, forward, backward event handlers to the write page buttons
+     * @function
+     * @requires module:dojo/ready
+     * @requires module:dojo/dom
+     * @requires module:dojo/on
+     */
+    ready(function () {
+        var create_button = dom.byId('create'),
+            save_button = dom.byId('save'),
+			delete_button = dom.byId('delete'),
+			clear_button = dom.byId('clear'),
+			forward_button = dom.byId('forward'),
+			backward_button = dom.byId('backward');
+
+        on(create_button, "click", createAttempt);
+        on(save_button, "click", saveAttempt);
+        on(delete_button, "click", deleteAttempt);
+        on(clear_button, "click", clearAttempt);
+        on(forward_button, "click", forwardAttempt);
+        on(backward_button, "click", backwardAttempt);
+    });
+});

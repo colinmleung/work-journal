@@ -1,11 +1,10 @@
 <?php
-require_once __DIR__.'\..\models\page_models\WriteModel.php';
-//require_once __DIR__.'\..\views\WriteView.php';
+require_once __DIR__.'/../../models/page_models/WriteModel.php';
 
 session_start();
 
-$entry['header'] = json_decode($_POST['entry_h']);
-$entry['response'] = json_decode($_POST['entry_r']);
+$entry['header'] = json_decode($_POST['entry_headers']);
+$entry['response'] = json_decode($_POST['entry_responses']);
 
 $wm = new WriteModel;
 //$wv = new WriteView;

@@ -5,9 +5,7 @@ session_start();
 
 $template['name'] = $_POST['name'];
 $template['header'] = json_decode($_POST['headers']);
-$delete_array = json_decode($_POST['delete_array']);
-
 $tm = new TemplatesModel;
-$tm->deleteTemplateHeader($delete_array, $template);
-echo $_POST['delete_array'];
+$tm->addTemplateHeader($template);
+echo $_POST['headers'];
 ?>

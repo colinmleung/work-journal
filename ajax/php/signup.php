@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'\..\models\page_models\SignUpModel.php';
+require_once __DIR__.'/../../models/page_models/SignUpModel.php';
 
 session_start();
 

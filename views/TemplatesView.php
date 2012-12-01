@@ -109,8 +109,7 @@ class TemplatesView extends View
         ?>
                                     />
                                 </div>
-                            </div>
-                        </div>
+                        
         <?php
         $template = $model->getWorkingTemplate();
         $template_name = $template['name'];
@@ -136,7 +135,9 @@ class TemplatesView extends View
         }
         echo '<input type="submit" value="Add" name="add_header" class="btn" id="add_header"/>';
         ?>				
-                    </form>
+                            </form>
+                        </div>
+                    </div>
         <?php
         $error_msg = $model->getErrorMsg();
         if (isset($error_msg)) {
@@ -144,9 +145,11 @@ class TemplatesView extends View
         }
         ?>
                 </div>
-                <script src="../ajax/js/dojo/dojo/dojo.js" data-dojo-config="async: true"></script>
-                <script src="../ajax/js/templates.js"></script>
-                <script src="../bootstrap/js/bootstrap.min.js"></script>
+                <script src="../ajax/js/dojo-toolkit/dojo/dojo.js" data-dojo-config="async: true"></script>
+                    <script src="../ajax/js/work-journal/templatesModel.js"></script>
+                    <script src="../ajax/js/work-journal/templates.js"></script>
+                    <script src="http://code.jquery.com/jquery-latest.js"></script>
+                    <script src="../bootstrap/js/bootstrap.min.js"></script>
             </body>
         </html>
         <?php
