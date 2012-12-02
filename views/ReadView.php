@@ -95,8 +95,10 @@ class ReadView extends View
                             </div>
                         </form>
                     </div>
-                    <div id="journal">
-                        <div id="reading">
+                    <div class="row">
+                        <div class="span12 offset1">
+                            <div id="journal">
+                                <div id="reading">
         <?php
         $reading = $model->getReading();
         $count = count($reading);
@@ -115,6 +117,8 @@ class ReadView extends View
             
         }
         ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <script src="../ajax/js/dojo-toolkit/dojo/dojo.js" data-dojo-config="async: true"></script>

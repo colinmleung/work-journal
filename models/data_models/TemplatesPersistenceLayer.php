@@ -23,7 +23,7 @@ class TemplatesPersistenceLayer extends PersistenceLayer
     }
     
     function createNewTemplate() {
-         $template = array("name" => "new", "header" => array(0 => ""));
+         $template = array("name" => "template_name", "header" => array(0 => ""));
          return $template;
     }
     

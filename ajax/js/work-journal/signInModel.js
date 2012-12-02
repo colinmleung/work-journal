@@ -50,7 +50,7 @@ require([
          */
         function signInAttemptResponse(response) {
             if (response === "1") {
-                window.location.href = "http://localhost/work-journal/application/write.php";
+                window.location.href = "http://www.colinmleung.com/workjournal/ajax/application/write.php";
             }
             setErrorMsg("Enter a valid username and password combination.");
             dom.byId("message").innerHTML = workjournal.signInModel().getErrorMsg();

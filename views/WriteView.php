@@ -64,14 +64,20 @@ class WriteView extends View
                 <div class="row">
                     <div class="span12 offset1">
                         <header>
-                            <input type="submit" value="Forward" id="forward" name="forward" class="btn"/>
                             <h2 id="date">
                 <?php
                 echo $date
                 ?>
                             </h2>
-                            <input type="submit" value="Backward" id="backward" name="backward" class="btn"/>
                         </header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12 offset1">
+                        <div class="btn-group">
+                            <input type="submit" value="Backward" id="backward" name="backward" class="btn"/>
+                            <input type="submit" value="Forward" id="forward" name="forward" class="btn"/>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -88,11 +94,11 @@ class WriteView extends View
                         </nav>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="span12 offset1">
-                        <div id="entry">
-                            <form name="entry" id="entry" method="post" 
-                                action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                <div id="entry">
+                    <form name="entry" id="entry" method="post" 
+                        action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                        <div class="row">
+                            <div class="span12 offset1">
                                 <select name="template_name" id="template_name">
                                     <option value="blank">Blank</option>
         <?php

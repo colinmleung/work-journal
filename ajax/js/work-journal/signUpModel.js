@@ -50,7 +50,7 @@ require([
          */
         function signUpAttemptResponse(response) {
             if (response === "1") {
-                window.location.href = "http://localhost/work-journal/application/signin.php";
+                window.location.href = "http://www.colinmleung.com/workjournal/ajax/application/signin.php";
             }
             setErrorMsg("Username taken.");
             dom.byId("message").innerHTML = workjournal.signUpModel().getErrorMsg();
