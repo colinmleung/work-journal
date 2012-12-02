@@ -14,7 +14,6 @@ require([
     "dojo/dom",
     "dojo/_base/declare"
 ], function (request, dom, declare) {
-
     "use strict";
 
     /**

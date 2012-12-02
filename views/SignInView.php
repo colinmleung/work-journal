@@ -10,8 +10,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /SignUpView.html
  */
 
 require_once __DIR__.'/View.php';
@@ -25,8 +23,6 @@ require_once __DIR__.'/View.php';
  * @license  http://opensource.org/licenses/gpl-3.0.html 
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /SignInView.html
  */
 class SignInView extends View
 {

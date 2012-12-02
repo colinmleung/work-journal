@@ -14,7 +14,6 @@ require([
     "dojo/dom",
     "dojo/_base/declare"
 ], function (request, dom, declare) {
-
     "use strict";
 
     /**
@@ -44,7 +43,7 @@ require([
         }
 
         /**
-         *           Responds to the sign up attempt
+         *           Responds to the sign up attempt: goes to the sign in page if successful, if not, display an error message
          * @private
          * @requires module:dojo/dom
          * @param    {string} response 1 if the sign in attempt succeeded

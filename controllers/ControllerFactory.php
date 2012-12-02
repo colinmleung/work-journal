@@ -10,8 +10,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /ControllerFactory.html
  */
 
  
@@ -33,8 +31,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /ControllerFactory.html
  */
 abstract class ControllerFactory
 {
@@ -65,8 +61,6 @@ abstract class ControllerFactory
     /**
      * The constructor dynamically constructs the appropriate views and models
      * as well as the utility object. 
-     *
-     * @return mixed
      */
     function __construct()
     {
@@ -76,24 +70,22 @@ abstract class ControllerFactory
     }
     
     /**
-     * Constructs the appropriate view. 
+     * Constructs the appropriate view.
      *
-     * @return mixed
+     * @return View
      */
     abstract protected function createView();
 
     /**
      * Constructs the approriate model.
      *
-     * @return mixed
+     * @return Model
      */
     abstract protected function createModel();
 
     /** 
      * All controllers must respond to user actions and perform the approriate
      * operations.
-     *
-     * @return void
      */
     abstract public function performAction();
 }

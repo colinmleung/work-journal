@@ -11,8 +11,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /read.php.html
  */
  
 /** Necessary for adding more detailed error reports. */

@@ -15,14 +15,13 @@ require([
 	"dojo/dom-construct",
     "dojo/_base/declare"
 ], function (request, dom, domConstruct, declare) {
-
 	"use strict";
 
 	/**
      *           The readModel calls AJAX scripts and responds to their results
      * @class
      * @name     workjournal.readModel
-     * @property {string} readModel.error_msg The error message from sign in attempts
+     * @property {string} readModel.error_msg The error message from attempting to exercise read functionality
      */
     return declare("workjournal.readModel", null, (function () {
         /** @scope readModel */
@@ -45,7 +44,7 @@ require([
         }
 
 		/**
-         *           Response to the read scripts: wipes out old reading, displays the new one
+         *           Response to the read scripts: wipes out the old reading, displays the new one
          * @private
 		 * @requires module:dojo/dom
 		 * @requires module:dojo/dom-construct
@@ -58,41 +57,42 @@ require([
 				i,
 				j,
 				date,
-				entry_header,
-				entry_response,
 				entry_headers,
 				entry_responses;
 
+            // wipe out the old reading
             domConstruct.empty(read_area);
-            
+
+            // iterate through the response, create new paragraphs, and fill them with the entries
             for (i = 0; i < reading_array.length; i = i + 1) {
-                if (reading_array[i] != null) {
+                if (reading_array[i] !== null) {
+
+                    // create the date node
                     date = reading_array[i].date;
                     domConstruct.create("p",
                                         null,
                                         read_area);
                     read_area.lastElementChild.innerText = date;
 
+                    // create the header and response nodes
                     entry_headers = reading_array[i].header;
                     entry_responses = reading_array[i].response;
                     for (j = 0; j < entry_headers.length; j = j + 1) {
-                        entry_header = entry_headers[j];
-                        entry_response = entry_responses[j];
                         domConstruct.create("p",
                                             null,
                                            read_area);
-                        read_area.lastElementChild.innerText = entry_header;
+                        read_area.lastElementChild.innerText = entry_headers[j];
                         domConstruct.create("p",
                                             null,
                                            read_area);
-                        read_area.lastElementChild.innerText = entry_response;
+                        read_area.lastElementChild.innerText = entry_responses[j];
                     }
                 }
             }
         }
 
 		/**
-         *           Response to an error occuring in the read scripts
+         *           Response to an error occurring in the read scripts
          * @private
          * @param    {string} error Error message from interpreter
          */

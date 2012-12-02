@@ -17,7 +17,6 @@ require([
     "dojo/dom-attr",
     "dojo/_base/declare"
 ], function (request, on, dom, domConstruct, domAttr, declare) {
-
 	"use strict";
 
 	/**
@@ -45,22 +44,22 @@ require([
         function setErrorMsg(msg) {
             error_msg = msg;
         }
-        
+
         /**
          *           Collects the headers into an array
          * @requires module:dojo/dom
          */
-     	function collectHeaders() {
-     		var template_form = dom.byId('templateForm'),
-     			headers = [],
-     			i;
-     			
-     		for (i = 4; i < template_form.length - 1; i = i + 2) {
-                headers[(i-4)/2] = template_form[i].innerText;
+        function collectHeaders() {
+            var template_form = dom.byId('templateForm'),
+                headers = [],
+                i;
+
+            for (i = 4; i < template_form.length - 1; i = i + 2) {
+                headers[(i - 4) / 2] = template_form[i].innerText;
             }
-     		
-     		return headers;
-     	}
+
+            return headers;
+        }
 
         /**
 		 *           Disables the delete button
@@ -95,12 +94,13 @@ require([
                 first_header = dom.byId('template[header][0]'),
                 template_name = dom.byId('template[name]'),
                 i;
-			// set a blank entry
-                // delete extra text areas
-            for (i = template_form.length - 2; i > 4; i--)  {
+
+            // delete extra text areas
+            for (i = template_form.length - 2; i > 4; i = i - 1) {
                 domConstruct.destroy(template_form[i]);
             }
-                // empty out the first header and response
+
+            // empty out the first header and response
             first_header.innerText = "";
             template_name.innerText = "";
 		}
@@ -111,22 +111,21 @@ require([
          * @param    {MouseEvent} evt The click event from one of the delete header buttons
          */
         function deleteHeaderAttempto(evt) {
-        
-        	evt.stopPropagation();
+            evt.stopPropagation();
             evt.preventDefault();
-        	
-        	var name = dom.byId('templateForm')[3].innerText,
-        	    headers = [],
-        		delete_array = [],
+
+            var name = dom.byId('templateForm')[3].innerText,
+                headers = [],
+                delete_array = [],
                 delete_index;
-        		
-        	headers = collectHeaders();
+
+            headers = collectHeaders();
             headers = JSON.stringify(headers);
-        	
+
             delete_index = evt.target.id.match(/\d+/g);
             delete_array[delete_index[0]] = "Delete";
             delete_array = JSON.stringify(delete_array);
-        
+
             workjournal.templatesModel().deleteHeaderAttempti(name, headers, delete_array);
         }
 
@@ -140,7 +139,7 @@ require([
             eraseEntry();
             disableDeleteButton();
         }
-        
+
         /**
          *           Response to the save attempt: enable the delete button
          * @private
@@ -150,7 +149,7 @@ require([
         function saveAttemptResponse() {
             enableDeleteButton();
         }
-        
+
         /**
          *           Response to the delete attempt: dumps the current template and displays a new blank template
          * @private
@@ -161,7 +160,7 @@ require([
             eraseEntry();
             disableDeleteButton();
         }
-        
+
         /**
          *           Response to the add header attempt: creates a new header
          * @private
@@ -176,7 +175,7 @@ require([
                 delete_header_button;
 
             // if only one header, create a delete button for the first header once a second one is added 
-            if (header_array.length == 1) {
+            if (header_array.length === 1) {
                 delete_string = "delete_header[0]";
                 domConstruct.create("input",
                                         {type: "submit",
@@ -185,18 +184,20 @@ require([
                                         id: delete_string},
                                         add_header_button,
                                         "before");
-                var delete_header_button = dom.byId(delete_string);
+                delete_header_button = dom.byId(delete_string);
                 domAttr.set(delete_header_button, "class", "btn");
             }
+
             // insert a new header before the Add button
             header_string = "template[header][" + header_array.length + "]";
-            domConstruct.create("textarea", 
+            domConstruct.create("textarea",
                                     {rows: "1",
                                     cols: "200",
                                     name: header_string,
                                     id: header_string},
                                     add_header_button,
                                     "before");
+
             // insert a new delete button before the Add button
             delete_string = "delete_header[" + header_array.length + "]";
             domConstruct.create("input",
@@ -206,11 +207,12 @@ require([
                                     id: delete_string},
                                     add_header_button,
                                     "before");
-            var delete_header_button = dom.byId(delete_string);
+
+            delete_header_button = dom.byId(delete_string);
             domAttr.set(delete_header_button, "class", "btn");
             on(delete_header_button, "click", deleteHeaderAttempto);
         }
-        
+
         /**
          *           Response to the delete header attempt: destroys the selected header
          * @private
@@ -218,10 +220,10 @@ require([
 		 * @requires module:dojo/dom-construct
          */
         function deleteHeaderAttemptResponse(response) {
-        
+
             var k,
                 delete_array = JSON.parse(response),
-                header_id_string = "template[header]["+ delete_array.indexOf("Delete") +"]",
+                header_id_string = "template[header][" + delete_array.indexOf("Delete") + "]",
                 delete_button_id = "delete_header[" + delete_array.indexOf("Delete") + "]",
                 template_form = dom.byId('templateForm'),
                 k_plus_one,
@@ -230,18 +232,18 @@ require([
                 old_delete,
                 new_header_string,
                 new_delete_string;
-                
+
             // delete the header and its delete button
             domConstruct.destroy(header_id_string);
             domConstruct.destroy(delete_button_id);
-            
+
             // rename all the header and delete buttons
-            for (k = 4; k < template_form.length - 1; k = k+2) {
+            for (k = 4; k < template_form.length - 1; k = k + 2) {
                 k_plus_one = +k + 1;
                 old_header = template_form[k];
                 old_delete = template_form[k_plus_one];
-                
-                new_index = (+k - 4)/2;
+
+                new_index = (+k - 4) / 2;
                 new_header_string = "template[header][" + new_index + "]";
                 new_delete_string = "delete_header[" + new_index + "]";
                 domAttr.set(old_header, "name", new_header_string);
@@ -249,9 +251,9 @@ require([
                 domAttr.set(old_delete, "name", new_delete_string);
                 domAttr.set(old_delete, "id", new_delete_string);
             }
-            
+
             // if only one header is left, delete its delete button
-            if (delete_array.length == 1) {
+            if (delete_array.length === 1) {
                 domConstruct.destroy("delete_header[0]");
             }
         }
@@ -277,7 +279,7 @@ require([
                     templatesAttemptError
                 );
             },
-            
+
             /**
              *           Calls the PHP AJAX script templates_save.php, and attaches the relevant event handlers
              * @public
@@ -294,7 +296,7 @@ require([
                     templatesAttemptError
                 );
             },
-            
+
             /**
              *           Calls the PHP AJAX script templates_delete.php, and attaches the relevant event handlers
              * @public
@@ -306,7 +308,7 @@ require([
                     templatesAttemptError
                 );
             },
-            
+
             /**
              *           Calls the PHP AJAX script templates_add_header.php, and attaches the relevant event handlers
              * @public
@@ -323,7 +325,7 @@ require([
                     templatesAttemptError
                 );
             },
-            
+
             /**
              *           Calls the PHP AJAX script templates_delete_header.php, and attaches the relevant event handlers
              * @public

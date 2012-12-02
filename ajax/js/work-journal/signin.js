@@ -14,7 +14,6 @@ require([
     "dojo/dom",
     "dojo/on"
 ], function (ready, dom, on) {
-
     "use strict";
 
     /**
@@ -38,7 +37,7 @@ require([
     }
 
     /**
-     *           Attaches the sign in event handler to the sign in button
+     *           Attaches the sign in event handler to the sign in form
      * @requires module:dojo/ready
      * @requires module:dojo/dom
      * @requires module:dojo/on

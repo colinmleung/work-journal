@@ -44,16 +44,16 @@ class WriteModel extends Model {
  * @var WriteInputValidator */
 	private $iv;
 	
-/**
- * Persistence Layer for the application.
- *
- * The persistence layer handles the database, session, and cookie variables.
- * 
- * @var PersistenceLayer
-*/
+    /**
+     * Persistence Layer for the application.
+     *
+     * The persistence layer handles the database, session, and cookie variables.
+     * 
+     * @var PersistenceLayer
+    */
 	private $pl;
 	
-/** Constructs the delegates of the class. */
+    /** Constructs the delegates of the class. */
 	function __construct() {
 		$this->iv = new WriteInputValidator();
 		$this->pl = new WritePersistenceLayer();
@@ -65,24 +65,24 @@ class WriteModel extends Model {
         $this->pl->signOut();
     }
 	
-/**
- * Create a new entry.
- *
- * Creates a blank entry with headers corresponding to the selected template. Set it as the working entry.
- *
- * @param string $template_name The name of the template.
- */
+    /**
+     * Create a new entry.
+     *
+     * Creates a blank entry with headers corresponding to the selected template. Set it as the working entry.
+     *
+     * @param string $template_name The name of the template.
+     */
 	function createNewEntry($template_name) {
 		return $this->pl->createNewEntry($template_name);
 	}
 	
-/** 
- * Save the current entry.
- * 
- * Saves the current entry into the database.
- * 
- * @param mixed $entry The entry to be saved.
-*/
+    /** 
+     * Save the current entry.
+     * 
+     * Saves the current entry into the database.
+     * 
+     * @param mixed $entry The entry to be saved.
+    */
 	function saveEntry($entry) {
 		if ($this->iv->writeFilter($entry, $this->error_msg)) {
 			$this->pl->insertEntry($entry);
@@ -91,51 +91,51 @@ class WriteModel extends Model {
         return false;
 	}
 	
-/**
- * Delete the current entry.
- * 
- * Deletes the current entry from the database. A blank entry becomes the working entry.
-*/
+    /**
+     * Delete the current entry.
+     * 
+     * Deletes the current entry from the database. A blank entry becomes the working entry.
+    */
 	function deleteEntry() {
 		$this->pl->deleteEntry($this->error_msg);
 		$this->pl->setBlankWorkingEntry();
         return true;
 	}
 	
-/**
- * Clear the current entry.
- *
- * Erases all the responses in current entry. Makes no changes to the database.
-*/
+    /**
+     * Clear the current entry.
+     *
+     * Erases all the responses in current entry. Makes no changes to the database.
+    */
 	function clearEntry() {
 		$this->pl->clearWorkingEntry();
 	}
 	
-/**
- * Show the default entry.
- *
- * Shows a blank entry with one empty header and one empty response.
-*/
+    /**
+     * Show the default entry.
+     *
+     * Shows a blank entry with one empty header and one empty response.
+    */
 	function showDefaultEntry() {
 		$this->pl->setBlankWorkingEntry();
 	}
 	
-/**
- * Go to the next day.
- *
- * Goes to the entries of the next day. Discards the working entry.
-*/
+    /**
+     * Go to the next day.
+     *
+     * Goes to the entries of the next day. Discards the working entry.
+    */
 	function incrementDate() {
 		$this->pl->incrementDate();
         $this->pl->clearWorkspace();
 		$this->pl->setBlankWorkingEntry();
 	}
 	
-/**
- * Go to the previous day.
- *
- * Goes to the entries of the previous day. Discards the working entry.
-*/
+    /**
+     * Go to the previous day.
+     *
+     * Goes to the entries of the previous day. Discards the working entry.
+    */
 	function decrementDate() {
 		$this->pl->decrementDate();
         $this->pl->clearWorkspace();
@@ -146,59 +146,59 @@ class WriteModel extends Model {
         $this->pl->clearWorkspace();
     }
 	
-// View Functions
+    // View Functions
 
-/**
- * Get the working date.
- * 
- * Retrieve the date that the user wants to go to.
- *
- * @return mixed The working date.
-*/
+    /**
+     * Get the working date.
+     * 
+     * Retrieve the date that the user wants to go to.
+     *
+     * @return mixed The working date.
+    */
 	function getDate() {
 		return $this->pl->getDate();
 	}
 	
-/**
- * Get the template names.
- *
- * Get the names of the templates that exist.
- *
- * @return array An array of template names.
-*/
+    /**
+     * Get the template names.
+     *
+     * Get the names of the templates that exist.
+     *
+     * @return array An array of template names.
+    */
 	function getTemplateNames() {
 		return $this->pl->getTemplateNames();
 	}
 	
-/*
- * Get the current entry.
- *
- * Gets the currently worked on entry.
- *
- * @return entry The working entry stored in the model.
-*/
+    /*
+     * Get the current entry.
+     *
+     * Gets the currently worked on entry.
+     *
+     * @return entry The working entry stored in the model.
+    */
 	function getEntry() {
 		return $this->pl->retrieveWorkingEntry();
 	}
 	
-/*
- * Check if entry id exists.
- * 
- * Checks to see if the working entry has already been stored in the database.
- *
- * @return bool True if entry id exists.
-*/
+    /*
+     * Check if entry id exists.
+     * 
+     * Checks to see if the working entry has already been stored in the database.
+     *
+     * @return bool True if entry id exists.
+    */
 	function checkEntryId() {
 		return $this->pl->checkEntryId();
 	}
 
-/**
- * Gets the current error message.
- *
- * Gets the current error message from the model.
- *
- * @return string The model's error message.
-*/
+    /**
+     * Gets the current error message.
+     *
+     * Gets the current error message from the model.
+     *
+     * @return string The model's error message.
+    */
 	function getErrorMsg() {
 		return $this->error_msg;
 	}

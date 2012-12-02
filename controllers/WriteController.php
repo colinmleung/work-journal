@@ -10,8 +10,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /WriteController.html
  */
  
 /** Include the base class of the WriteController class. */
@@ -36,8 +34,6 @@ require_once __DIR__.'/../models/page_models/WriteModel.php';
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /WriteController.html
  */
 class WriteController extends ControllerFactory
 {
@@ -73,17 +69,15 @@ class WriteController extends ControllerFactory
      * perform the appropriate action.
      *
      * On the write page, the user can:
-     * 1. sign out
-     * 2. go the read page
-     * 3. go the templates page
-     * 4. create a new entry
-     * 5. save the current entry
-     * 6. delete the current entry
-     * 7. clear the current entry
-     * 8. go to the next day
-     * 9. go the previous day
-     *
-     * @return void
+     * - sign out
+     * - go the read page
+     * - go the templates page
+     * - create a new entry
+     * - save the current entry
+     * - delete the current entry
+     * - clear the current entry
+     * - go to the next day
+     * - go the previous day
     */
     function performAction()
     {
@@ -112,15 +106,12 @@ class WriteController extends ControllerFactory
         }
     }
 
+    /** Redirect user to sign in page if not signed in. */
     private function _userNotLoggedIn() {
         $this->utility->redirect('signin');
     }
     
-    /**
-     * Sign out the user.
-     *
-     * @return void
-     */
+    /** Sign out the user. */
     private function _signOut()
     {
         $this->model->signOut();
@@ -129,99 +120,63 @@ class WriteController extends ControllerFactory
             echo "its set";} else { echo "not set";}*/
     }
 
-    /**
-     * Go to the read page.
-     *
-     * @return void
-     */
+    /** Go to the read page. */
     private function _read()
     {
         $this->model->clearWorkspace();
         $this->utility->redirect('read');
     }
 
-    /**
-     * Go to the templates page.
-     *
-     * @return void
-     */
+    /** Go to the templates page. */
     private function _templates()
     {
         $this->model->clearWorkspace();
         $this->utility->redirect('templates');
     }
 
-    /**
-     * Create a new journal entry.
-     *
-     * @return void
-     */
+    /** Create a new journal entry. */
     private function _createNewEntry()
     {
         $this->model->createNewEntry($_POST['template_name']);
         $this->view->display($this->model);
     }
 
-    /**
-     * Save the current entry.
-     *
-     * @return void
-     */
+    /** Save the current entry. */
     private function _saveEntry()
     {
         $this->model->saveEntry($_POST['entry']);
         $this->view->display($this->model);
     }
 
-    /**
-     * Delete the current entry.
-     *
-     * @return void
-     */
+    /** Delete the current entry. */
     private function _deleteEntry()
     {
         $this->model->deleteEntry();
         $this->view->display($this->model);
     }
 
-    /**
-     * Clear the current entry.
-     *
-     * @return void
-     */
+    /** Clear the current entry. */
     private function _clearEntry()
     {
         $this->model->clearEntry();
         $this->view->display($this->model);
     }
 
-    /**
-     * Show the default blank entry.
-     *
-     * @return void
-     */
+    /** Show the default blank entry. */
     private function _showDefaultEntry()
     {
         $this->model->showDefaultEntry();
         $this->view->display($this->model);
     }
 
-    /**
-     * Go to the next day's entry.
-     *
-     * @return void
-     */
+    /** Go to the next day's entry. */
     private function _incrementDate()
     {
         $this->model->incrementDate();
         $this->view->display($this->model);
     }
 
-    /**
-     * Go to the previous day's entry.
-     *
-     * @return void
-     */
+    /** Go to the previous day's entry. */
     private function _decrementDate()
     {
         $this->model->decrementDate();

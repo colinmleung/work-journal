@@ -10,8 +10,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /ReadController.html
  */
  
 /** Include the base class of the ReadController class. */
@@ -36,8 +34,6 @@ require_once __DIR__.'/../models/page_models/ReadModel.php';
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /ReadController.html
  */
 class ReadController extends ControllerFactory
 {
@@ -80,8 +76,6 @@ class ReadController extends ControllerFactory
      * 5. read all the entries this week
      * 6. read all the entries this month
      * 7. read all the entries this semester
-     *
-     * @return void
      */
     function performAction() 
     {
@@ -105,82 +99,57 @@ class ReadController extends ControllerFactory
             $this->_readDay();
         }
     }
-    
+
+    /**
+     * Redirect user to sign in page if not signed in.
+     */
     private function _userNotLoggedIn() {
         $this->utility->redirect('signin');
     }
 
-    /**
-     * Sign out the user.
-     *
-     * @return void
-     */
+    /** Sign out the user. */
     private function _signOut() 
     {
         $this->model->signOut();
         $this->utility->redirect('signin');
     }
 
-    /**
-     * Go to the write page.
-     *
-     * @return void
-     */
+    /** Go to the write page. */
     private function _write() 
     {
         $this->model->clearWorkspace();
         $this->utility->redirect('write');
     }
 
-    /**
-     * Go to the templates page.
-     *
-     * @return void
-     */
+    /** Go to the templates page. */
     private function _templates() 
     {
         $this->model->clearWorkspace();
         $this->utility->redirect('templates');
     }
 
-    /**
-     * Show today's entry.
-     *
-     * @return void
-     */
+    /** Show today's entry. */
     private function _readDay() 
     {
         $this->model->exposeDay();
         $this->view->display($this->model);
     }
 
-    /**
-     * Show all the entries this week.
-     *
-     * @return void
-     */
+    /** Show all the entries this week. */
     private function _readWeek() 
     {
         $this->model->exposeWeek();
         $this->view->display($this->model);
     }
 
-    /**
-     * Show all the entries this month.
-     *
-     * @return void
-     */
+    /** Show all the entries this month. */
     private function _readMonth() 
     {
         $this->model->exposeMonth();
         $this->view->display($this->model);
     }
 
-    /**
-     * Show all the entries this semester.
-     *
-     * @return void
-     */
+    /** Show all the entries this semester. */
     private function _readSemester() 
     {
         $this->model->exposeSemester();

@@ -10,8 +10,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /SignInController.html
  */
  
 /** Include the base class of the SignInController class. */
@@ -38,8 +36,6 @@ require_once __DIR__.'/../utilities/Utility.php';
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /SignInController.html
  */
 class SignInController extends ControllerFactory
 {
@@ -78,8 +74,6 @@ class SignInController extends ControllerFactory
      * 1. log in
      * 2. go the sign up page
      * 3. be already logged in
-     *
-     * @return void
     */
     public function performAction()
     {
@@ -94,21 +88,13 @@ class SignInController extends ControllerFactory
         }
     }
 
-    /** 
-     * Just display the page.
-     *
-     * @return void
-     */
+    /** Just display the page. */
     private function _noActionTaken()
     {
         $this->view->display($this->model);
     }
 
-    /** 
-     * Attempt to log in the user.
-     *
-     * @return void
-     */
+    /** Attempt to log in the user. */
     private function _signInRequested()
     {
         if ($this->model->signIn($_POST['username'], $_POST['password'])) {
@@ -118,21 +104,13 @@ class SignInController extends ControllerFactory
         }
     }
 
-    /**
-     * Go to the sign up page.
-     *
-     * @return void
-     */
+    /** Go to the sign up page. */
     private function _signUpPageRequested()
     {
         $this->utility->redirect('signup');
     }
 
-    /**
-     * Go to the journal page.
-     *
-     * @return void
-     */
+    /** Go to the journal page. */
     private function _userLoggedIn()
     {
         $this->utility->redirect('write');

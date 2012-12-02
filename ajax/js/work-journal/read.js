@@ -14,16 +14,13 @@ require([
     "dojo/dom",
     "dojo/on"
 ], function (ready, dom, on) {
-
 	"use strict";
 
 	/**
      *           Display today's entries
-     * @requires module:dojo/dom
      * @param    {MouseEvent} evt The click event from the read day button
      */
     function readDayAttempt(evt) {
-
         evt.stopPropagation();
         evt.preventDefault();
 
@@ -32,11 +29,9 @@ require([
 
 	/**
      *           Displays last week's entries
-     * @requires module:dojo/dom
      * @param    {MouseEvent} evt The click event from the read week button
      */
     function readWeekAttempt(evt) {
-
         evt.stopPropagation();
         evt.preventDefault();
 
@@ -45,11 +40,9 @@ require([
 
 	/**
      *           Display last month's entries
-     * @requires module:dojo/dom
      * @param    {MouseEvent} evt The click event from the read month button
      */
     function readMonthAttempt(evt) {
-
         evt.stopPropagation();
         evt.preventDefault();
 
@@ -58,11 +51,9 @@ require([
 
 	/**
      *           Display last semester's entries
-     * @requires module:dojo/dom
      * @param    {MouseEvent} evt The click event from the read semester button
      */
     function readSemesterAttempt(evt) {
-
         evt.stopPropagation();
         evt.preventDefault();
 

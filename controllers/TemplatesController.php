@@ -10,8 +10,6 @@
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /TemplatesController.html
  */
  
 /** Include the base class of the TemplatesController class. */
@@ -36,8 +34,6 @@ require_once __DIR__.'/../models/page_models/TemplatesModel.php';
  * @license  http://opensource.org/licenses/gpl-3.0.html
                 GNU General Public License
  * Version   0.0.2
- * @link     file://localhost/C:/xampp/htdocs/work-journal/docs/classes
-                /TemplatesController.html
  */
 class TemplatesController extends ControllerFactory
 {
@@ -80,8 +76,6 @@ class TemplatesController extends ControllerFactory
      * 5. load an existing template
      * 6. save the current template
      * 7. modify the existing template
-     *
-     * @return void
     */
     function performAction()
     {
@@ -109,92 +103,61 @@ class TemplatesController extends ControllerFactory
         }
     }
     
+    /** Redirect user to sign in page if not signed in. */
     private function _userNotLoggedIn() {
         $this->utility->redirect('signin');
     }
 
-    /**
-     * Sign out the user.
-     *
-     * @return void
-     */
+    /** Sign out the user. */
     private function _signOut()
     {
         $this->model->signOut();
         $this->utility->redirect('signin');
     }
 
-    /**
-     * Go to the write page.
-     *
-     * @return void
-     */
+    /** Go to the write page. */
     private function _write()
     {
         $this->model->clearWorkspace();
         $this->utility->redirect('write');
     }
 
-    /**
-     * Go to the read page.
-     *
-     * @return void
-     */
+    /** Go to the read page. */
     private function _read()
     {
         $this->model->clearWorkspace();
         $this->utility->redirect('read');
     }
 
-    /**
-     * Create a new template.
-     *
-     * @return void
-     */
+    /** Create a new template. */
     private function _createNewTemplate()
     {
         $this->model->createNewTemplate();
         $this->view->display($this->model);
     }
 
-    /**
-     * Save the current template.
-     *
-     * @return void
-     */
+    /** Save the current template. */
     private function _saveTemplate()
     {
         $this->model->saveTemplate($_POST['template']);
         $this->view->display($this->model);
     }
 
-    /**
-     * Delete the current template.
-     *
-     * @return void
-     */
+    /** Delete the current template. */
     private function _deleteTemplate()
     {
         $this->model->deleteTemplate();
         $this->view->display($this->model);
     }
 
-    /**
-     * Delete a template question.
-     *
-     * @return void
-     */
+    /** Delete a template question. */
     private function _deleteTemplateHeader()
     {
         $this->model->deleteTemplateHeader($_POST['delete_header'], $_POST['template']);
         $this->view->display($this->model);
     }
     
-    /**
-     * Add a template question.
-     *
-     * @return void
-     */
+    /** Add a template question. */
     private function _addTemplateHeader()
     {
         $this->model->addTemplateHeader($_POST['template']);

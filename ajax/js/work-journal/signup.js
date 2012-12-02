@@ -14,13 +14,11 @@ require([
     "dojo/dom",
     "dojo/on"
 ], function (ready, dom, on) {
-
     "use strict";
 
     /**
      *           Verifies the input username and passwords through an input filter, and 
                      attempts to add the user to the database
-     * @function signUpAttempt
      * @requires module:dojo/dom
      * @param    {MouseEvent} evt The submit event from the sign up form
      */
@@ -41,7 +39,6 @@ require([
 
     /**
      *           Attaches the sign up event handler to the sign up button
-     * @function
      * @requires module:dojo/ready
      * @requires module:dojo/dom
      * @requires module:dojo/on
