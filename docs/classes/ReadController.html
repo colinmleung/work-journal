@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \ReadController</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+<li><a href="../packages/Workjournalpackage.html"><i class="icon-folder-open"></i> Workjournalpackage</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">132</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Calls the ControllerFactory constructor."><span class="description">Calls the ControllerFactory constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_performAction" title="performAction :: Makes decisions based on $_POST variables, and calls class functions to perform the appropriate action."><span class="description">Makes decisions based on $_POST variables, and calls class functions to perform the appropriate action.</span><pre>performAction()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_createModel" title="createModel :: Constructs a ReadModel"><span class="description">Constructs a ReadModel</span><pre>createModel()</pre></a></li>
+<li class="method protected "><a href="#method_createView" title="createView :: Constructs a ReadView"><span class="description">Constructs a ReadView</span><pre>createView()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_readDay" title="readDay :: Show today's entry."><span class="description">Show today's entry.</span><pre>readDay()</pre></a></li>
+<li class="method private "><a href="#method_readMonth" title="readMonth :: Show all the entries this month."><span class="description">Show all the entries this month.</span><pre>readMonth()</pre></a></li>
+<li class="method private "><a href="#method_readSemester" title="readSemester :: Show all the entries this semester."><span class="description">Show all the entries this semester.</span><pre>readSemester()</pre></a></li>
+<li class="method private "><a href="#method_readWeek" title="readWeek :: Show all the entries this week."><span class="description">Show all the entries this week.</span><pre>readWeek()</pre></a></li>
+<li class="method private "><a href="#method_signOut" title="signOut :: Sign out the user."><span class="description">Sign out the user.</span><pre>signOut()</pre></a></li>
+<li class="method private "><a href="#method_templates" title="templates :: Go to the templates page."><span class="description">Go to the templates page.</span><pre>templates()</pre></a></li>
+<li class="method private "><a href="#method_write" title="write :: Go to the write page."><span class="description">Go to the write page.</span><pre>write()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_model" title="$model :: Model part of the MVC."><span class="description"></span><pre>$model</pre></a></li>
+<li class="property protected inherited"><a href="#property_utility" title="$utility :: "><span class="description"></span><pre>$utility</pre></a></li>
+<li class="property protected inherited"><a href="#property_view" title="$view :: View part of the MVC."><span class="description"></span><pre>$view</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\ReadController"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/ReadController.html">ReadController</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">The Controller class for read.php.</p>
+<div class="details">
+<div class="long_description"><p>ReadController reads the $_POST superglobal, makes decisions on what to do,
+and delegates tasks to the ReadModel and ReadView.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/Default.html">Workjournalpackage</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:colinmleung@gmail.com">Colin M. Leung</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Calls the ControllerFactory constructor.</h2>
+<pre>__construct() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_performAction"></a><div class="element clickable method public method_performAction" data-toggle="collapse" data-target=".method_performAction .collapse">
+<h2>Makes decisions based on $_POST variables, and calls class functions to perform the appropriate action.</h2>
+<pre>performAction() : \none</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>On the read page, the user can:
+1. sign out
+2. go the write page
+3. go the templates page
+4. read today's entry
+5. read all the entries this week
+6. read all the entries this month
+7. read all the entries this semester</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\none</code></div>
+</div></div>
+</div>
+<a id="method_createModel"></a><div class="element clickable method protected method_createModel" data-toggle="collapse" data-target=".method_createModel .collapse">
+<h2>Constructs a ReadModel</h2>
+<pre>createModel() : <a href="../classes/ReadModel.html">\ReadModel</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/ReadModel.html">\ReadModel</a></code></div>
+</div></div>
+</div>
+<a id="method_createView"></a><div class="element clickable method protected method_createView" data-toggle="collapse" data-target=".method_createView .collapse">
+<h2>Constructs a ReadView</h2>
+<pre>createView() : <a href="../classes/ReadView.html">\ReadView</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/ReadView.html">\ReadView</a></code></div>
+</div></div>
+</div>
+<a id="method_readDay"></a><div class="element clickable method private method_readDay" data-toggle="collapse" data-target=".method_readDay .collapse">
+<h2>Show today's entry.</h2>
+<pre>readDay() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_readMonth"></a><div class="element clickable method private method_readMonth" data-toggle="collapse" data-target=".method_readMonth .collapse">
+<h2>Show all the entries this month.</h2>
+<pre>readMonth() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_readSemester"></a><div class="element clickable method private method_readSemester" data-toggle="collapse" data-target=".method_readSemester .collapse">
+<h2>Show all the entries this semester.</h2>
+<pre>readSemester() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_readWeek"></a><div class="element clickable method private method_readWeek" data-toggle="collapse" data-target=".method_readWeek .collapse">
+<h2>Show all the entries this week.</h2>
+<pre>readWeek() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_signOut"></a><div class="element clickable method private method_signOut" data-toggle="collapse" data-target=".method_signOut .collapse">
+<h2>Sign out the user.</h2>
+<pre>signOut() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_templates"></a><div class="element clickable method private method_templates" data-toggle="collapse" data-target=".method_templates .collapse">
+<h2>Go to the templates page.</h2>
+<pre>templates() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_write"></a><div class="element clickable method private method_write" data-toggle="collapse" data-target=".method_write .collapse">
+<h2>Go to the write page.</h2>
+<pre>write() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_model"> </a><div class="element clickable property protected property_model" data-toggle="collapse" data-target=".property_model .collapse">
+<h2></h2>
+<pre>$model : <a href="../classes/Model.html">\Model</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The Model represents all the logic of the application, as well as
+connections to the persistent data stores.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ControllerFactory::$$model</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_utility"> </a><div class="element clickable property protected property_utility" data-toggle="collapse" data-target=".property_utility .collapse">
+<h2></h2>
+<pre>$utility : <a href="../classes/Utility.html">\Utility</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ControllerFactory::$$utility</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_view"> </a><div class="element clickable property protected property_view" data-toggle="collapse" data-target=".property_view .collapse">
+<h2></h2>
+<pre>$view : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The View represents the part of the MVC that displays the Model to the user.
+It grabs relevant variables from the Model.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ControllerFactory::$$view</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a11</a> and<br>
+            generated on 2012-11-12T21:48:24-08:00.<br></footer></div>
+</div>
+</body>
+</html>
